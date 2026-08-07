@@ -179,16 +179,27 @@ class DataTransformer:
         t0 = time.perf_counter()
         steps: List[TransformationStep] = []
         initial_len = len(df)
-        df = df.drop_duplicates().reset_index(drop=True)
+
+        subset_keys = None
+        if schema.primary_key and schema.primary_key in df.columns:
+            subset_keys = [schema.primary_key]
+        elif schema.composite_keys and all(k in df.columns for k in schema.composite_keys):
+            subset_keys = schema.composite_keys
+
+        if subset_keys:
+            df = df.drop_duplicates(subset=subset_keys, keep="first").reset_index(drop=True)
+        else:
+            df = df.drop_duplicates().reset_index(drop=True)
+
         dropped = initial_len - len(df)
         exec_ms = round((time.perf_counter() - t0) * 1000.0, 3)
         if dropped > 0:
             steps.append(
                 TransformationStep(
                     step_name="deduplication",
-                    description=f"Removed {dropped:,} exact duplicate rows.",
+                    description=f"Removed {dropped:,} duplicate rows based on keys ({subset_keys if subset_keys else 'all_columns'}).",
                     affected_rows=dropped,
-                    columns_modified=list(df.columns),
+                    columns_modified=subset_keys if subset_keys else list(df.columns),
                     execution_time_ms=exec_ms,
                     status="SUCCESS",
                 )

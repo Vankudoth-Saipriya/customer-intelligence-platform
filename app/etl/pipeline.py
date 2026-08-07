@@ -218,7 +218,9 @@ class ETLPipeline:
         total_elapsed = time.perf_counter() - pipeline_start
 
         overall_status = "SUCCESS"
-        if val_report.status == ValidationResult.FAILED or (load_summary and any(r.rows_inserted < r.rows_attempted for r in load_summary.reports.values())):
+        if val_report.status == ValidationResult.FAILED or (
+            load_summary and any((r.rows_inserted + r.rows_skipped) < r.rows_attempted for r in load_summary.reports.values())
+        ):
             overall_status = "FAILED"
         elif val_report.status == ValidationResult.WARNING:
             overall_status = "WARNING"
@@ -374,7 +376,7 @@ class ETLPipeline:
 
         overall_status = "SUCCESS"
         if val_summary.overall_status == ValidationResult.FAILED or (
-            load_summary and load_summary.total_inserted < load_summary.total_attempted
+            load_summary and (load_summary.total_inserted + load_summary.total_skipped) < load_summary.total_attempted
         ):
             overall_status = "FAILED"
         elif val_summary.overall_status == ValidationResult.WARNING:

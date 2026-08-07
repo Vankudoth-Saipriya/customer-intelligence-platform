@@ -99,7 +99,7 @@ class ReviewModel(Base):
     __tablename__ = "reviews"
 
     review_id: Mapped[str] = mapped_column(String(64), primary_key=True)
-    order_id: Mapped[str] = mapped_column(String(64), ForeignKey("orders.order_id"), nullable=False, index=True)
+    order_id: Mapped[str] = mapped_column(String(64), ForeignKey("orders.order_id"), primary_key=True, index=True)
     review_score: Mapped[int] = mapped_column(Integer, nullable=False)
     review_comment_title: Mapped[Optional[str]] = mapped_column(String(255), nullable=True)
     review_comment_message: Mapped[Optional[str]] = mapped_column(Text, nullable=True)

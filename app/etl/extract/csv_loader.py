@@ -66,6 +66,28 @@ class CSVLoader:
         key = target.value if isinstance(target, DatasetType) else str(target)
         return DATASET_FILENAME_MAP.get(key, key)
 
+    def detect_dataset_type(
+        self, filename_or_key: Union[str, DatasetType]
+    ) -> Optional[DatasetType]:
+        """
+        Detect and resolve filename or dataset key string to a DatasetType enum.
+        """
+        if isinstance(filename_or_key, DatasetType):
+            return filename_or_key
+
+        target_str = str(filename_or_key).lower()
+        for d_type in DatasetType:
+            if d_type.value == target_str:
+                return d_type
+
+        for key, fname in DATASET_FILENAME_MAP.items():
+            if fname.lower() == target_str or key.lower() == target_str:
+                try:
+                    return DatasetType(key)
+                except ValueError:
+                    pass
+        return None
+
     def load_dataset(
         self, filename: Union[str, DatasetType], encoding: str = "utf-8"
     ) -> pd.DataFrame:
