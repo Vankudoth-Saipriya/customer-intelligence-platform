@@ -58,3 +58,7 @@ artifacts/customer_intelligence_verification.db
 # Large CSV artifact exports (Parquet is used at runtime)
 artifacts/*/*.csv
 
+# Local Interview & Portfolio Dossier
+Customer_Intelligence_Platform_Interview_Dossier.docx
+
+
