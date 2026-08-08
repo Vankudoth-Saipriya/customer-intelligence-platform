@@ -1,0 +1,413 @@
+{
+  "total_orders_analyzed": 99441,
+  "revenue_analysis": {
+    "total_revenue": 15843553.24,
+    "total_items_revenue": 13591643.7,
+    "total_freight_revenue": 2251909.54,
+    "revenue_by_year": {
+      "2016": 57183.21,
+      "2017": 7142672.43,
+      "2018": 8643697.6
+    },
+    "revenue_by_quarter": {
+      "2016Q3": 354.75,
+      "2016Q4": 56828.46,
+      "2017Q1": 855517.7,
+      "2017Q2": 1501576.23,
+      "2017Q3": 1973575.13,
+      "2017Q4": 2812003.37,
+      "2018Q1": 3249337.67,
+      "2018Q2": 3332156.97,
+      "2018Q3": 2062202.96,
+      "2018Q4": 0.0
+    },
+    "revenue_by_month": {
+      "2016-09": 354.75,
+      "2016-10": 56808.84,
+      "2016-12": 19.62,
+      "2017-01": 137188.49,
+      "2017-02": 286280.62,
+      "2017-03": 432048.59,
+      "2017-04": 412422.24,
+      "2017-05": 586190.95,
+      "2017-06": 502963.04,
+      "2017-07": 584971.62,
+      "2017-08": 668204.6,
+      "2017-09": 720398.91,
+      "2017-10": 769312.37,
+      "2017-11": 1179143.77,
+      "2017-12": 863547.23,
+      "2018-01": 1107301.89,
+      "2018-02": 986908.96,
+      "2018-03": 1155126.82,
+      "2018-04": 1159698.04,
+      "2018-05": 1149781.82,
+      "2018-06": 1022677.11,
+      "2018-07": 1058728.03,
+      "2018-08": 1003308.47,
+      "2018-09": 166.46,
+      "2018-10": 0.0
+    },
+    "revenue_growth_rate": {
+      "2016-09": 0.0,
+      "2016-10": 15913.77,
+      "2016-12": -99.97,
+      "2017-01": 699127.78,
+      "2017-02": 108.68,
+      "2017-03": 50.92,
+      "2017-04": -4.54,
+      "2017-05": 42.13,
+      "2017-06": -14.2,
+      "2017-07": 16.31,
+      "2017-08": 14.23,
+      "2017-09": 7.81,
+      "2017-10": 6.79,
+      "2017-11": 53.27,
+      "2017-12": -26.76,
+      "2018-01": 28.23,
+      "2018-02": -10.87,
+      "2018-03": 17.04,
+      "2018-04": 0.4,
+      "2018-05": -0.86,
+      "2018-06": -11.05,
+      "2018-07": 3.53,
+      "2018-08": -5.23,
+      "2018-09": -99.98,
+      "2018-10": -100.0
+    }
+  },
+  "order_analysis": {
+    "orders_by_year": {
+      "2016": 329,
+      "2017": 45101,
+      "2018": 54011
+    },
+    "orders_by_month": {
+      "2016-09": 4,
+      "2016-10": 324,
+      "2016-12": 1,
+      "2017-01": 800,
+      "2017-02": 1780,
+      "2017-03": 2682,
+      "2017-04": 2404,
+      "2017-05": 3700,
+      "2017-06": 3245,
+      "2017-07": 4026,
+      "2017-08": 4331,
+      "2017-09": 4285,
+      "2017-10": 4631,
+      "2017-11": 7544,
+      "2017-12": 5673,
+      "2018-01": 7269,
+      "2018-02": 6728,
+      "2018-03": 7211,
+      "2018-04": 6939,
+      "2018-05": 6873,
+      "2018-06": 6167,
+      "2018-07": 6292,
+      "2018-08": 6512,
+      "2018-09": 16,
+      "2018-10": 4
+    },
+    "orders_by_weekday": {
+      "Monday": 16196,
+      "Tuesday": 15963,
+      "Wednesday": 15552,
+      "Thursday": 14761,
+      "Friday": 14122,
+      "Saturday": 10887,
+      "Sunday": 11960
+    },
+    "orders_by_hour": {
+      "00:00": 2394,
+      "01:00": 1170,
+      "02:00": 510,
+      "03:00": 272,
+      "04:00": 206,
+      "05:00": 188,
+      "06:00": 502,
+      "07:00": 1231,
+      "08:00": 2967,
+      "09:00": 4785,
+      "10:00": 6177,
+      "11:00": 6578,
+      "12:00": 5995,
+      "13:00": 6518,
+      "14:00": 6569,
+      "15:00": 6454,
+      "16:00": 6675,
+      "17:00": 6150,
+      "18:00": 5769,
+      "19:00": 5982,
+      "20:00": 6193,
+      "21:00": 6217,
+      "22:00": 5816,
+      "23:00": 4123
+    },
+    "average_order_value": 159.33,
+    "distribution_of_order_values": {
+      "mean": 159.33,
+      "std": 220.06,
+      "min": 0.0,
+      "q25": 61.05,
+      "median": 104.56,
+      "q75": 176.0,
+      "max": 13664.08,
+      "skewness": 9.2206
+    }
+  },
+  "seasonality": {
+    "monthly_seasonality": {
+      "January": {
+        "total_revenue": 1244490.38,
+        "average_revenue": 154.23,
+        "order_count": 8069
+      },
+      "February": {
+        "total_revenue": 1273189.58,
+        "average_revenue": 149.65,
+        "order_count": 8508
+      },
+      "March": {
+        "total_revenue": 1587175.41,
+        "average_revenue": 160.43,
+        "order_count": 9893
+      },
+      "April": {
+        "total_revenue": 1572120.28,
+        "average_revenue": 168.27,
+        "order_count": 9343
+      },
+      "May": {
+        "total_revenue": 1735972.77,
+        "average_revenue": 164.19,
+        "order_count": 10573
+      },
+      "June": {
+        "total_revenue": 1525640.15,
+        "average_revenue": 162.1,
+        "order_count": 9412
+      },
+      "July": {
+        "total_revenue": 1643699.65,
+        "average_revenue": 159.3,
+        "order_count": 10318
+      },
+      "August": {
+        "total_revenue": 1671513.07,
+        "average_revenue": 154.16,
+        "order_count": 10843
+      },
+      "September": {
+        "total_revenue": 720920.12,
+        "average_revenue": 167.46,
+        "order_count": 4305
+      },
+      "October": {
+        "total_revenue": 826121.21,
+        "average_revenue": 166.59,
+        "order_count": 4959
+      },
+      "November": {
+        "total_revenue": 1179143.77,
+        "average_revenue": 156.3,
+        "order_count": 7544
+      },
+      "December": {
+        "total_revenue": 863566.85,
+        "average_revenue": 152.2,
+        "order_count": 5674
+      }
+    },
+    "quarterly_seasonality": {
+      "Q1": {
+        "total_revenue": 4104855.37,
+        "average_revenue": 155.08,
+        "order_count": 26470
+      },
+      "Q2": {
+        "total_revenue": 4833733.2,
+        "average_revenue": 164.82,
+        "order_count": 29328
+      },
+      "Q3": {
+        "total_revenue": 4036132.84,
+        "average_revenue": 158.49,
+        "order_count": 25466
+      },
+      "Q4": {
+        "total_revenue": 2868831.83,
+        "average_revenue": 157.83,
+        "order_count": 18177
+      }
+    },
+    "holiday_spike_detection": {
+      "average_daily_revenue": 24989.83,
+      "spike_threshold_3_sigma": 70269.92,
+      "top_revenue_spike_days": [
+        {
+          "date": "2017-11-24",
+          "daily_revenue": 178377.63,
+          "daily_orders": 1176,
+          "revenue_multiplier_vs_avg": 7.14,
+          "event_context": "Black Friday 2017"
+        },
+        {
+          "date": "2017-11-25",
+          "daily_revenue": 71858.16,
+          "daily_orders": 499,
+          "revenue_multiplier_vs_avg": 2.88,
+          "event_context": "Black Friday 2017"
+        },
+        {
+          "date": "2018-08-06",
+          "daily_revenue": 65860.42,
+          "daily_orders": 372,
+          "revenue_multiplier_vs_avg": 2.64,
+          "event_context": "Standard Peak"
+        },
+        {
+          "date": "2018-05-16",
+          "daily_revenue": 64739.09,
+          "daily_orders": 357,
+          "revenue_multiplier_vs_avg": 2.59,
+          "event_context": "Standard Peak"
+        },
+        {
+          "date": "2018-05-07",
+          "daily_revenue": 62460.21,
+          "daily_orders": 372,
+          "revenue_multiplier_vs_avg": 2.5,
+          "event_context": "Standard Peak"
+        },
+        {
+          "date": "2018-05-14",
+          "daily_revenue": 62230.72,
+          "daily_orders": 364,
+          "revenue_multiplier_vs_avg": 2.49,
+          "event_context": "Standard Peak"
+        },
+        {
+          "date": "2018-05-10",
+          "daily_revenue": 58871.89,
+          "daily_orders": 279,
+          "revenue_multiplier_vs_avg": 2.36,
+          "event_context": "Standard Peak"
+        },
+        {
+          "date": "2018-08-07",
+          "daily_revenue": 58294.38,
+          "daily_orders": 370,
+          "revenue_multiplier_vs_avg": 2.33,
+          "event_context": "Standard Peak"
+        },
+        {
+          "date": "2018-06-11",
+          "daily_revenue": 57313.28,
+          "daily_orders": 294,
+          "revenue_multiplier_vs_avg": 2.29,
+          "event_context": "Standard Peak"
+        },
+        {
+          "date": "2017-11-27",
+          "daily_revenue": 56644.85,
+          "daily_orders": 403,
+          "revenue_multiplier_vs_avg": 2.27,
+          "event_context": "Cyber Monday"
+        }
+      ]
+    }
+  },
+  "sales_performance": {
+    "highest_revenue_months": [
+      {
+        "year_month": "2017-11",
+        "revenue": 1179143.77,
+        "order_count": 7544
+      },
+      {
+        "year_month": "2018-04",
+        "revenue": 1159698.04,
+        "order_count": 6939
+      },
+      {
+        "year_month": "2018-03",
+        "revenue": 1155126.82,
+        "order_count": 7211
+      },
+      {
+        "year_month": "2018-05",
+        "revenue": 1149781.82,
+        "order_count": 6873
+      },
+      {
+        "year_month": "2018-01",
+        "revenue": 1107301.89,
+        "order_count": 7269
+      }
+    ],
+    "lowest_revenue_months": [
+      {
+        "year_month": "2018-09",
+        "revenue": 166.46,
+        "order_count": 16
+      },
+      {
+        "year_month": "2016-10",
+        "revenue": 56808.84,
+        "order_count": 324
+      },
+      {
+        "year_month": "2017-01",
+        "revenue": 137188.49,
+        "order_count": 800
+      },
+      {
+        "year_month": "2017-02",
+        "revenue": 286280.62,
+        "order_count": 1780
+      },
+      {
+        "year_month": "2017-04",
+        "revenue": 412422.24,
+        "order_count": 2404
+      }
+    ],
+    "best_selling_categories": {
+      "Health_Beauty": 1258681.34,
+      "Watches_Gifts": 1205005.68,
+      "Bed_Bath_Table": 1036988.68,
+      "Sports_Leisure": 988048.97,
+      "Computers_Accessories": 911954.32,
+      "Furniture_Decor": 729762.49,
+      "Cool_Stuff": 635290.85,
+      "Housewares": 632248.66,
+      "Auto": 592720.11,
+      "Garden_Tools": 485256.46,
+      "Toys": 483946.6,
+      "Baby": 411764.89,
+      "Perfumery": 399124.87,
+      "Telephony": 323667.53,
+      "Office_Furniture": 273960.7,
+      "Stationery": 230943.23,
+      "Computers": 222963.13,
+      "Pet_Shop": 214315.41,
+      "Musical_Instruments": 191498.88,
+      "Small_Appliances": 190648.58
+    },
+    "revenue_concentration": {
+      "top_1_percent_products_revenue_share": 24.5,
+      "top_5_percent_products_revenue_share": 47.82,
+      "top_10_percent_products_revenue_share": 60.85,
+      "top_20_percent_products_revenue_share": 74.83
+    }
+  },
+  "operational_metrics": {
+    "average_items_per_order": 1.13,
+    "freight_percentage_of_total_revenue": 14.21,
+    "revenue_per_order": 159.33,
+    "revenue_per_customer": 164.87,
+    "total_unique_customers_count": 96096
+  },
+  "execution_time_sec": 3.0519
+}

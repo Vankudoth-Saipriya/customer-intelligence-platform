@@ -1,0 +1,354 @@
+{
+  "total_payments_analyzed": 103886,
+  "payment_method_analysis": {
+    "payment_method_distribution": {
+      "credit_card": 76795,
+      "boleto": 19784,
+      "voucher": 5775,
+      "debit_card": 1529,
+      "not_defined": 3
+    },
+    "revenue_by_payment_method": {
+      "boleto": 2869361.27,
+      "credit_card": 12542084.19,
+      "debit_card": 217989.79,
+      "not_defined": 0.0,
+      "voucher": 379436.87
+    },
+    "order_count_by_payment_method": {
+      "boleto": 19784,
+      "credit_card": 76505,
+      "debit_card": 1528,
+      "not_defined": 3,
+      "voucher": 3866
+    },
+    "average_payment_value_by_payment_method": {
+      "boleto": 145.03,
+      "credit_card": 163.32,
+      "debit_card": 142.57,
+      "not_defined": 0.0,
+      "voucher": 65.7
+    }
+  },
+  "installment_analysis": {
+    "installment_count_distribution": {
+      "0": 2,
+      "1": 52546,
+      "2": 12413,
+      "3": 10461,
+      "4": 7098,
+      "5": 5239,
+      "6": 3920,
+      "7": 1626,
+      "8": 4268,
+      "9": 644,
+      "10": 5328,
+      "11": 23,
+      "12": 133,
+      "13": 16,
+      "14": 15,
+      "15": 74,
+      "16": 5,
+      "17": 8,
+      "18": 27,
+      "20": 17,
+      "21": 3,
+      "22": 1,
+      "23": 1,
+      "24": 18
+    },
+    "average_installment_count_overall": 2.85,
+    "average_installment_count_credit_card": 3.51,
+    "revenue_by_installment_count": {
+      "0": 188.63,
+      "1": 5907233.36,
+      "2": 1579283.03,
+      "3": 1491103.8,
+      "4": 1163907.61,
+      "5": 961174.3,
+      "6": 822611.81,
+      "7": 305157.39,
+      "8": 1313423.34,
+      "9": 131015.92,
+      "10": 2211577.34,
+      "11": 2873.44,
+      "12": 42783.24,
+      "13": 2407.4,
+      "14": 2519.44,
+      "15": 32970.93,
+      "16": 1463.47,
+      "17": 1396.82,
+      "18": 13135.05,
+      "20": 10468.63,
+      "21": 731.1,
+      "22": 228.71,
+      "23": 236.48,
+      "24": 10980.88
+    },
+    "percentage_of_installment_vs_one_time_payments": {
+      "one_time_payments": {
+        "transaction_count": 52546,
+        "transaction_percentage": 50.58,
+        "revenue": 5907233.36,
+        "revenue_percentage": 36.9
+      },
+      "installment_payments": {
+        "transaction_count": 51338,
+        "transaction_percentage": 49.42,
+        "revenue": 10101450.13,
+        "revenue_percentage": 63.1
+      }
+    }
+  },
+  "payment_value_analysis": {
+    "total_payment_value": 16008872.12,
+    "average_payment_value": 154.1,
+    "median_payment_value": 100.0,
+    "min_payment_value": 0.0,
+    "max_payment_value": 13664.08,
+    "quartiles": {
+      "q25": 56.79,
+      "q50_median": 100.0,
+      "q75": 171.84
+    },
+    "outlier_detection_iqr": {
+      "outlier_count": 7981,
+      "outlier_percentage": 7.68,
+      "lower_bound": -115.79,
+      "upper_bound": 344.42
+    }
+  },
+  "payment_behavior": {
+    "multiple_payment_methods_per_order": {
+      "orders_with_multiple_payments": 2961,
+      "percentage_of_total_orders": 2.98,
+      "payment_count_per_order_histogram": {
+        "1": 96479,
+        "2": 2382,
+        "3": 301,
+        "4": 108,
+        "5": 52,
+        "6": 36,
+        "7": 28,
+        "8": 11,
+        "9": 9,
+        "10": 5,
+        "11": 8,
+        "12": 8,
+        "13": 3,
+        "14": 2,
+        "15": 2,
+        "19": 2,
+        "21": 1,
+        "22": 1,
+        "26": 1,
+        "29": 1
+      }
+    },
+    "voucher_usage": {
+      "voucher_transaction_count": 5775,
+      "voucher_total_revenue": 379436.87,
+      "voucher_orders_count": 3866,
+      "voucher_orders_percentage": 3.89,
+      "average_voucher_value": 65.7
+    },
+    "credit_card_dominance": {
+      "credit_card_transaction_count": 76795,
+      "credit_card_revenue": 12542084.19,
+      "credit_card_transaction_share_percent": 73.92,
+      "credit_card_revenue_share_percent": 78.34
+    },
+    "payment_type_trends_over_time": {
+      "2016-09": {
+        "boleto": 0.0,
+        "credit_card": 252.24,
+        "debit_card": 0.0,
+        "not_defined": 0.0,
+        "voucher": 0.0
+      },
+      "2016-10": {
+        "boleto": 9679.06,
+        "credit_card": 48290.62,
+        "debit_card": 241.73,
+        "not_defined": 0.0,
+        "voucher": 879.07
+      },
+      "2016-12": {
+        "boleto": 0.0,
+        "credit_card": 19.62,
+        "debit_card": 0.0,
+        "not_defined": 0.0,
+        "voucher": 0.0
+      },
+      "2017-01": {
+        "boleto": 24074.43,
+        "credit_card": 109615.68,
+        "debit_card": 743.53,
+        "not_defined": 0.0,
+        "voucher": 4054.4
+      },
+      "2017-02": {
+        "boleto": 57476.74,
+        "credit_card": 226753.56,
+        "debit_card": 1510.32,
+        "not_defined": 0.0,
+        "voucher": 6167.39
+      },
+      "2017-03": {
+        "boleto": 82160.53,
+        "credit_card": 354488.94,
+        "debit_card": 3592.8,
+        "not_defined": 0.0,
+        "voucher": 9621.33
+      },
+      "2017-04": {
+        "boleto": 81307.24,
+        "credit_card": 322087.72,
+        "debit_card": 2790.0,
+        "not_defined": 0.0,
+        "voucher": 11603.07
+      },
+      "2017-05": {
+        "boleto": 128652.9,
+        "credit_card": 445047.31,
+        "debit_card": 3023.41,
+        "not_defined": 0.0,
+        "voucher": 16195.2
+      },
+      "2017-06": {
+        "boleto": 107774.16,
+        "credit_card": 388268.27,
+        "debit_card": 2424.17,
+        "not_defined": 0.0,
+        "voucher": 12809.78
+      },
+      "2017-07": {
+        "boleto": 116775.48,
+        "credit_card": 454988.47,
+        "debit_card": 2345.03,
+        "not_defined": 0.0,
+        "voucher": 18273.94
+      },
+      "2017-08": {
+        "boleto": 134289.81,
+        "credit_card": 521595.69,
+        "debit_card": 3136.84,
+        "not_defined": 0.0,
+        "voucher": 15373.98
+      },
+      "2017-09": {
+        "boleto": 131042.24,
+        "credit_card": 574484.15,
+        "debit_card": 4690.36,
+        "not_defined": 0.0,
+        "voucher": 17545.7
+      },
+      "2017-10": {
+        "boleto": 140633.45,
+        "credit_card": 614327.89,
+        "debit_card": 5776.57,
+        "not_defined": 0.0,
+        "voucher": 18939.97
+      },
+      "2017-11": {
+        "boleto": 226292.34,
+        "credit_card": 942856.67,
+        "debit_card": 6168.1,
+        "not_defined": 0.0,
+        "voucher": 19565.69
+      },
+      "2017-12": {
+        "boleto": 165584.05,
+        "credit_card": 682859.59,
+        "debit_card": 7125.34,
+        "not_defined": 0.0,
+        "voucher": 22832.5
+      },
+      "2018-01": {
+        "boleto": 204844.66,
+        "credit_card": 868880.38,
+        "debit_card": 11543.55,
+        "not_defined": 0.0,
+        "voucher": 29735.59
+      },
+      "2018-02": {
+        "boleto": 183112.72,
+        "credit_card": 778803.0,
+        "debit_card": 7469.53,
+        "not_defined": 0.0,
+        "voucher": 23078.09
+      },
+      "2018-03": {
+        "boleto": 191538.02,
+        "credit_card": 933770.1,
+        "debit_card": 8375.11,
+        "not_defined": 0.0,
+        "voucher": 25968.89
+      },
+      "2018-04": {
+        "boleto": 193547.09,
+        "credit_card": 934306.0,
+        "debit_card": 10782.53,
+        "not_defined": 0.0,
+        "voucher": 22149.86
+      },
+      "2018-05": {
+        "boleto": 195378.93,
+        "credit_card": 927556.35,
+        "debit_card": 9710.74,
+        "not_defined": 0.0,
+        "voucher": 21336.13
+      },
+      "2018-06": {
+        "boleto": 153350.28,
+        "credit_card": 811508.56,
+        "debit_card": 35672.62,
+        "not_defined": 0.0,
+        "voucher": 23349.04
+      },
+      "2018-07": {
+        "boleto": 198041.24,
+        "credit_card": 803674.49,
+        "debit_card": 44866.18,
+        "not_defined": 0.0,
+        "voucher": 19958.84
+      },
+      "2018-08": {
+        "boleto": 143805.9,
+        "credit_card": 797648.89,
+        "debit_card": 46001.33,
+        "not_defined": 0.0,
+        "voucher": 34969.2
+      },
+      "2018-09": {
+        "boleto": 0.0,
+        "credit_card": 0.0,
+        "debit_card": 0.0,
+        "not_defined": 0.0,
+        "voucher": 4439.54
+      },
+      "2018-10": {
+        "boleto": 0.0,
+        "credit_card": 0.0,
+        "debit_card": 0.0,
+        "not_defined": 0.0,
+        "voucher": 589.67
+      }
+    }
+  },
+  "business_metrics": {
+    "payment_method_contribution_percent": {
+      "boleto": 17.92,
+      "credit_card": 78.34,
+      "debit_card": 1.36,
+      "not_defined": 0.0,
+      "voucher": 2.37
+    },
+    "installment_revenue_contribution_percent": 63.1,
+    "average_payment_per_customer": 166.59,
+    "average_payment_per_order": 160.99,
+    "total_unique_customers_count": 96096,
+    "total_unique_orders_count": 99441
+  },
+  "execution_time_sec": 2.6473
+}

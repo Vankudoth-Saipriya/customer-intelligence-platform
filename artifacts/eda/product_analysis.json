@@ -1,0 +1,1163 @@
+{
+  "total_products_analyzed": 32951,
+  "category_analysis": {
+    "products_per_category": {
+      "Bed_Bath_Table": 3029,
+      "Sports_Leisure": 2867,
+      "Furniture_Decor": 2657,
+      "Health_Beauty": 2444,
+      "Housewares": 2335,
+      "Auto": 1900,
+      "Computers_Accessories": 1639,
+      "Toys": 1411,
+      "Watches_Gifts": 1329,
+      "Telephony": 1134,
+      "Baby": 919,
+      "Perfumery": 868,
+      "Stationery": 849,
+      "Fashion_Bags_Accessories": 849,
+      "Cool_Stuff": 789,
+      "Garden_Tools": 753,
+      "Pet_Shop": 719,
+      "Uncategorized": 623,
+      "Electronics": 517,
+      "Construction_Tools_Construction": 400,
+      "Home_Appliances": 370,
+      "Luggage_Accessories": 349,
+      "Consoles_Games": 317,
+      "Office_Furniture": 309,
+      "Musical_Instruments": 289,
+      "Small_Appliances": 231,
+      "Home_Construction": 225,
+      "Books_General_Interest": 216,
+      "Fashion_Shoes": 173,
+      "Furniture_Living_Room": 156,
+      "Air_Conditioning": 124,
+      "Books_Technical": 123,
+      "Fixed_Telephony": 116,
+      "Home_Confort": 111,
+      "Food_Drink": 104,
+      "Market_Place": 104,
+      "Fashion_Male_Clothing": 95,
+      "Kitchen_Dining_Laundry_Garden_Furniture": 94,
+      "Signaling_And_Security": 93,
+      "Construction_Tools_Safety": 91,
+      "Home_Appliances_2": 90,
+      "Costruction_Tools_Garden": 88,
+      "Food": 82,
+      "Drinks": 81,
+      "Construction_Tools_Lights": 78,
+      "Agro_Industry_And_Commerce": 74,
+      "Industry_Commerce_And_Business": 68,
+      "Christmas_Supplies": 65,
+      "Audio": 58,
+      "Art": 55,
+      "Fashion_Underwear_Beach": 53,
+      "Dvds_Blu_Ray": 48,
+      "Furniture_Bedroom": 45,
+      "Costruction_Tools_Tools": 39,
+      "Small_Appliances_Home_Oven_And_Coffee": 31,
+      "Books_Imported": 31,
+      "Computers": 30,
+      "Cine_Photo": 28,
+      "Fashio_Female_Clothing": 27,
+      "Music": 27,
+      "Party_Supplies": 26,
+      "Arts_And_Craftmanship": 19,
+      "Fashion_Sport": 19,
+      "Flowers": 14,
+      "Diapers_And_Hygiene": 12,
+      "La_Cuisine": 10,
+      "Furniture_Mattress_And_Upholstery": 10,
+      "Tablets_Printing_Image": 9,
+      "Fashion_Childrens_Clothes": 5,
+      "Home_Comfort_2": 5,
+      "Security_And_Services": 2,
+      "Cds_Dvds_Musicals": 1
+    },
+    "top_20_categories": {
+      "Bed_Bath_Table": 3029,
+      "Sports_Leisure": 2867,
+      "Furniture_Decor": 2657,
+      "Health_Beauty": 2444,
+      "Housewares": 2335,
+      "Auto": 1900,
+      "Computers_Accessories": 1639,
+      "Toys": 1411,
+      "Watches_Gifts": 1329,
+      "Telephony": 1134,
+      "Baby": 919,
+      "Perfumery": 868,
+      "Stationery": 849,
+      "Fashion_Bags_Accessories": 849,
+      "Cool_Stuff": 789,
+      "Garden_Tools": 753,
+      "Pet_Shop": 719,
+      "Uncategorized": 623,
+      "Electronics": 517,
+      "Construction_Tools_Construction": 400
+    },
+    "revenue_by_category": {
+      "Agro_Industry_And_Commerce": 72530.47,
+      "Air_Conditioning": 55024.96,
+      "Art": 24202.64,
+      "Arts_And_Craftmanship": 1814.01,
+      "Audio": 50688.5,
+      "Auto": 592720.11,
+      "Baby": 411764.89,
+      "Bed_Bath_Table": 1036988.68,
+      "Books_General_Interest": 46856.88,
+      "Books_Imported": 4639.85,
+      "Books_Technical": 19096.06,
+      "Cds_Dvds_Musicals": 730.0,
+      "Christmas_Supplies": 8800.82,
+      "Cine_Photo": 6933.46,
+      "Computers": 222963.13,
+      "Computers_Accessories": 911954.32,
+      "Consoles_Games": 157465.22,
+      "Construction_Tools_Construction": 144677.59,
+      "Construction_Tools_Lights": 41080.0,
+      "Construction_Tools_Safety": 40544.52,
+      "Cool_Stuff": 635290.85,
+      "Costruction_Tools_Garden": 25715.89,
+      "Costruction_Tools_Tools": 15903.95,
+      "Diapers_And_Hygiene": 1567.59,
+      "Drinks": 22428.7,
+      "Dvds_Blu_Ray": 5999.39,
+      "Electronics": 160246.74,
+      "Fashio_Female_Clothing": 2803.64,
+      "Fashion_Bags_Accessories": 152823.54,
+      "Fashion_Childrens_Clothes": 569.85,
+      "Fashion_Male_Clothing": 10797.82,
+      "Fashion_Shoes": 23562.77,
+      "Fashion_Sport": 2119.51,
+      "Fashion_Underwear_Beach": 9541.55,
+      "Fixed_Telephony": 59583.0,
+      "Flowers": 1110.04,
+      "Food": 29393.41,
+      "Food_Drink": 15179.48,
+      "Furniture_Bedroom": 20028.78,
+      "Furniture_Decor": 729762.49,
+      "Furniture_Living_Room": 68916.56,
+      "Furniture_Mattress_And_Upholstery": 4368.08,
+      "Garden_Tools": 485256.46,
+      "Health_Beauty": 1258681.34,
+      "Home_Appliances": 80171.53,
+      "Home_Appliances_2": 113317.74,
+      "Home_Comfort_2": 760.27,
+      "Home_Confort": 58572.04,
+      "Home_Construction": 83088.12,
+      "Housewares": 632248.66,
+      "Industry_Commerce_And_Business": 39669.61,
+      "Kitchen_Dining_Laundry_Garden_Furniture": 46328.37,
+      "La_Cuisine": 2054.99,
+      "Luggage_Accessories": 140429.98,
+      "Market_Place": 28378.47,
+      "Music": 6034.35,
+      "Musical_Instruments": 191498.88,
+      "Office_Furniture": 273960.7,
+      "Party_Supplies": 4485.18,
+      "Perfumery": 399124.87,
+      "Pet_Shop": 214315.41,
+      "Security_And_Services": 283.29,
+      "Signaling_And_Security": 21509.23,
+      "Small_Appliances": 190648.58,
+      "Small_Appliances_Home_Oven_And_Coffee": 47445.71,
+      "Sports_Leisure": 988048.97,
+      "Stationery": 230943.23,
+      "Tablets_Printing_Image": 7528.41,
+      "Telephony": 323667.53,
+      "Toys": 483946.6,
+      "Uncategorized": 185049.76,
+      "Watches_Gifts": 1205005.68
+    },
+    "order_count_by_category": {
+      "Agro_Industry_And_Commerce": 212,
+      "Air_Conditioning": 297,
+      "Art": 209,
+      "Arts_And_Craftmanship": 24,
+      "Audio": 364,
+      "Auto": 4235,
+      "Baby": 3065,
+      "Bed_Bath_Table": 11115,
+      "Books_General_Interest": 553,
+      "Books_Imported": 60,
+      "Books_Technical": 267,
+      "Cds_Dvds_Musicals": 14,
+      "Christmas_Supplies": 153,
+      "Cine_Photo": 72,
+      "Computers": 203,
+      "Computers_Accessories": 7827,
+      "Consoles_Games": 1137,
+      "Construction_Tools_Construction": 929,
+      "Construction_Tools_Lights": 304,
+      "Construction_Tools_Safety": 194,
+      "Cool_Stuff": 3796,
+      "Costruction_Tools_Garden": 238,
+      "Costruction_Tools_Tools": 103,
+      "Diapers_And_Hygiene": 39,
+      "Drinks": 379,
+      "Dvds_Blu_Ray": 64,
+      "Electronics": 2767,
+      "Fashio_Female_Clothing": 48,
+      "Fashion_Bags_Accessories": 2031,
+      "Fashion_Childrens_Clothes": 8,
+      "Fashion_Male_Clothing": 132,
+      "Fashion_Shoes": 262,
+      "Fashion_Sport": 30,
+      "Fashion_Underwear_Beach": 131,
+      "Fixed_Telephony": 264,
+      "Flowers": 33,
+      "Food": 510,
+      "Food_Drink": 278,
+      "Furniture_Bedroom": 109,
+      "Furniture_Decor": 8334,
+      "Furniture_Living_Room": 503,
+      "Furniture_Mattress_And_Upholstery": 38,
+      "Garden_Tools": 4347,
+      "Health_Beauty": 9670,
+      "Home_Appliances": 771,
+      "Home_Appliances_2": 238,
+      "Home_Comfort_2": 30,
+      "Home_Confort": 434,
+      "Home_Construction": 604,
+      "Housewares": 6964,
+      "Industry_Commerce_And_Business": 268,
+      "Kitchen_Dining_Laundry_Garden_Furniture": 281,
+      "La_Cuisine": 14,
+      "Luggage_Accessories": 1092,
+      "Market_Place": 311,
+      "Music": 38,
+      "Musical_Instruments": 680,
+      "Office_Furniture": 1691,
+      "Party_Supplies": 43,
+      "Perfumery": 3419,
+      "Pet_Shop": 1947,
+      "Security_And_Services": 2,
+      "Signaling_And_Security": 199,
+      "Small_Appliances": 679,
+      "Small_Appliances_Home_Oven_And_Coffee": 76,
+      "Sports_Leisure": 8641,
+      "Stationery": 2517,
+      "Tablets_Printing_Image": 83,
+      "Telephony": 4545,
+      "Toys": 4117,
+      "Uncategorized": 1627,
+      "Watches_Gifts": 5991
+    }
+  },
+  "dimension_analysis": {
+    "weight_distribution": {
+      "mean": 2276.47,
+      "std": 4282.04,
+      "min": 0.0,
+      "q25": 300.0,
+      "median": 700.0,
+      "q75": 1900.0,
+      "max": 40425.0,
+      "skewness": 3.6049,
+      "null_count": 2
+    },
+    "volume_distribution": {
+      "mean": 16564.1,
+      "std": 27057.04,
+      "min": 168.0,
+      "q25": 2880.0,
+      "median": 6840.0,
+      "q75": 18480.0,
+      "max": 296208.0,
+      "skewness": 4.1761,
+      "null_count": 2
+    },
+    "dimension_statistics": {
+      "length_cm": {
+        "mean": 30.82,
+        "std": 16.91,
+        "min": 7.0,
+        "q25": 18.0,
+        "median": 25.0,
+        "q75": 38.0,
+        "max": 105.0,
+        "skewness": 1.7505,
+        "null_count": 2
+      },
+      "width_cm": {
+        "mean": 23.2,
+        "std": 12.08,
+        "min": 6.0,
+        "q25": 15.0,
+        "median": 20.0,
+        "q75": 30.0,
+        "max": 118.0,
+        "skewness": 1.671,
+        "null_count": 2
+      },
+      "height_cm": {
+        "mean": 16.94,
+        "std": 13.64,
+        "min": 2.0,
+        "q25": 8.0,
+        "median": 13.0,
+        "q75": 21.0,
+        "max": 105.0,
+        "skewness": 2.1401,
+        "null_count": 2
+      }
+    },
+    "outliers": {
+      "weight_g": {
+        "outlier_count": 4551,
+        "outlier_percentage": 13.81,
+        "lower_bound": -2100.0,
+        "upper_bound": 4300.0
+      },
+      "volume_cm3": {
+        "outlier_count": 3262,
+        "outlier_percentage": 9.9,
+        "lower_bound": -20520.0,
+        "upper_bound": 41880.0
+      },
+      "length_cm": {
+        "outlier_count": 1380,
+        "outlier_percentage": 4.19,
+        "lower_bound": -12.0,
+        "upper_bound": 68.0
+      },
+      "width_cm": {
+        "outlier_count": 912,
+        "outlier_percentage": 2.77,
+        "lower_bound": -7.5,
+        "upper_bound": 52.5
+      },
+      "height_cm": {
+        "outlier_count": 1892,
+        "outlier_percentage": 5.74,
+        "lower_bound": -11.5,
+        "upper_bound": 40.5
+      }
+    }
+  },
+  "product_performance": {
+    "top_selling_products_by_revenue": [
+      {
+        "product_id": "bb50f2e236e5eea0100680137654686c",
+        "category": "Health_Beauty",
+        "items_sold": 195,
+        "total_revenue": 63885.0,
+        "distinct_orders": 187
+      },
+      {
+        "product_id": "6cdd53843498f92890544667809f1595",
+        "category": "Health_Beauty",
+        "items_sold": 156,
+        "total_revenue": 54730.2,
+        "distinct_orders": 151
+      },
+      {
+        "product_id": "d6160fb7873f184099d9bc95e30376af",
+        "category": "Computers",
+        "items_sold": 35,
+        "total_revenue": 48899.34,
+        "distinct_orders": 35
+      },
+      {
+        "product_id": "d1c427060a0f73f6b889a5c7c61f2ac4",
+        "category": "Computers_Accessories",
+        "items_sold": 343,
+        "total_revenue": 47214.51,
+        "distinct_orders": 323
+      },
+      {
+        "product_id": "99a4788cb24856965c36a24e339b6058",
+        "category": "Bed_Bath_Table",
+        "items_sold": 488,
+        "total_revenue": 43025.56,
+        "distinct_orders": 467
+      },
+      {
+        "product_id": "3dd2a17168ec895c781a9191c1e95ad7",
+        "category": "Computers_Accessories",
+        "items_sold": 274,
+        "total_revenue": 41082.6,
+        "distinct_orders": 255
+      },
+      {
+        "product_id": "25c38557cf793876c5abdd5931f922db",
+        "category": "Baby",
+        "items_sold": 38,
+        "total_revenue": 38907.32,
+        "distinct_orders": 38
+      },
+      {
+        "product_id": "5f504b3a1c75b73d6151be81eb05bdc9",
+        "category": "Cool_Stuff",
+        "items_sold": 63,
+        "total_revenue": 37733.9,
+        "distinct_orders": 63
+      },
+      {
+        "product_id": "53b36df67ebb7c41585e8d54d6772e08",
+        "category": "Watches_Gifts",
+        "items_sold": 323,
+        "total_revenue": 37683.42,
+        "distinct_orders": 306
+      },
+      {
+        "product_id": "aca2eb7d00ea1a7b8ebd4e68314663af",
+        "category": "Furniture_Decor",
+        "items_sold": 527,
+        "total_revenue": 37608.9,
+        "distinct_orders": 431
+      },
+      {
+        "product_id": "e0d64dcfaa3b6db5c54ca298ae101d05",
+        "category": "Watches_Gifts",
+        "items_sold": 194,
+        "total_revenue": 31786.82,
+        "distinct_orders": 194
+      },
+      {
+        "product_id": "d285360f29ac7fd97640bf0baef03de0",
+        "category": "Watches_Gifts",
+        "items_sold": 123,
+        "total_revenue": 31623.81,
+        "distinct_orders": 122
+      },
+      {
+        "product_id": "7a10781637204d8d10485c71a6108a2e",
+        "category": "Watches_Gifts",
+        "items_sold": 143,
+        "total_revenue": 30467.5,
+        "distinct_orders": 142
+      },
+      {
+        "product_id": "f1c7f353075ce59d8a6f3cf58f419c9c",
+        "category": "Bed_Bath_Table",
+        "items_sold": 154,
+        "total_revenue": 29997.36,
+        "distinct_orders": 150
+      },
+      {
+        "product_id": "f819f0c84a64f02d3a5606ca95edd272",
+        "category": "Watches_Gifts",
+        "items_sold": 45,
+        "total_revenue": 29024.48,
+        "distinct_orders": 45
+      },
+      {
+        "product_id": "588531f8ec37e7d5ff5b7b22ea0488f8",
+        "category": "Computers",
+        "items_sold": 20,
+        "total_revenue": 28291.99,
+        "distinct_orders": 19
+      },
+      {
+        "product_id": "422879e10f46682990de24d770e7f83d",
+        "category": "Garden_Tools",
+        "items_sold": 484,
+        "total_revenue": 26577.22,
+        "distinct_orders": 352
+      },
+      {
+        "product_id": "16c4e87b98a9370a9cbc3a4658a3f45b",
+        "category": "Musical_Instruments",
+        "items_sold": 13,
+        "total_revenue": 25034.0,
+        "distinct_orders": 13
+      },
+      {
+        "product_id": "5a848e4ab52fd5445cdc07aab1c40e48",
+        "category": "Uncategorized",
+        "items_sold": 197,
+        "total_revenue": 24229.03,
+        "distinct_orders": 194
+      },
+      {
+        "product_id": "a62e25e09e05e6faf31d90c6ec1aa3d1",
+        "category": "Watches_Gifts",
+        "items_sold": 226,
+        "total_revenue": 24051.0,
+        "distinct_orders": 172
+      }
+    ],
+    "top_selling_products_by_units": [
+      {
+        "product_id": "aca2eb7d00ea1a7b8ebd4e68314663af",
+        "category": "Furniture_Decor",
+        "items_sold": 527,
+        "total_revenue": 37608.9,
+        "distinct_orders": 431
+      },
+      {
+        "product_id": "99a4788cb24856965c36a24e339b6058",
+        "category": "Bed_Bath_Table",
+        "items_sold": 488,
+        "total_revenue": 43025.56,
+        "distinct_orders": 467
+      },
+      {
+        "product_id": "422879e10f46682990de24d770e7f83d",
+        "category": "Garden_Tools",
+        "items_sold": 484,
+        "total_revenue": 26577.22,
+        "distinct_orders": 352
+      },
+      {
+        "product_id": "389d119b48cf3043d311335e499d9c6b",
+        "category": "Garden_Tools",
+        "items_sold": 392,
+        "total_revenue": 21440.59,
+        "distinct_orders": 311
+      },
+      {
+        "product_id": "368c6c730842d78016ad823897a372db",
+        "category": "Garden_Tools",
+        "items_sold": 388,
+        "total_revenue": 21056.8,
+        "distinct_orders": 291
+      },
+      {
+        "product_id": "53759a2ecddad2bb87a079a1f1519f73",
+        "category": "Garden_Tools",
+        "items_sold": 373,
+        "total_revenue": 20387.2,
+        "distinct_orders": 287
+      },
+      {
+        "product_id": "d1c427060a0f73f6b889a5c7c61f2ac4",
+        "category": "Computers_Accessories",
+        "items_sold": 343,
+        "total_revenue": 47214.51,
+        "distinct_orders": 323
+      },
+      {
+        "product_id": "53b36df67ebb7c41585e8d54d6772e08",
+        "category": "Watches_Gifts",
+        "items_sold": 323,
+        "total_revenue": 37683.42,
+        "distinct_orders": 306
+      },
+      {
+        "product_id": "154e7e31ebfa092203795c972e5804a6",
+        "category": "Health_Beauty",
+        "items_sold": 281,
+        "total_revenue": 6325.19,
+        "distinct_orders": 269
+      },
+      {
+        "product_id": "3dd2a17168ec895c781a9191c1e95ad7",
+        "category": "Computers_Accessories",
+        "items_sold": 274,
+        "total_revenue": 41082.6,
+        "distinct_orders": 255
+      },
+      {
+        "product_id": "2b4609f8948be18874494203496bc318",
+        "category": "Health_Beauty",
+        "items_sold": 260,
+        "total_revenue": 22717.22,
+        "distinct_orders": 259
+      },
+      {
+        "product_id": "7c1bd920dbdf22470b68bde975dd3ccf",
+        "category": "Health_Beauty",
+        "items_sold": 231,
+        "total_revenue": 13866.69,
+        "distinct_orders": 225
+      },
+      {
+        "product_id": "a62e25e09e05e6faf31d90c6ec1aa3d1",
+        "category": "Watches_Gifts",
+        "items_sold": 226,
+        "total_revenue": 24051.0,
+        "distinct_orders": 172
+      },
+      {
+        "product_id": "5a848e4ab52fd5445cdc07aab1c40e48",
+        "category": "Uncategorized",
+        "items_sold": 197,
+        "total_revenue": 24229.03,
+        "distinct_orders": 194
+      },
+      {
+        "product_id": "bb50f2e236e5eea0100680137654686c",
+        "category": "Health_Beauty",
+        "items_sold": 195,
+        "total_revenue": 63885.0,
+        "distinct_orders": 187
+      },
+      {
+        "product_id": "e0d64dcfaa3b6db5c54ca298ae101d05",
+        "category": "Watches_Gifts",
+        "items_sold": 194,
+        "total_revenue": 31786.82,
+        "distinct_orders": 194
+      },
+      {
+        "product_id": "e53e557d5a159f5aa2c5e995dfdf244b",
+        "category": "Computers_Accessories",
+        "items_sold": 183,
+        "total_revenue": 15439.25,
+        "distinct_orders": 156
+      },
+      {
+        "product_id": "42a2c92a0979a949ca4ea89ec5c7b934",
+        "category": "Housewares",
+        "items_sold": 183,
+        "total_revenue": 10870.1,
+        "distinct_orders": 160
+      },
+      {
+        "product_id": "b532349fe46b38fbc7bb3914c1bdae07",
+        "category": "Furniture_Decor",
+        "items_sold": 169,
+        "total_revenue": 6162.11,
+        "distinct_orders": 76
+      },
+      {
+        "product_id": "35afc973633aaeb6b877ff57b2793310",
+        "category": "Home_Confort",
+        "items_sold": 165,
+        "total_revenue": 14484.89,
+        "distinct_orders": 156
+      }
+    ],
+    "top_selling_categories": {
+      "Health_Beauty": 1258681.34,
+      "Watches_Gifts": 1205005.68,
+      "Bed_Bath_Table": 1036988.68,
+      "Sports_Leisure": 988048.97,
+      "Computers_Accessories": 911954.32,
+      "Furniture_Decor": 729762.49,
+      "Cool_Stuff": 635290.85,
+      "Housewares": 632248.66,
+      "Auto": 592720.11,
+      "Garden_Tools": 485256.46,
+      "Toys": 483946.6,
+      "Baby": 411764.89,
+      "Perfumery": 399124.87,
+      "Telephony": 323667.53,
+      "Office_Furniture": 273960.7,
+      "Stationery": 230943.23,
+      "Computers": 222963.13,
+      "Pet_Shop": 214315.41,
+      "Musical_Instruments": 191498.88,
+      "Small_Appliances": 190648.58,
+      "Uncategorized": 185049.76,
+      "Electronics": 160246.74,
+      "Consoles_Games": 157465.22,
+      "Fashion_Bags_Accessories": 152823.54,
+      "Construction_Tools_Construction": 144677.59,
+      "Luggage_Accessories": 140429.98,
+      "Home_Appliances_2": 113317.74,
+      "Home_Construction": 83088.12,
+      "Home_Appliances": 80171.53,
+      "Agro_Industry_And_Commerce": 72530.47,
+      "Furniture_Living_Room": 68916.56,
+      "Fixed_Telephony": 59583.0,
+      "Home_Confort": 58572.04,
+      "Air_Conditioning": 55024.96,
+      "Audio": 50688.5,
+      "Small_Appliances_Home_Oven_And_Coffee": 47445.71,
+      "Books_General_Interest": 46856.88,
+      "Kitchen_Dining_Laundry_Garden_Furniture": 46328.37,
+      "Construction_Tools_Lights": 41080.0,
+      "Construction_Tools_Safety": 40544.52,
+      "Industry_Commerce_And_Business": 39669.61,
+      "Food": 29393.41,
+      "Market_Place": 28378.47,
+      "Costruction_Tools_Garden": 25715.89,
+      "Art": 24202.64,
+      "Fashion_Shoes": 23562.77,
+      "Drinks": 22428.7,
+      "Signaling_And_Security": 21509.23,
+      "Furniture_Bedroom": 20028.78,
+      "Books_Technical": 19096.06,
+      "Costruction_Tools_Tools": 15903.95,
+      "Food_Drink": 15179.48,
+      "Fashion_Male_Clothing": 10797.82,
+      "Fashion_Underwear_Beach": 9541.55,
+      "Christmas_Supplies": 8800.82,
+      "Tablets_Printing_Image": 7528.41,
+      "Cine_Photo": 6933.46,
+      "Music": 6034.35,
+      "Dvds_Blu_Ray": 5999.39,
+      "Books_Imported": 4639.85,
+      "Party_Supplies": 4485.18,
+      "Furniture_Mattress_And_Upholstery": 4368.08,
+      "Fashio_Female_Clothing": 2803.64,
+      "Fashion_Sport": 2119.51,
+      "La_Cuisine": 2054.99,
+      "Arts_And_Craftmanship": 1814.01,
+      "Diapers_And_Hygiene": 1567.59,
+      "Flowers": 1110.04,
+      "Home_Comfort_2": 760.27,
+      "Cds_Dvds_Musicals": 730.0,
+      "Fashion_Childrens_Clothes": 569.85,
+      "Security_And_Services": 283.29
+    },
+    "products_with_no_sales": {
+      "count": 0,
+      "percentage": 0.0,
+      "sample_product_ids": []
+    },
+    "revenue_per_product_stats": {
+      "mean": 412.48,
+      "std": 1371.95,
+      "min": 2.2,
+      "q25": 59.9,
+      "median": 136.75,
+      "q75": 329.0,
+      "max": 63885.0,
+      "skewness": 17.8613,
+      "null_count": 0
+    }
+  },
+  "freight_analysis": {
+    "freight_value_by_category": {
+      "Agro_Industry_And_Commerce": {
+        "avg_freight": 27.56,
+        "median_freight": 23.68,
+        "total_freight": 5843.6,
+        "order_items_count": 212
+      },
+      "Air_Conditioning": {
+        "avg_freight": 22.72,
+        "median_freight": 18.46,
+        "total_freight": 6749.23,
+        "order_items_count": 297
+      },
+      "Art": {
+        "avg_freight": 19.35,
+        "median_freight": 15.23,
+        "total_freight": 4045.17,
+        "order_items_count": 209
+      },
+      "Arts_And_Craftmanship": {
+        "avg_freight": 15.42,
+        "median_freight": 12.86,
+        "total_freight": 370.13,
+        "order_items_count": 24
+      },
+      "Audio": {
+        "avg_freight": 15.69,
+        "median_freight": 15.23,
+        "total_freight": 5710.44,
+        "order_items_count": 364
+      },
+      "Auto": {
+        "avg_freight": 21.88,
+        "median_freight": 17.62,
+        "total_freight": 92664.21,
+        "order_items_count": 4235
+      },
+      "Baby": {
+        "avg_freight": 22.3,
+        "median_freight": 16.99,
+        "total_freight": 68353.11,
+        "order_items_count": 3065
+      },
+      "Bed_Bath_Table": {
+        "avg_freight": 18.42,
+        "median_freight": 16.19,
+        "total_freight": 204693.04,
+        "order_items_count": 11115
+      },
+      "Books_General_Interest": {
+        "avg_freight": 16.63,
+        "median_freight": 15.56,
+        "total_freight": 9195.52,
+        "order_items_count": 553
+      },
+      "Books_Imported": {
+        "avg_freight": 12.83,
+        "median_freight": 10.03,
+        "total_freight": 769.85,
+        "order_items_count": 60
+      },
+      "Books_Technical": {
+        "avg_freight": 16.04,
+        "median_freight": 15.23,
+        "total_freight": 4283.06,
+        "order_items_count": 267
+      },
+      "Cds_Dvds_Musicals": {
+        "avg_freight": 16.07,
+        "median_freight": 16.11,
+        "total_freight": 224.99,
+        "order_items_count": 14
+      },
+      "Christmas_Supplies": {
+        "avg_freight": 21.11,
+        "median_freight": 17.92,
+        "total_freight": 3229.3,
+        "order_items_count": 153
+      },
+      "Cine_Photo": {
+        "avg_freight": 17.45,
+        "median_freight": 16.86,
+        "total_freight": 1256.2,
+        "order_items_count": 72
+      },
+      "Computers": {
+        "avg_freight": 48.45,
+        "median_freight": 41.55,
+        "total_freight": 9836.3,
+        "order_items_count": 203
+      },
+      "Computers_Accessories": {
+        "avg_freight": 18.82,
+        "median_freight": 16.0,
+        "total_freight": 147318.08,
+        "order_items_count": 7827
+      },
+      "Consoles_Games": {
+        "avg_freight": 17.44,
+        "median_freight": 15.1,
+        "total_freight": 19828.02,
+        "order_items_count": 1137
+      },
+      "Construction_Tools_Construction": {
+        "avg_freight": 22.23,
+        "median_freight": 17.45,
+        "total_freight": 20650.41,
+        "order_items_count": 929
+      },
+      "Construction_Tools_Lights": {
+        "avg_freight": 24.95,
+        "median_freight": 18.43,
+        "total_freight": 7583.8,
+        "order_items_count": 304
+      },
+      "Construction_Tools_Safety": {
+        "avg_freight": 20.2,
+        "median_freight": 17.34,
+        "total_freight": 3919.1,
+        "order_items_count": 194
+      },
+      "Cool_Stuff": {
+        "avg_freight": 22.14,
+        "median_freight": 17.65,
+        "total_freight": 84039.1,
+        "order_items_count": 3796
+      },
+      "Costruction_Tools_Garden": {
+        "avg_freight": 22.32,
+        "median_freight": 17.9,
+        "total_freight": 5311.4,
+        "order_items_count": 238
+      },
+      "Costruction_Tools_Tools": {
+        "avg_freight": 19.71,
+        "median_freight": 18.23,
+        "total_freight": 2030.22,
+        "order_items_count": 103
+      },
+      "Diapers_And_Hygiene": {
+        "avg_freight": 14.71,
+        "median_freight": 12.92,
+        "total_freight": 573.68,
+        "order_items_count": 39
+      },
+      "Drinks": {
+        "avg_freight": 15.15,
+        "median_freight": 15.1,
+        "total_freight": 5741.25,
+        "order_items_count": 379
+      },
+      "Dvds_Blu_Ray": {
+        "avg_freight": 20.14,
+        "median_freight": 17.7,
+        "total_freight": 1288.74,
+        "order_items_count": 64
+      },
+      "Electronics": {
+        "avg_freight": 16.83,
+        "median_freight": 15.1,
+        "total_freight": 46578.32,
+        "order_items_count": 2767
+      },
+      "Fashio_Female_Clothing": {
+        "avg_freight": 12.95,
+        "median_freight": 12.8,
+        "total_freight": 621.75,
+        "order_items_count": 48
+      },
+      "Fashion_Bags_Accessories": {
+        "avg_freight": 15.48,
+        "median_freight": 15.1,
+        "total_freight": 31450.0,
+        "order_items_count": 2031
+      },
+      "Fashion_Childrens_Clothes": {
+        "avg_freight": 11.94,
+        "median_freight": 12.12,
+        "total_freight": 95.51,
+        "order_items_count": 8
+      },
+      "Fashion_Male_Clothing": {
+        "avg_freight": 16.31,
+        "median_freight": 15.2,
+        "total_freight": 2152.41,
+        "order_items_count": 132
+      },
+      "Fashion_Shoes": {
+        "avg_freight": 18.77,
+        "median_freight": 16.9,
+        "total_freight": 4918.87,
+        "order_items_count": 262
+      },
+      "Fashion_Sport": {
+        "avg_freight": 19.27,
+        "median_freight": 15.1,
+        "total_freight": 578.13,
+        "order_items_count": 30
+      },
+      "Fashion_Underwear_Beach": {
+        "avg_freight": 14.63,
+        "median_freight": 14.6,
+        "total_freight": 1916.19,
+        "order_items_count": 131
+      },
+      "Fixed_Telephony": {
+        "avg_freight": 17.57,
+        "median_freight": 15.1,
+        "total_freight": 4637.81,
+        "order_items_count": 264
+      },
+      "Flowers": {
+        "avg_freight": 14.81,
+        "median_freight": 16.11,
+        "total_freight": 488.87,
+        "order_items_count": 33
+      },
+      "Food": {
+        "avg_freight": 14.26,
+        "median_freight": 12.94,
+        "total_freight": 7271.03,
+        "order_items_count": 510
+      },
+      "Food_Drink": {
+        "avg_freight": 16.22,
+        "median_freight": 16.11,
+        "total_freight": 4507.99,
+        "order_items_count": 278
+      },
+      "Furniture_Bedroom": {
+        "avg_freight": 42.5,
+        "median_freight": 38.11,
+        "total_freight": 4632.23,
+        "order_items_count": 109
+      },
+      "Furniture_Decor": {
+        "avg_freight": 20.73,
+        "median_freight": 16.39,
+        "total_freight": 172749.3,
+        "order_items_count": 8334
+      },
+      "Furniture_Living_Room": {
+        "avg_freight": 35.72,
+        "median_freight": 26.72,
+        "total_freight": 17968.17,
+        "order_items_count": 503
+      },
+      "Furniture_Mattress_And_Upholstery": {
+        "avg_freight": 42.91,
+        "median_freight": 38.97,
+        "total_freight": 1630.46,
+        "order_items_count": 38
+      },
+      "Garden_Tools": {
+        "avg_freight": 22.77,
+        "median_freight": 17.67,
+        "total_freight": 98962.75,
+        "order_items_count": 4347
+      },
+      "Health_Beauty": {
+        "avg_freight": 18.88,
+        "median_freight": 15.79,
+        "total_freight": 182566.73,
+        "order_items_count": 9670
+      },
+      "Home_Appliances": {
+        "avg_freight": 19.22,
+        "median_freight": 16.11,
+        "total_freight": 14818.9,
+        "order_items_count": 771
+      },
+      "Home_Appliances_2": {
+        "avg_freight": 44.54,
+        "median_freight": 36.23,
+        "total_freight": 10600.18,
+        "order_items_count": 238
+      },
+      "Home_Comfort_2": {
+        "avg_freight": 13.68,
+        "median_freight": 15.1,
+        "total_freight": 410.31,
+        "order_items_count": 30
+      },
+      "Home_Confort": {
+        "avg_freight": 19.59,
+        "median_freight": 16.81,
+        "total_freight": 8501.23,
+        "order_items_count": 434
+      },
+      "Home_Construction": {
+        "avg_freight": 22.9,
+        "median_freight": 17.14,
+        "total_freight": 13832.24,
+        "order_items_count": 604
+      },
+      "Housewares": {
+        "avg_freight": 20.99,
+        "median_freight": 16.74,
+        "total_freight": 146149.11,
+        "order_items_count": 6964
+      },
+      "Industry_Commerce_And_Business": {
+        "avg_freight": 29.42,
+        "median_freight": 23.09,
+        "total_freight": 7884.68,
+        "order_items_count": 268
+      },
+      "Kitchen_Dining_Laundry_Garden_Furniture": {
+        "avg_freight": 42.7,
+        "median_freight": 31.1,
+        "total_freight": 11999.43,
+        "order_items_count": 281
+      },
+      "La_Cuisine": {
+        "avg_freight": 23.82,
+        "median_freight": 25.0,
+        "total_freight": 333.55,
+        "order_items_count": 14
+      },
+      "Luggage_Accessories": {
+        "avg_freight": 27.88,
+        "median_freight": 18.43,
+        "total_freight": 30445.23,
+        "order_items_count": 1092
+      },
+      "Market_Place": {
+        "avg_freight": 17.54,
+        "median_freight": 15.2,
+        "total_freight": 5456.06,
+        "order_items_count": 311
+      },
+      "Music": {
+        "avg_freight": 18.17,
+        "median_freight": 16.33,
+        "total_freight": 690.51,
+        "order_items_count": 38
+      },
+      "Musical_Instruments": {
+        "avg_freight": 27.41,
+        "median_freight": 18.23,
+        "total_freight": 18638.49,
+        "order_items_count": 680
+      },
+      "Office_Furniture": {
+        "avg_freight": 40.55,
+        "median_freight": 34.18,
+        "total_freight": 68571.95,
+        "order_items_count": 1691
+      },
+      "Party_Supplies": {
+        "avg_freight": 19.26,
+        "median_freight": 17.73,
+        "total_freight": 827.97,
+        "order_items_count": 43
+      },
+      "Perfumery": {
+        "avg_freight": 15.86,
+        "median_freight": 15.13,
+        "total_freight": 54213.84,
+        "order_items_count": 3419
+      },
+      "Pet_Shop": {
+        "avg_freight": 20.32,
+        "median_freight": 16.71,
+        "total_freight": 39561.24,
+        "order_items_count": 1947
+      },
+      "Security_And_Services": {
+        "avg_freight": 20.61,
+        "median_freight": 20.61,
+        "total_freight": 41.22,
+        "order_items_count": 2
+      },
+      "Signaling_And_Security": {
+        "avg_freight": 32.7,
+        "median_freight": 18.23,
+        "total_freight": 6507.82,
+        "order_items_count": 199
+      },
+      "Small_Appliances": {
+        "avg_freight": 23.59,
+        "median_freight": 17.95,
+        "total_freight": 16020.25,
+        "order_items_count": 679
+      },
+      "Small_Appliances_Home_Oven_And_Coffee": {
+        "avg_freight": 36.16,
+        "median_freight": 28.98,
+        "total_freight": 2747.86,
+        "order_items_count": 76
+      },
+      "Sports_Leisure": {
+        "avg_freight": 19.51,
+        "median_freight": 16.27,
+        "total_freight": 168607.51,
+        "order_items_count": 8641
+      },
+      "Stationery": {
+        "avg_freight": 18.59,
+        "median_freight": 16.29,
+        "total_freight": 46798.48,
+        "order_items_count": 2517
+      },
+      "Tablets_Printing_Image": {
+        "avg_freight": 14.77,
+        "median_freight": 14.86,
+        "total_freight": 1226.2,
+        "order_items_count": 83
+      },
+      "Telephony": {
+        "avg_freight": 15.67,
+        "median_freight": 15.1,
+        "total_freight": 71215.79,
+        "order_items_count": 4545
+      },
+      "Toys": {
+        "avg_freight": 18.81,
+        "median_freight": 16.11,
+        "total_freight": 77425.95,
+        "order_items_count": 4117
+      },
+      "Uncategorized": {
+        "avg_freight": 17.59,
+        "median_freight": 15.23,
+        "total_freight": 28613.14,
+        "order_items_count": 1627
+      },
+      "Watches_Gifts": {
+        "avg_freight": 16.78,
+        "median_freight": 15.82,
+        "total_freight": 100535.93,
+        "order_items_count": 5991
+      }
+    },
+    "freight_vs_product_weight_correlation": 0.6104,
+    "freight_vs_product_volume_correlation": 0.5873
+  },
+  "translation_coverage": {
+    "total_pt_categories": 73,
+    "categories_with_english_translation": 73,
+    "missing_translations_count": 0,
+    "missing_translation_categories": [],
+    "category_translation_coverage_percent": 100.0,
+    "product_translation_coverage_percent": 100.0
+  },
+  "execution_time_sec": 1.374
+}

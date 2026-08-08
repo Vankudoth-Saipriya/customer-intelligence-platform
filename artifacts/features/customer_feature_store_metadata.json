@@ -1,0 +1,100 @@
+{
+  "total_customers": 96096,
+  "total_features": 36,
+  "feature_groups": {
+    "customer_profile": [
+      "customer_id",
+      "customer_unique_id",
+      "state",
+      "city",
+      "customer_age_days",
+      "first_purchase_date",
+      "last_purchase_date"
+    ],
+    "rfm_features": [
+      "recency_days",
+      "frequency_orders",
+      "monetary_value",
+      "avg_order_value"
+    ],
+    "purchase_behaviour": [
+      "total_items",
+      "avg_items_per_order",
+      "favorite_product_category",
+      "unique_categories",
+      "repeat_purchase_rate"
+    ],
+    "payment_features": [
+      "preferred_payment_method",
+      "avg_payment_value",
+      "avg_installments",
+      "installment_ratio",
+      "voucher_usage_ratio"
+    ],
+    "delivery_features": [
+      "avg_delivery_days",
+      "avg_delivery_delay",
+      "late_delivery_ratio",
+      "avg_freight_value"
+    ],
+    "review_features": [
+      "avg_review_score",
+      "positive_review_ratio",
+      "negative_review_ratio",
+      "review_count"
+    ],
+    "revenue_features": [
+      "total_revenue",
+      "revenue_rank_percentile",
+      "customer_value_tier"
+    ],
+    "derived_features": [
+      "days_between_orders_mean",
+      "order_value_std",
+      "spending_velocity",
+      "order_frequency_per_month"
+    ]
+  },
+  "parquet_path": "C:\\Users\\saipr\\Desktop\\customer-intelligence-platform\\artifacts\\features\\customer_feature_store.parquet",
+  "csv_path": "C:\\Users\\saipr\\Desktop\\customer-intelligence-platform\\artifacts\\features\\customer_feature_store.csv",
+  "metadata_path": "C:\\Users\\saipr\\Desktop\\customer-intelligence-platform\\artifacts\\features\\customer_feature_store_metadata.json",
+  "column_types": {
+    "customer_id": "object",
+    "customer_unique_id": "object",
+    "state": "object",
+    "city": "object",
+    "customer_age_days": "float64",
+    "first_purchase_date": "object",
+    "last_purchase_date": "object",
+    "recency_days": "float64",
+    "frequency_orders": "int64",
+    "monetary_value": "float64",
+    "avg_order_value": "float64",
+    "total_items": "int64",
+    "avg_items_per_order": "float64",
+    "favorite_product_category": "object",
+    "unique_categories": "int64",
+    "repeat_purchase_rate": "float64",
+    "preferred_payment_method": "object",
+    "avg_payment_value": "float64",
+    "avg_installments": "float64",
+    "installment_ratio": "float64",
+    "voucher_usage_ratio": "float64",
+    "avg_delivery_days": "float64",
+    "avg_delivery_delay": "float64",
+    "late_delivery_ratio": "float64",
+    "avg_freight_value": "float64",
+    "avg_review_score": "float64",
+    "positive_review_ratio": "float64",
+    "negative_review_ratio": "float64",
+    "review_count": "int64",
+    "total_revenue": "float64",
+    "revenue_rank_percentile": "float64",
+    "customer_value_tier": "object",
+    "days_between_orders_mean": "float64",
+    "order_value_std": "float64",
+    "spending_velocity": "float64",
+    "order_frequency_per_month": "float64"
+  },
+  "execution_time_sec": 48.5469
+}

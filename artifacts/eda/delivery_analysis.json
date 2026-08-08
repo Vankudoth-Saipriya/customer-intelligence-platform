@@ -1,0 +1,513 @@
+{
+  "total_orders_analyzed": 99441,
+  "total_delivered_orders": 96476,
+  "delivery_time_analysis": {
+    "average_delivery_days": 12.56,
+    "median_delivery_days": 10.22,
+    "min_delivery_days": 0.53,
+    "max_delivery_days": 209.63,
+    "delivery_time_quartiles": {
+      "q25": 6.77,
+      "q50_median": 10.22,
+      "q75": 15.72
+    },
+    "delivery_day_distribution": {
+      "0-3 days": {
+        "count": 4775,
+        "percentage": 4.95
+      },
+      "4-7 days": {
+        "count": 21325,
+        "percentage": 22.1
+      },
+      "8-14 days": {
+        "count": 40191,
+        "percentage": 41.66
+      },
+      "15-21 days": {
+        "count": 17697,
+        "percentage": 18.34
+      },
+      "22-30 days": {
+        "count": 7937,
+        "percentage": 8.23
+      },
+      ">30 days": {
+        "count": 4551,
+        "percentage": 4.72
+      }
+    }
+  },
+  "delivery_delay_analysis": {
+    "average_delivery_delay_days": -11.18,
+    "percentage_of_late_deliveries": 8.11,
+    "late_deliveries_summary": {
+      "count": 7821,
+      "percentage": 8.11,
+      "average_days_late": 9.56
+    },
+    "early_deliveries_summary": {
+      "count": 88639,
+      "percentage": 91.88,
+      "average_days_early": 13.01
+    },
+    "on_time_deliveries_summary": {
+      "count": 88655,
+      "percentage": 91.89
+    },
+    "delay_distribution": {
+      ">10 days early": {
+        "count": 57230,
+        "percentage": 59.32
+      },
+      "0-10 days early": {
+        "count": 31425,
+        "percentage": 32.57
+      },
+      "1-5 days late": {
+        "count": 3612,
+        "percentage": 3.74
+      },
+      "6-10 days late": {
+        "count": 1910,
+        "percentage": 1.98
+      },
+      ">10 days late": {
+        "count": 2299,
+        "percentage": 2.38
+      }
+    },
+    "delay_statistics": {
+      "mean": -11.18,
+      "std": 10.19,
+      "min": -146.02,
+      "q25": -16.24,
+      "median": -11.95,
+      "q75": -6.39,
+      "max": 188.98,
+      "skewness": 2.0092
+    }
+  },
+  "regional_delivery_performance": {
+    "average_delivery_time_by_state": {
+      "AC": 21.04,
+      "AL": 24.54,
+      "AM": 26.43,
+      "AP": 27.19,
+      "BA": 19.34,
+      "CE": 21.27,
+      "DF": 12.97,
+      "ES": 15.79,
+      "GO": 15.61,
+      "MA": 21.57,
+      "MG": 12.01,
+      "MS": 15.62,
+      "MT": 18.06,
+      "PA": 23.77,
+      "PB": 20.43,
+      "PE": 18.45,
+      "PI": 19.46,
+      "PR": 11.99,
+      "RJ": 15.31,
+      "RN": 19.28,
+      "RO": 19.37,
+      "RR": 29.39,
+      "RS": 15.3,
+      "SC": 14.96,
+      "SE": 21.52,
+      "SP": 8.76,
+      "TO": 17.66
+    },
+    "average_delivery_delay_by_state": {
+      "AC": -20.08,
+      "AL": -8.03,
+      "AM": -18.85,
+      "AP": -19.06,
+      "BA": -10.1,
+      "CE": -10.11,
+      "DF": -11.34,
+      "ES": -9.8,
+      "GO": -11.48,
+      "MA": -8.89,
+      "MG": -12.54,
+      "MS": -10.36,
+      "MT": -13.69,
+      "PA": -13.39,
+      "PB": -12.6,
+      "PE": -12.61,
+      "PI": -10.63,
+      "PR": -12.62,
+      "RJ": -11.06,
+      "RN": -12.96,
+      "RO": -19.4,
+      "RR": -16.59,
+      "RS": -13.21,
+      "SC": -10.81,
+      "SE": -9.33,
+      "SP": -10.38,
+      "TO": -11.44
+    },
+    "top_20_fastest_states": [
+      {
+        "state": "SP",
+        "average_delivery_days": 8.76,
+        "average_delay_days": -10.38,
+        "late_delivery_rate": 5.89,
+        "order_count": 40495
+      },
+      {
+        "state": "PR",
+        "average_delivery_days": 11.99,
+        "average_delay_days": -12.62,
+        "late_delivery_rate": 5.0,
+        "order_count": 4923
+      },
+      {
+        "state": "MG",
+        "average_delivery_days": 12.01,
+        "average_delay_days": -12.54,
+        "late_delivery_rate": 5.62,
+        "order_count": 11355
+      },
+      {
+        "state": "DF",
+        "average_delivery_days": 12.97,
+        "average_delay_days": -11.34,
+        "late_delivery_rate": 7.07,
+        "order_count": 2080
+      },
+      {
+        "state": "SC",
+        "average_delivery_days": 14.96,
+        "average_delay_days": -10.81,
+        "late_delivery_rate": 9.75,
+        "order_count": 3547
+      },
+      {
+        "state": "RS",
+        "average_delivery_days": 15.3,
+        "average_delay_days": -13.21,
+        "late_delivery_rate": 7.15,
+        "order_count": 5344
+      },
+      {
+        "state": "RJ",
+        "average_delivery_days": 15.31,
+        "average_delay_days": -11.06,
+        "late_delivery_rate": 13.47,
+        "order_count": 12353
+      },
+      {
+        "state": "GO",
+        "average_delivery_days": 15.61,
+        "average_delay_days": -11.48,
+        "late_delivery_rate": 8.18,
+        "order_count": 1957
+      },
+      {
+        "state": "MS",
+        "average_delivery_days": 15.62,
+        "average_delay_days": -10.36,
+        "late_delivery_rate": 11.55,
+        "order_count": 701
+      },
+      {
+        "state": "ES",
+        "average_delivery_days": 15.79,
+        "average_delay_days": -9.8,
+        "late_delivery_rate": 12.23,
+        "order_count": 1995
+      },
+      {
+        "state": "TO",
+        "average_delivery_days": 17.66,
+        "average_delay_days": -11.44,
+        "late_delivery_rate": 12.77,
+        "order_count": 274
+      },
+      {
+        "state": "MT",
+        "average_delivery_days": 18.06,
+        "average_delay_days": -13.69,
+        "late_delivery_rate": 6.77,
+        "order_count": 886
+      },
+      {
+        "state": "PE",
+        "average_delivery_days": 18.45,
+        "average_delay_days": -12.61,
+        "late_delivery_rate": 10.8,
+        "order_count": 1593
+      },
+      {
+        "state": "RN",
+        "average_delivery_days": 19.28,
+        "average_delay_days": -12.96,
+        "late_delivery_rate": 10.76,
+        "order_count": 474
+      },
+      {
+        "state": "BA",
+        "average_delivery_days": 19.34,
+        "average_delay_days": -10.1,
+        "late_delivery_rate": 14.04,
+        "order_count": 3256
+      },
+      {
+        "state": "RO",
+        "average_delivery_days": 19.37,
+        "average_delay_days": -19.4,
+        "late_delivery_rate": 2.88,
+        "order_count": 243
+      },
+      {
+        "state": "PI",
+        "average_delivery_days": 19.46,
+        "average_delay_days": -10.63,
+        "late_delivery_rate": 15.97,
+        "order_count": 476
+      },
+      {
+        "state": "PB",
+        "average_delivery_days": 20.43,
+        "average_delay_days": -12.6,
+        "late_delivery_rate": 11.03,
+        "order_count": 517
+      },
+      {
+        "state": "AC",
+        "average_delivery_days": 21.04,
+        "average_delay_days": -20.08,
+        "late_delivery_rate": 3.75,
+        "order_count": 80
+      },
+      {
+        "state": "CE",
+        "average_delivery_days": 21.27,
+        "average_delay_days": -10.11,
+        "late_delivery_rate": 15.32,
+        "order_count": 1279
+      }
+    ],
+    "top_20_slowest_states": [
+      {
+        "state": "RR",
+        "average_delivery_days": 29.39,
+        "average_delay_days": -16.59,
+        "late_delivery_rate": 12.2,
+        "order_count": 41
+      },
+      {
+        "state": "AP",
+        "average_delivery_days": 27.19,
+        "average_delay_days": -19.06,
+        "late_delivery_rate": 4.48,
+        "order_count": 67
+      },
+      {
+        "state": "AM",
+        "average_delivery_days": 26.43,
+        "average_delay_days": -18.85,
+        "late_delivery_rate": 4.14,
+        "order_count": 145
+      },
+      {
+        "state": "AL",
+        "average_delivery_days": 24.54,
+        "average_delay_days": -8.03,
+        "late_delivery_rate": 23.93,
+        "order_count": 397
+      },
+      {
+        "state": "PA",
+        "average_delivery_days": 23.77,
+        "average_delay_days": -13.39,
+        "late_delivery_rate": 12.37,
+        "order_count": 946
+      },
+      {
+        "state": "MA",
+        "average_delivery_days": 21.57,
+        "average_delay_days": -8.89,
+        "late_delivery_rate": 19.67,
+        "order_count": 717
+      },
+      {
+        "state": "SE",
+        "average_delivery_days": 21.52,
+        "average_delay_days": -9.33,
+        "late_delivery_rate": 15.22,
+        "order_count": 335
+      },
+      {
+        "state": "CE",
+        "average_delivery_days": 21.27,
+        "average_delay_days": -10.11,
+        "late_delivery_rate": 15.32,
+        "order_count": 1279
+      },
+      {
+        "state": "AC",
+        "average_delivery_days": 21.04,
+        "average_delay_days": -20.08,
+        "late_delivery_rate": 3.75,
+        "order_count": 80
+      },
+      {
+        "state": "PB",
+        "average_delivery_days": 20.43,
+        "average_delay_days": -12.6,
+        "late_delivery_rate": 11.03,
+        "order_count": 517
+      },
+      {
+        "state": "PI",
+        "average_delivery_days": 19.46,
+        "average_delay_days": -10.63,
+        "late_delivery_rate": 15.97,
+        "order_count": 476
+      },
+      {
+        "state": "RO",
+        "average_delivery_days": 19.37,
+        "average_delay_days": -19.4,
+        "late_delivery_rate": 2.88,
+        "order_count": 243
+      },
+      {
+        "state": "BA",
+        "average_delivery_days": 19.34,
+        "average_delay_days": -10.1,
+        "late_delivery_rate": 14.04,
+        "order_count": 3256
+      },
+      {
+        "state": "RN",
+        "average_delivery_days": 19.28,
+        "average_delay_days": -12.96,
+        "late_delivery_rate": 10.76,
+        "order_count": 474
+      },
+      {
+        "state": "PE",
+        "average_delivery_days": 18.45,
+        "average_delay_days": -12.61,
+        "late_delivery_rate": 10.8,
+        "order_count": 1593
+      },
+      {
+        "state": "MT",
+        "average_delivery_days": 18.06,
+        "average_delay_days": -13.69,
+        "late_delivery_rate": 6.77,
+        "order_count": 886
+      },
+      {
+        "state": "TO",
+        "average_delivery_days": 17.66,
+        "average_delay_days": -11.44,
+        "late_delivery_rate": 12.77,
+        "order_count": 274
+      },
+      {
+        "state": "ES",
+        "average_delivery_days": 15.79,
+        "average_delay_days": -9.8,
+        "late_delivery_rate": 12.23,
+        "order_count": 1995
+      },
+      {
+        "state": "MS",
+        "average_delivery_days": 15.62,
+        "average_delay_days": -10.36,
+        "late_delivery_rate": 11.55,
+        "order_count": 701
+      },
+      {
+        "state": "GO",
+        "average_delivery_days": 15.61,
+        "average_delay_days": -11.48,
+        "late_delivery_rate": 8.18,
+        "order_count": 1957
+      }
+    ]
+  },
+  "freight_and_logistics": {
+    "freight_vs_delivery_time_correlation": 0.1671,
+    "freight_vs_distance_proxy_state": {
+      "PB": 48.84,
+      "RR": 48.34,
+      "RO": 46.43,
+      "AC": 45.55,
+      "PI": 42.98,
+      "MA": 42.95,
+      "TO": 42.35,
+      "AP": 41.3,
+      "SE": 40.94,
+      "PA": 39.7,
+      "RN": 39.26,
+      "AL": 38.58,
+      "AM": 37.45,
+      "CE": 36.5,
+      "PE": 35.83,
+      "MT": 32.77,
+      "BA": 29.96,
+      "MS": 27.02,
+      "GO": 26.25,
+      "SC": 24.85,
+      "RS": 24.81,
+      "ES": 24.57,
+      "RJ": 23.94,
+      "DF": 23.86,
+      "PR": 23.49,
+      "MG": 23.46,
+      "SP": 17.34
+    },
+    "freight_percentage_by_state": {
+      "RR": 32.68,
+      "RO": 31.23,
+      "MA": 29.95,
+      "AM": 29.61,
+      "AC": 28.73,
+      "TO": 28.51,
+      "PI": 28.46,
+      "PB": 28.25,
+      "RN": 28.1,
+      "SE": 27.66,
+      "PA": 27.38,
+      "AL": 26.74,
+      "PE": 26.42,
+      "CE": 26.19,
+      "AP": 24.93,
+      "BA": 24.49,
+      "MT": 24.25,
+      "ES": 22.81,
+      "GO": 22.6,
+      "RS": 22.49,
+      "MS": 22.46,
+      "PR": 22.28,
+      "DF": 22.15,
+      "SC": 22.12,
+      "MG": 21.55,
+      "RJ": 21.36,
+      "SP": 18.2
+    },
+    "freight_distribution": {
+      "mean": 22.65,
+      "std": 21.66,
+      "min": 0.0,
+      "q25": 13.72,
+      "median": 17.09,
+      "q75": 23.92,
+      "max": 1794.96,
+      "skewness": 11.96
+    }
+  },
+  "operational_metrics": {
+    "average_order_processing_time_days": 0.43,
+    "average_carrier_time_days": 2.86,
+    "average_shipping_time_days": 9.33,
+    "delivery_sla_achievement_rate_percent": 91.89
+  },
+  "execution_time_sec": 1.9379
+}

@@ -1,0 +1,108 @@
+{
+  "total_customers_segmented": 96096,
+  "best_k": 2,
+  "best_silhouette_score": 0.5369,
+  "model_evaluation_metrics": {
+    "k_2": {
+      "k": 2,
+      "silhouette_score": 0.5369,
+      "davies_bouldin_index": 1.8215,
+      "calinski_harabasz_score": 12724.11,
+      "inertia": 2523069.71
+    },
+    "k_3": {
+      "k": 3,
+      "silhouette_score": 0.372,
+      "davies_bouldin_index": 1.549,
+      "calinski_harabasz_score": 13271.44,
+      "inertia": 2238764.17
+    },
+    "k_4": {
+      "k": 4,
+      "silhouette_score": 0.2824,
+      "davies_bouldin_index": 1.5808,
+      "calinski_harabasz_score": 13616.39,
+      "inertia": 2004875.35
+    },
+    "k_5": {
+      "k": 5,
+      "silhouette_score": 0.1241,
+      "davies_bouldin_index": 1.7829,
+      "calinski_harabasz_score": 12880.22,
+      "inertia": 1859925.31
+    },
+    "k_6": {
+      "k": 6,
+      "silhouette_score": 0.118,
+      "davies_bouldin_index": 1.6868,
+      "calinski_harabasz_score": 12076.05,
+      "inertia": 1754610.28
+    },
+    "k_7": {
+      "k": 7,
+      "silhouette_score": 0.1317,
+      "davies_bouldin_index": 1.6393,
+      "calinski_harabasz_score": 11521.06,
+      "inertia": 1661718.37
+    },
+    "k_8": {
+      "k": 8,
+      "silhouette_score": 0.1375,
+      "davies_bouldin_index": 1.5819,
+      "calinski_harabasz_score": 10963.89,
+      "inertia": 1588440.94
+    },
+    "k_9": {
+      "k": 9,
+      "silhouette_score": 0.1436,
+      "davies_bouldin_index": 1.5082,
+      "calinski_harabasz_score": 10578.11,
+      "inertia": 1519189.83
+    },
+    "k_10": {
+      "k": 10,
+      "silhouette_score": 0.1369,
+      "davies_bouldin_index": 1.5323,
+      "calinski_harabasz_score": 10204.86,
+      "inertia": 1460826.83
+    }
+  },
+  "cluster_profiles": {
+    "cluster_0": {
+      "cluster_id": 0,
+      "customer_count": 90893,
+      "customer_percentage": 94.59,
+      "average_revenue": 136.17,
+      "average_orders": 1.0,
+      "average_review_score": 4.06,
+      "average_delivery_delay": -10.78,
+      "average_order_value": 136.17,
+      "average_recency": 289.42,
+      "average_frequency": 1.0,
+      "average_monetary_value": 136.17,
+      "preferred_payment_method": "credit_card",
+      "dominant_customer_value_tier": "Medium Value",
+      "business_description": "Mid-Tier Dormant Single-Order Customers"
+    },
+    "cluster_1": {
+      "cluster_id": 1,
+      "customer_count": 5203,
+      "customer_percentage": 5.41,
+      "average_revenue": 666.2,
+      "average_orders": 1.64,
+      "average_review_score": 3.94,
+      "average_delivery_delay": -11.76,
+      "average_order_value": 572.74,
+      "average_recency": 266.9,
+      "average_frequency": 1.64,
+      "average_monetary_value": 666.2,
+      "preferred_payment_method": "credit_card",
+      "dominant_customer_value_tier": "High Value",
+      "business_description": "High-Value Loyal Repeat Buyers"
+    }
+  },
+  "csv_path": "C:\\Users\\saipr\\Desktop\\customer-intelligence-platform\\artifacts\\ml\\customer_segments.csv",
+  "parquet_path": "C:\\Users\\saipr\\Desktop\\customer-intelligence-platform\\artifacts\\ml\\customer_segments.parquet",
+  "metadata_path": "C:\\Users\\saipr\\Desktop\\customer-intelligence-platform\\artifacts\\ml\\customer_segmentation_metadata.json",
+  "execution_time_sec": 78.7531
+}

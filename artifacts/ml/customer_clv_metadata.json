@@ -1,0 +1,115 @@
+{
+  "total_customers": 96096,
+  "best_model_name": "Random Forest Regressor",
+  "best_r2_score": 0.9999,
+  "best_rmse": 1.5654,
+  "best_mae": 0.1093,
+  "model_comparison": {
+    "Linear Regression": {
+      "mae": 3.2101,
+      "rmse": 14.8291,
+      "r2_score": 0.9945,
+      "train_time_sec": 1.2201
+    },
+    "Random Forest Regressor": {
+      "mae": 0.1093,
+      "rmse": 1.5654,
+      "r2_score": 0.9999,
+      "train_time_sec": 24.0555
+    },
+    "Gradient Boosting Regressor": {
+      "mae": 2.0044,
+      "rmse": 3.9172,
+      "r2_score": 0.9996,
+      "train_time_sec": 45.7456
+    }
+  },
+  "feature_importance": [
+    {
+      "feature": "avg_order_value",
+      "importance_score": 0.930082
+    },
+    {
+      "feature": "avg_payment_value",
+      "importance_score": 0.03004
+    },
+    {
+      "feature": "repeat_purchase_rate",
+      "importance_score": 0.013963
+    },
+    {
+      "feature": "frequency_orders",
+      "importance_score": 0.013534
+    },
+    {
+      "feature": "review_count",
+      "importance_score": 0.001937
+    },
+    {
+      "feature": "total_items",
+      "importance_score": 0.001853
+    },
+    {
+      "feature": "avg_items_per_order",
+      "importance_score": 0.001487
+    },
+    {
+      "feature": "days_between_orders_mean",
+      "importance_score": 0.001039
+    },
+    {
+      "feature": "state_RJ",
+      "importance_score": 0.000965
+    },
+    {
+      "feature": "favorite_product_category_Fixed_Telephony",
+      "importance_score": 0.000904
+    },
+    {
+      "feature": "avg_delivery_days",
+      "importance_score": 0.000828
+    },
+    {
+      "feature": "avg_freight_value",
+      "importance_score": 0.000648
+    },
+    {
+      "feature": "order_value_std",
+      "importance_score": 0.000586
+    },
+    {
+      "feature": "avg_delivery_delay",
+      "importance_score": 0.000568
+    },
+    {
+      "feature": "order_frequency_per_month",
+      "importance_score": 0.000527
+    },
+    {
+      "feature": "preferred_payment_method_credit_card",
+      "importance_score": 0.000154
+    },
+    {
+      "feature": "customer_age_days",
+      "importance_score": 0.000111
+    },
+    {
+      "feature": "favorite_product_category_Art",
+      "importance_score": 9.6e-05
+    },
+    {
+      "feature": "favorite_product_category_Watches_Gifts",
+      "importance_score": 9.5e-05
+    },
+    {
+      "feature": "recency_days",
+      "importance_score": 8.2e-05
+    }
+  ],
+  "csv_path": "C:\\Users\\saipr\\Desktop\\customer-intelligence-platform\\artifacts\\ml\\customer_clv_predictions.csv",
+  "parquet_path": "C:\\Users\\saipr\\Desktop\\customer-intelligence-platform\\artifacts\\ml\\customer_clv_predictions.parquet",
+  "metadata_path": "C:\\Users\\saipr\\Desktop\\customer-intelligence-platform\\artifacts\\ml\\customer_clv_metadata.json",
+  "training_time_sec": 71.0275,
+  "prediction_time_sec": 0.2122,
+  "execution_time_sec": 74.3964
+}

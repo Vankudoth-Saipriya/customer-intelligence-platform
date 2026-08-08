@@ -1,0 +1,385 @@
+{
+  "total_reviews_analyzed": 99224,
+  "review_score_analysis": {
+    "review_score_distribution": {
+      "1": 11424,
+      "2": 3151,
+      "3": 8179,
+      "4": 19142,
+      "5": 57328
+    },
+    "average_review_score": 4.09,
+    "median_review_score": 5.0,
+    "rating_percentages": {
+      "1": 11.51,
+      "2": 3.18,
+      "3": 8.24,
+      "4": 19.29,
+      "5": 57.78
+    },
+    "rating_trend_over_time": {
+      "2016-10": {
+        "average_score": 4.06,
+        "review_count": 179
+      },
+      "2016-11": {
+        "average_score": 3.19,
+        "review_count": 101
+      },
+      "2016-12": {
+        "average_score": 2.36,
+        "review_count": 45
+      },
+      "2017-01": {
+        "average_score": 4.34,
+        "review_count": 239
+      },
+      "2017-02": {
+        "average_score": 4.28,
+        "review_count": 1413
+      },
+      "2017-03": {
+        "average_score": 4.03,
+        "review_count": 2481
+      },
+      "2017-04": {
+        "average_score": 4.04,
+        "review_count": 2055
+      },
+      "2017-05": {
+        "average_score": 4.1,
+        "review_count": 3710
+      },
+      "2017-06": {
+        "average_score": 4.13,
+        "review_count": 3440
+      },
+      "2017-07": {
+        "average_score": 4.18,
+        "review_count": 3503
+      },
+      "2017-08": {
+        "average_score": 4.22,
+        "review_count": 4503
+      },
+      "2017-09": {
+        "average_score": 4.18,
+        "review_count": 4199
+      },
+      "2017-10": {
+        "average_score": 4.18,
+        "review_count": 4424
+      },
+      "2017-11": {
+        "average_score": 4.11,
+        "review_count": 4786
+      },
+      "2017-12": {
+        "average_score": 3.93,
+        "review_count": 7982
+      },
+      "2018-01": {
+        "average_score": 4.06,
+        "review_count": 6179
+      },
+      "2018-02": {
+        "average_score": 4.01,
+        "review_count": 6101
+      },
+      "2018-03": {
+        "average_score": 3.73,
+        "review_count": 7803
+      },
+      "2018-04": {
+        "average_score": 3.92,
+        "review_count": 7287
+      },
+      "2018-05": {
+        "average_score": 4.19,
+        "review_count": 7458
+      },
+      "2018-06": {
+        "average_score": 4.2,
+        "review_count": 6715
+      },
+      "2018-07": {
+        "average_score": 4.29,
+        "review_count": 5634
+      },
+      "2018-08": {
+        "average_score": 4.21,
+        "review_count": 8987
+      }
+    }
+  },
+  "review_text_analysis": {
+    "percentage_with_review_title": 11.66,
+    "percentage_with_review_message": 41.27,
+    "average_review_message_length": 68.35,
+    "title_length_statistics": {
+      "mean": 11.77,
+      "std": 6.31,
+      "min": 0,
+      "q25": 7.0,
+      "median": 10.0,
+      "q75": 16.0,
+      "max": 26
+    },
+    "message_length_statistics": {
+      "mean": 68.35,
+      "std": 53.84,
+      "min": 0,
+      "q25": 28.0,
+      "median": 53.0,
+      "q75": 94.0,
+      "max": 208
+    }
+  },
+  "customer_satisfaction": {
+    "average_review_score_by_product_category": {
+      "Agro_Industry_And_Commerce": 4.02,
+      "Air_Conditioning": 4.04,
+      "Art": 4.05,
+      "Arts_And_Craftmanship": 4.14,
+      "Audio": 3.83,
+      "Auto": 4.1,
+      "Baby": 4.06,
+      "Bed_Bath_Table": 3.98,
+      "Books_General_Interest": 4.47,
+      "Books_Imported": 4.38,
+      "Books_Technical": 4.4,
+      "Cds_Dvds_Musicals": 4.67,
+      "Christmas_Supplies": 4.06,
+      "Cine_Photo": 4.24,
+      "Computers": 4.19,
+      "Computers_Accessories": 4.03,
+      "Consoles_Games": 4.07,
+      "Construction_Tools_Construction": 4.09,
+      "Construction_Tools_Lights": 4.19,
+      "Construction_Tools_Safety": 3.89,
+      "Cool_Stuff": 4.18,
+      "Costruction_Tools_Garden": 4.23,
+      "Costruction_Tools_Tools": 4.43,
+      "Diapers_And_Hygiene": 3.74,
+      "Drinks": 4.18,
+      "Dvds_Blu_Ray": 4.09,
+      "Electronics": 4.1,
+      "Fashio_Female_Clothing": 3.73,
+      "Fashion_Bags_Accessories": 4.19,
+      "Fashion_Childrens_Clothes": 4.5,
+      "Fashion_Male_Clothing": 3.7,
+      "Fashion_Shoes": 4.22,
+      "Fashion_Sport": 4.42,
+      "Fashion_Underwear_Beach": 3.93,
+      "Fixed_Telephony": 3.9,
+      "Flowers": 4.39,
+      "Food": 4.27,
+      "Food_Drink": 4.39,
+      "Furniture_Bedroom": 4.17,
+      "Furniture_Decor": 4.02,
+      "Furniture_Living_Room": 4.05,
+      "Furniture_Mattress_And_Upholstery": 3.82,
+      "Garden_Tools": 4.15,
+      "Health_Beauty": 4.19,
+      "Home_Appliances": 4.17,
+      "Home_Appliances_2": 4.14,
+      "Home_Comfort_2": 3.9,
+      "Home_Confort": 3.88,
+      "Home_Construction": 4.04,
+      "Housewares": 4.15,
+      "Industry_Commerce_And_Business": 4.21,
+      "Kitchen_Dining_Laundry_Garden_Furniture": 4.05,
+      "La_Cuisine": 4.55,
+      "Luggage_Accessories": 4.34,
+      "Market_Place": 4.06,
+      "Music": 4.3,
+      "Musical_Instruments": 4.19,
+      "Office_Furniture": 3.62,
+      "Party_Supplies": 4.0,
+      "Perfumery": 4.2,
+      "Pet_Shop": 4.25,
+      "Security_And_Services": 2.5,
+      "Signaling_And_Security": 4.11,
+      "Small_Appliances": 4.18,
+      "Small_Appliances_Home_Oven_And_Coffee": 4.29,
+      "Sports_Leisure": 4.17,
+      "Stationery": 4.25,
+      "Tablets_Printing_Image": 4.17,
+      "Telephony": 4.01,
+      "Toys": 4.19,
+      "Uncategorized": 3.17,
+      "Watches_Gifts": 4.07
+    },
+    "average_review_score_by_state": {
+      "AC": 4.05,
+      "AL": 3.75,
+      "AM": 4.18,
+      "AP": 4.19,
+      "BA": 3.86,
+      "CE": 3.85,
+      "DF": 4.06,
+      "ES": 4.04,
+      "GO": 4.04,
+      "MA": 3.76,
+      "MG": 4.14,
+      "MS": 4.12,
+      "MT": 4.1,
+      "PA": 3.85,
+      "PB": 4.02,
+      "PE": 4.01,
+      "PI": 3.92,
+      "PR": 4.18,
+      "RJ": 3.87,
+      "RN": 4.11,
+      "RO": 4.05,
+      "RR": 3.61,
+      "RS": 4.13,
+      "SC": 4.07,
+      "SE": 3.81,
+      "SP": 4.17,
+      "TO": 4.1
+    },
+    "average_review_score_by_payment_method": {
+      "Uncategorized": 1.0,
+      "boleto": 4.09,
+      "credit_card": 4.09,
+      "debit_card": 4.17,
+      "not_defined": 1.67,
+      "voucher": 4.0
+    },
+    "average_review_score_by_delivery_delay_bucket": {
+      "0-10 days early": 4.24,
+      "1-5 days late": 3.46,
+      "6-10 days late": 1.89,
+      ">10 days early": 4.32,
+      ">10 days late": 1.7
+    },
+    "average_review_score_by_delivery_time_bucket": {
+      "0-3 days": 4.48,
+      "15-21 days": 4.14,
+      "22-30 days": 3.61,
+      "4-7 days": 4.4,
+      "8-14 days": 4.31,
+      ">30 days": 2.25
+    }
+  },
+  "business_insights": {
+    "review_score_vs_delivery_delay_correlation": -0.2664,
+    "review_score_vs_delivery_time_correlation": -0.3338,
+    "review_score_vs_order_value_correlation": -0.036,
+    "categories_with_highest_ratings": [
+      {
+        "category": "Cds_Dvds_Musicals",
+        "average_score": 4.67,
+        "review_count": 12
+      },
+      {
+        "category": "La_Cuisine",
+        "average_score": 4.55,
+        "review_count": 11
+      },
+      {
+        "category": "Books_General_Interest",
+        "average_score": 4.47,
+        "review_count": 505
+      },
+      {
+        "category": "Costruction_Tools_Tools",
+        "average_score": 4.43,
+        "review_count": 94
+      },
+      {
+        "category": "Fashion_Sport",
+        "average_score": 4.42,
+        "review_count": 26
+      },
+      {
+        "category": "Books_Technical",
+        "average_score": 4.4,
+        "review_count": 258
+      },
+      {
+        "category": "Food_Drink",
+        "average_score": 4.39,
+        "review_count": 225
+      },
+      {
+        "category": "Flowers",
+        "average_score": 4.39,
+        "review_count": 28
+      },
+      {
+        "category": "Books_Imported",
+        "average_score": 4.38,
+        "review_count": 52
+      },
+      {
+        "category": "Luggage_Accessories",
+        "average_score": 4.34,
+        "review_count": 1019
+      }
+    ],
+    "categories_with_lowest_ratings": [
+      {
+        "category": "Uncategorized",
+        "average_score": 3.17,
+        "review_count": 2194
+      },
+      {
+        "category": "Office_Furniture",
+        "average_score": 3.62,
+        "review_count": 1260
+      },
+      {
+        "category": "Fashion_Male_Clothing",
+        "average_score": 3.7,
+        "review_count": 111
+      },
+      {
+        "category": "Fashio_Female_Clothing",
+        "average_score": 3.73,
+        "review_count": 41
+      },
+      {
+        "category": "Diapers_And_Hygiene",
+        "average_score": 3.74,
+        "review_count": 27
+      },
+      {
+        "category": "Furniture_Mattress_And_Upholstery",
+        "average_score": 3.82,
+        "review_count": 38
+      },
+      {
+        "category": "Audio",
+        "average_score": 3.83,
+        "review_count": 344
+      },
+      {
+        "category": "Home_Confort",
+        "average_score": 3.88,
+        "review_count": 376
+      },
+      {
+        "category": "Construction_Tools_Safety",
+        "average_score": 3.89,
+        "review_count": 161
+      },
+      {
+        "category": "Fixed_Telephony",
+        "average_score": 3.9,
+        "review_count": 215
+      }
+    ]
+  },
+  "operational_metrics": {
+    "positive_reviews_count": 76470,
+    "neutral_reviews_count": 8179,
+    "negative_reviews_count": 14575,
+    "positive_review_percentage": 77.07,
+    "total_delivered_orders_count": 96476,
+    "reviewed_orders_count": 98673,
+    "review_coverage_percentage": 102.28
+  },
+  "execution_time_sec": 5.1098
+}
