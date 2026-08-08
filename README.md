@@ -278,18 +278,22 @@ The REST API layer ([app/api/v1/](file:///c:/Users/saipr/Desktop/customer-intell
 
 ## 🖼️ Dashboard Screenshot Artifacts
 
+![Dashboard Overview Collage](artifacts/dashboard/dashboard_overview.png)
+
 | Module Page | Screenshot Artifact Path |
 | :--- | :--- |
-| **Executive Home** | ![Home](artifacts/dashboard/00_home.png) |
-| **Customer Analytics** | ![Customer Analytics](artifacts/dashboard/01_customer_analytics.png) |
-| **Product Analytics** | ![Product Analytics](artifacts/dashboard/02_product_analytics.png) |
-| **Sales Analytics** | ![Sales Analytics](artifacts/dashboard/03_sales_analytics.png) |
-| **Delivery Analytics** | ![Delivery Analytics](artifacts/dashboard/04_delivery_analytics.png) |
-| **Payment Analytics** | ![Payment Analytics](artifacts/dashboard/05_payment_analytics.png) |
-| **Review Analytics** | ![Review Analytics](artifacts/dashboard/06_review_analytics.png) |
-| **Customer Segmentation** | ![Customer Segmentation](artifacts/dashboard/07_customer_segmentation.png) |
-| **CLV Prediction** | ![CLV Prediction](artifacts/dashboard/08_clv_prediction.png) |
-| **Repeat Purchase Propensity** | ![Repeat Purchase Propensity](artifacts/dashboard/09_repeat_purchase.png) |
+| **Executive Home** | `artifacts/dashboard/00_home.png` |
+| **Customer Analytics** | `artifacts/dashboard/01_customer_analytics.png` |
+| **Product Analytics** | `artifacts/dashboard/02_product_analytics.png` |
+| **Sales Analytics** | `artifacts/dashboard/03_sales_analytics.png` |
+| **Delivery Analytics** | `artifacts/dashboard/04_delivery_analytics.png` |
+| **Payment Analytics** | `artifacts/dashboard/05_payment_analytics.png` |
+| **Review Analytics** | `artifacts/dashboard/06_review_analytics.png` |
+| **Customer Segmentation** | `artifacts/dashboard/07_customer_segmentation.png` |
+| **CLV Prediction** | `artifacts/dashboard/08_clv_prediction.png` |
+| **Repeat Purchase Propensity** | `artifacts/dashboard/09_repeat_purchase.png` |
+| **AI Business Analyst** | `artifacts/dashboard/10_ai_business_analyst.png` |
+| **Overview Collage Cover** | `artifacts/dashboard/dashboard_overview.png` |
 
 ---
 
