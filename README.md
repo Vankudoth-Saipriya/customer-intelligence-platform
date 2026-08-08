@@ -18,7 +18,7 @@
 
 ## 🌐 Live Demo & Quick Links
 
-- 🖥️ **Streamlit Dashboard App**: [https://customer-intelligence-dashboard.onrender.com](https://customer-intelligence-dashboard.onrender.com) (Local: `http://localhost:8501`)
+- 🖥️ **Streamlit Dashboard App**: [https://customer-intelligence-dashboard.onrender.com](https://customer-intelligence-dashboard-z92p.onrender.com/) (Local: `http://localhost:8501`)
 - 📚 **FastAPI Interactive Docs**: [https://customer-intelligence-api.onrender.com/docs](https://customer-intelligence-api.onrender.com/docs) (Local: `http://localhost:8000/docs`)
 - 📦 **GitHub Repository**: [https://github.com/Vankudoth-Saipriya/customer-intelligence-platform](https://github.com/Vankudoth-Saipriya/customer-intelligence-platform)
 
