@@ -46,7 +46,15 @@ htmlcov/
 *.swp
 *.swo
 
-# Docker / Local logs
+# Docker / Local logs & databases
 *.log
+*.tmp
+*.bak
+.DS_Store
+Thumbs.db
 docker-data/
 artifacts/customer_intelligence_verification.db
+
+# Large CSV artifact exports (Parquet is used at runtime)
+artifacts/*/*.csv
+

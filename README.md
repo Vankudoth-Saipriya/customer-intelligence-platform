@@ -18,9 +18,10 @@
 
 ## 🌐 Live Demo & Quick Links
 
-- 🖥️ **Streamlit Dashboard App**: `[TODO: Add Live Demo URL]` (Local: `http://localhost:8501`)
-- 📚 **FastAPI Interactive Docs**: `[TODO: Add Live API Docs URL]` (Local: `http://localhost:8000/docs`)
-- 📦 **GitHub Repository**: `[TODO: Add GitHub Repository URL]`
+- 🖥️ **Streamlit Dashboard App**: [https://customer-intelligence-dashboard.onrender.com](https://customer-intelligence-dashboard.onrender.com) (Local: `http://localhost:8501`)
+- 📚 **FastAPI Interactive Docs**: [https://customer-intelligence-api.onrender.com/docs](https://customer-intelligence-api.onrender.com/docs) (Local: `http://localhost:8000/docs`)
+- 📦 **GitHub Repository**: [https://github.com/Vankudoth-Saipriya/customer-intelligence-platform](https://github.com/Vankudoth-Saipriya/customer-intelligence-platform)
+
 
 ---
 
