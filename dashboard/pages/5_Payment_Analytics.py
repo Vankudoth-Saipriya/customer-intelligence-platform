@@ -51,7 +51,8 @@ try:
 
     with col_a:
         st.subheader("💳 Payment Method Share (%)")
-        pmt_val_type = pmt_method_info.get("payment_value_by_type", biz_info.get("payment_method_contribution_pct", {}))
+        pmt_val_type = pmt_method_info.get("payment_method_distribution", pmt_method_info.get("revenue_by_payment_method", biz_info.get("payment_method_contribution_percent", biz_info.get("payment_method_contribution_pct", {}))))
+
         if pmt_val_type:
             df_contrib = pd.DataFrame(list(pmt_val_type.items()), columns=["Payment Method", "Total Value ($)"])
             fig_pmt = px.pie(

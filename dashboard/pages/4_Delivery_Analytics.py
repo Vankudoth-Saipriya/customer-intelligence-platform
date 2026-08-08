@@ -69,9 +69,11 @@ try:
 
     with col_b:
         st.subheader("🚨 Delivery Delay Breakdown")
-        delay_cats = delay_info.get("delay_categories", {})
+        delay_cats = delay_info.get("delay_categories") or delay_info.get("delay_distribution", {})
         if delay_cats:
-            df_delay = pd.DataFrame(list(delay_cats.items()), columns=["Delay Status", "Orders"])
+            delay_list = [(k, v.get("count", v) if isinstance(v, dict) else v) for k, v in delay_cats.items()]
+            df_delay = pd.DataFrame(delay_list, columns=["Delay Status", "Orders"])
+
             fig_delay = px.pie(
                 df_delay,
                 names="Delay Status",

@@ -27,7 +27,9 @@ try:
 
     geo_dist = cust_eda.get("geographic_distribution", {})
     state_dict = geo_dist.get("state_distribution", {})
-    growth_dict = cust_eda.get("growth_over_time", {}).get("monthly_growth", {})
+    growth_info = cust_eda.get("growth_over_time", {})
+    growth_dict = growth_info.get("customers_by_month") or growth_info.get("monthly_growth", {})
+
     repeat_info = cust_eda.get("repeat_analysis", {})
 
     total_cust = cust_eda.get("total_customers_analyzed", len(df_fs))
