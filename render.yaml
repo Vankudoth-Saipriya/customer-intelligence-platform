@@ -13,6 +13,8 @@ services:
     healthCheckPath: /health
     autoDeploy: true
     envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.9"
       - key: ENVIRONMENT
         value: production
       - key: DEBUG
@@ -32,6 +34,8 @@ services:
     startCommand: streamlit run dashboard/Home.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
     autoDeploy: true
     envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.9"
       - key: ENVIRONMENT
         value: production
       - key: PYTHONUNBUFFERED
