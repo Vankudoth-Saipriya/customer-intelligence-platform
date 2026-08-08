@@ -2,6 +2,7 @@
 Customer Segmentation Streamlit Page.
 """
 
+import gc
 import sys
 from pathlib import Path
 
@@ -62,12 +63,14 @@ try:
             )
             fig_seg.update_layout(template="plotly_dark")
             st.plotly_chart(fig_seg, use_container_width=True)
+            del fig_seg
 
         with col_b:
             st.subheader("💰 Revenue by Cluster Segment ($)")
             rev_col = "total_revenue" if "total_revenue" in df_seg.columns else "monetary_value"
             if rev_col in df_seg.columns:
-                rev_seg = df_seg.groupby(desc_col)[rev_col].sum().reset_index()
+                rev_seg = df_seg.groupby(desc_col, observed=False)[rev_col].sum().reset_index()
+
                 fig_rev_seg = px.bar(
                     rev_seg,
                     x=desc_col,
@@ -77,6 +80,7 @@ try:
                 )
                 fig_rev_seg.update_layout(template="plotly_dark")
                 st.plotly_chart(fig_rev_seg, use_container_width=True)
+                del fig_rev_seg
             else:
                 st.warning("Segment revenue data unavailable")
 
@@ -102,12 +106,13 @@ try:
             with r3:
                 st.metric("Business Description", res.get("business_description"))
 
-            # Display customer profile summary from dataset
             if "customer_id" in df_seg.columns:
-                match = df_seg[(df_seg["customer_id"] == cust_input) | (df_seg.get("customer_unique_id", df_seg["customer_id"]) == cust_input)]
+                match = df_seg[(df_seg["customer_id"] == cust_input) | (df_seg["customer_unique_id"] == cust_input)] if "customer_unique_id" in df_seg.columns else df_seg[df_seg["customer_id"] == cust_input]
                 if not match.empty:
                     st.markdown("#### 👤 Customer Feature Summary")
                     st.dataframe(match.T.rename(columns={match.index[0]: "Value"}), use_container_width=True)
+
+        gc.collect()
 
 except Exception as e:
     st.error(f"Error loading Customer Segmentation page: {e}")

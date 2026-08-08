@@ -3,9 +3,18 @@ Dashboard Data Provider.
 
 Cached data provider layer for Streamlit pages consuming EDA JSON artifacts,
 ML Parquet prediction tables, and FastAPI ML inference endpoints.
-Optimized for lazy artifact loading, column projections, and low memory usage.
+
+Memory optimization:
+- EDA JSON functions use @st.cache_data(ttl=3600, max_entries=1) so Streamlit
+  keeps at most one copy and evicts after 1 hour.
+- Parquet DataFrame getters do NOT use @st.cache_data — they delegate directly
+  to artifact_store singletons. @st.cache_data would copy 122 MB of DataFrames
+  into Streamlit's internal store on every page navigation rerun, accumulating
+  hundreds of MB and triggering Exit 137. The singletons are already cached at
+  the module level; no copy is needed.
 """
 
+import gc
 import json
 import os
 from pathlib import Path
@@ -43,49 +52,61 @@ def get_cached_ai_service() -> AIService:
     return get_ai_service()
 
 
-@st.cache_data
+# ---------------------------------------------------------------------------
+# EDA JSON loaders — use @st.cache_data with TTL + max_entries=1
+# so Streamlit keeps exactly one copy per function and evicts stale ones.
+# JSON files are small (<1 MB each) so caching them is fine.
+# ---------------------------------------------------------------------------
+
+@st.cache_data(ttl=3600, max_entries=1)
 def get_customer_eda() -> Dict[str, Any]:
     path = ARTIFACTS_DIR / "eda" / "customer_analysis.json"
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-@st.cache_data
+@st.cache_data(ttl=3600, max_entries=1)
 def get_product_eda() -> Dict[str, Any]:
     path = ARTIFACTS_DIR / "eda" / "product_analysis.json"
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-@st.cache_data
+@st.cache_data(ttl=3600, max_entries=1)
 def get_sales_eda() -> Dict[str, Any]:
     path = ARTIFACTS_DIR / "eda" / "sales_analysis.json"
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-@st.cache_data
+@st.cache_data(ttl=3600, max_entries=1)
 def get_delivery_eda() -> Dict[str, Any]:
     path = ARTIFACTS_DIR / "eda" / "delivery_analysis.json"
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-@st.cache_data
+@st.cache_data(ttl=3600, max_entries=1)
 def get_payment_eda() -> Dict[str, Any]:
     path = ARTIFACTS_DIR / "eda" / "payment_analysis.json"
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-@st.cache_data
+@st.cache_data(ttl=3600, max_entries=1)
 def get_review_eda() -> Dict[str, Any]:
     path = ARTIFACTS_DIR / "eda" / "review_analysis.json"
     with open(path, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-@st.cache_data
+# ---------------------------------------------------------------------------
+# Parquet DataFrame getters — direct passthrough to artifact_store singletons.
+# NO @st.cache_data here: that would copy 30-45 MB DataFrames into Streamlit's
+# internal cache store on every page rerun, accumulating RAM until OOM kill.
+# The artifact_store module-level globals are already the canonical single copy.
+# ---------------------------------------------------------------------------
+
 def get_feature_store() -> pd.DataFrame:
     df = artifact_store.get_feature_store()
     if df is None:
@@ -93,7 +114,6 @@ def get_feature_store() -> pd.DataFrame:
     return df
 
 
-@st.cache_data
 def get_customer_segments() -> pd.DataFrame:
     df = artifact_store.get_segments()
     if df is None:
@@ -101,7 +121,6 @@ def get_customer_segments() -> pd.DataFrame:
     return df
 
 
-@st.cache_data
 def get_clv_predictions() -> pd.DataFrame:
     df = artifact_store.get_clv_predictions()
     if df is None:
@@ -109,13 +128,16 @@ def get_clv_predictions() -> pd.DataFrame:
     return df
 
 
-@st.cache_data
 def get_repeat_predictions() -> pd.DataFrame:
     df = artifact_store.get_repeat_predictions()
     if df is None:
         raise FileNotFoundError("repeat_purchase_predictions.parquet not found")
     return df
 
+
+# ---------------------------------------------------------------------------
+# API fallback helpers
+# ---------------------------------------------------------------------------
 
 def call_segment_api(customer_id: str, feature_payload: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:
     """Call POST /api/v1/ml/segment with fallback to cached MLService."""

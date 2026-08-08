@@ -111,18 +111,26 @@ try:
     with col_c:
         st.subheader("💰 Customer Spending Distribution ($)")
         if "monetary_value" in df_fs.columns:
+            # Sample 10k points from values <=1000 to avoid a 45 MB filter copy
+            mv = df_fs["monetary_value"].values
+            mv_capped = mv[mv <= 1000]
+            sample_size = min(10_000, len(mv_capped))
+            import numpy as np
+            rng = np.random.default_rng(42)
+            mv_sample = mv_capped[rng.choice(len(mv_capped), size=sample_size, replace=False)]
             fig_spend = px.histogram(
-                df_fs[df_fs["monetary_value"] <= 1000],
-                x="monetary_value",
+                x=mv_sample,
                 nbins=50,
-                title="Monetary Value Distribution (Capped at $1,000 for visibility)",
-                labels={"monetary_value": "Monetary Value ($)"},
+                title="Monetary Value Distribution (Capped $1,000, sampled 10k)",
+                labels={"x": "Monetary Value ($)"},
                 color_discrete_sequence=["#3B82F6"],
             )
             fig_spend.update_layout(template="plotly_dark")
             st.plotly_chart(fig_spend, use_container_width=True)
+            del mv, mv_capped, mv_sample
         else:
             st.warning("Monetary spending distribution data unavailable")
+
 
     with col_d:
         st.subheader("📊 RFM Summary Statistics")

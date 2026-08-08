@@ -2,6 +2,7 @@
 CLV Prediction Streamlit Page.
 """
 
+import gc
 import sys
 from pathlib import Path
 
@@ -59,6 +60,7 @@ try:
                 )
                 fig_scatter.update_layout(template="plotly_dark")
                 st.plotly_chart(fig_scatter, use_container_width=True)
+                del fig_scatter
             else:
                 st.warning("Scatter plot data unavailable")
 
@@ -68,6 +70,7 @@ try:
                 avail_cols = [c for c in ["customer_id", "state", "frequency_orders", rev_col, "predicted_clv"] if c in df_clv.columns]
                 top_clv = df_clv.sort_values(by="predicted_clv", ascending=False)[avail_cols].head(10)
                 st.dataframe(top_clv, use_container_width=True, hide_index=True)
+                del top_clv
             else:
                 st.warning("High-CLV customers data unavailable")
 
@@ -90,10 +93,13 @@ try:
             st.metric("Predicted Customer Lifetime Value (CLV)", f"${pred_val:,.2f}")
 
             if "customer_id" in df_clv.columns:
-                match = df_clv[(df_clv["customer_id"] == cust_input) | (df_clv.get("customer_unique_id", df_clv["customer_id"]) == cust_input)]
+                match = df_clv[(df_clv["customer_id"] == cust_input) | (df_clv["customer_unique_id"] == cust_input)] if "customer_unique_id" in df_clv.columns else df_clv[df_clv["customer_id"] == cust_input]
                 if not match.empty:
                     st.markdown("#### 👤 Customer Record & Prediction Audit")
                     st.dataframe(match.T.rename(columns={match.index[0]: "Value"}), use_container_width=True)
 
+        gc.collect()
+
 except Exception as e:
     st.error(f"Error loading CLV Prediction page: {e}")
+

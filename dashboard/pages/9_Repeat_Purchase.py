@@ -2,6 +2,7 @@
 Repeat Purchase Propensity Streamlit Page.
 """
 
+import gc
 import sys
 from pathlib import Path
 
@@ -58,6 +59,7 @@ try:
                 )
                 fig_prob.update_layout(template="plotly_dark")
                 st.plotly_chart(fig_prob, use_container_width=True)
+                del fig_prob
             else:
                 st.warning("Repeat propensity score distribution data unavailable")
 
@@ -79,6 +81,7 @@ try:
                 )
                 fig_pred.update_layout(template="plotly_dark")
                 st.plotly_chart(fig_pred, use_container_width=True)
+                del fig_pred
             else:
                 st.warning("Predicted repeat customer breakdown unavailable")
 
@@ -127,10 +130,12 @@ try:
             st.plotly_chart(fig_gauge, use_container_width=True)
 
             if "customer_id" in df_rp.columns:
-                match = df_rp[(df_rp["customer_id"] == cust_input) | (df_rp.get("customer_unique_id", df_rp["customer_id"]) == cust_input)]
+                match = df_rp[(df_rp["customer_id"] == cust_input) | (df_rp["customer_unique_id"] == cust_input)] if "customer_unique_id" in df_rp.columns else df_rp[df_rp["customer_id"] == cust_input]
                 if not match.empty:
                     st.markdown("#### 👤 Customer Record & Propensity Audit")
                     st.dataframe(match.T.rename(columns={match.index[0]: "Value"}), use_container_width=True)
+
+        gc.collect()
 
 except Exception as e:
     st.error(f"Error loading Repeat Purchase page: {e}")
