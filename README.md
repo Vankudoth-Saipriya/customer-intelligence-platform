@@ -42,12 +42,13 @@
 
 - **Production-Ready Architecture**: Enterprise-grade modular design with clear separation of concerns (ETL, Feature Store, ML, Services, API, UI, AI Agent).
 - **Modular ELT**: Scalable raw ingestion, staging standardization, and star-schema dimensional modeling (`dim_*`, `fact_*`).
-- **Feature Store Engine**: 36 aggregated features per customer across 96,096 unique entities saved in Parquet & CSV.
+- **Feature Store Engine**: 36 aggregated features per customer across 96,096 unique entities saved in Parquet.
 - **ML Pipelines**: End-to-end model evaluation, automatic hyperparameter selection, target leakage prevention, and `.joblib` persistence.
 - **FastAPI Layer**: Asynchronous REST microservices with lazy artifact loading and in-memory inference caching.
 - **Streamlit Interface**: Responsive 11-page web dashboard with dark enterprise themes and real-time API integrations.
 - **AI Analyst Layer**: 9-tool autonomous business analyst with zero-downtime synthesis fallback.
-- **Testing & Verification**: 100% `py_compile` pass rate across 126 files + automated AppTest dashboard suites.
+- **Testing & Verification**: 100% `py_compile` pass rate across 108 application modules + automated pytest suite.
+
 - **Docker Readiness**: Fully dockerized with compose orchestration for seamless single-command deployment.
 
 ---
@@ -88,7 +89,8 @@ Built on Brazilian e-commerce transaction data (**500,000+ transaction records a
 | :--- | :--- |
 | **🔄 ELT Data Pipeline** | Automated raw ingestion, staging transformations, and dimensional star-schema modeling (`dim_*`, `fact_*`). |
 | **📊 Exploratory Analytics** | 5 core EDA modules covering Products, Sales Trajectory, Payment Methods, Logistics Delivery SLA, and Review Sentiment. |
-| **🧠 Customer Feature Store** | 36 aggregated features per customer across 96,096 unique customer entities exported in Parquet/CSV. |
+| **🧠 Customer Feature Store** | 36 aggregated features per customer across 96,096 unique customer entities saved in Parquet format. |
+
 | **🎯 Customer Segmentation** | Unsupervised KMeans clustering ($k=2$, Silhouette Score: `0.5369`) profiling high-value vs. dormant buyers. |
 | **💵 CLV Prediction** | Supervised Random Forest Regressor ($R^2 = 0.9999$, $\text{MAE} = \$0.11$) predicting total customer lifetime revenue. |
 | **🔄 Repeat Purchase Propensity** | Supervised Logistic Regression Classifier ($\text{ROC-AUC} = 1.0000$, $\text{F1} = 0.9992$) predicting repeat buyer likelihood. |
@@ -197,7 +199,8 @@ customer-intelligence-platform/
 ├── artifacts/
 │   ├── dashboard/        # Dashboard visual PNG screenshot artifacts
 │   ├── eda/              # Generated EDA JSON analysis reports
-│   ├── features/         # Customer Feature Store Parquet/CSV artifacts
+│   ├── features/         # Customer Feature Store Parquet artifacts
+
 │   ├── ml/               # Model joblib pipelines & prediction Parquet tables
 │   └── ai/               # Sample AI business report artifacts
 ├── dashboard/
@@ -386,8 +389,9 @@ curl -X POST "http://127.0.0.1:8000/api/v1/ai/ask" \
 Execute static compilation checks and complete test suite:
 
 ```bash
-python -m scratch.verify_all
+pytest tests/
 ```
+
 
 ---
 
