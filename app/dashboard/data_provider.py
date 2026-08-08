@@ -14,6 +14,7 @@ import pandas as pd
 import requests
 import streamlit as st
 
+from app.ai import artifact_store
 from app.services.ai_service import AIService, get_ai_service
 from app.services.ml_service import MLService, get_ml_service
 
@@ -86,30 +87,34 @@ def get_review_eda() -> Dict[str, Any]:
 
 @st.cache_data
 def get_feature_store() -> pd.DataFrame:
-    path = ARTIFACTS_DIR / "features" / "customer_feature_store.parquet"
-    cols = ["customer_id", "customer_unique_id", "customer_age_days", "frequency_orders", "monetary_value", "recency_days", "customer_value_tier"]
-    return pd.read_parquet(path, columns=cols)
+    df = artifact_store.get_feature_store()
+    if df is None:
+        raise FileNotFoundError("customer_feature_store.parquet not found")
+    return df
 
 
 @st.cache_data
 def get_customer_segments() -> pd.DataFrame:
-    path = ARTIFACTS_DIR / "ml" / "customer_segments.parquet"
-    cols = ["customer_id", "customer_unique_id", "cluster_id", "cluster_description", "total_revenue"]
-    return pd.read_parquet(path, columns=cols)
+    df = artifact_store.get_segments()
+    if df is None:
+        raise FileNotFoundError("customer_segments.parquet not found")
+    return df
 
 
 @st.cache_data
 def get_clv_predictions() -> pd.DataFrame:
-    path = ARTIFACTS_DIR / "ml" / "customer_clv_predictions.parquet"
-    cols = ["customer_id", "customer_unique_id", "total_revenue", "predicted_clv", "customer_value_tier", "state", "frequency_orders"]
-    return pd.read_parquet(path, columns=cols)
+    df = artifact_store.get_clv_predictions()
+    if df is None:
+        raise FileNotFoundError("customer_clv_predictions.parquet not found")
+    return df
 
 
 @st.cache_data
 def get_repeat_predictions() -> pd.DataFrame:
-    path = ARTIFACTS_DIR / "ml" / "repeat_purchase_predictions.parquet"
-    cols = ["customer_id", "customer_unique_id", "repeat_customer", "repeat_propensity", "predicted_repeat_customer"]
-    return pd.read_parquet(path, columns=cols)
+    df = artifact_store.get_repeat_predictions()
+    if df is None:
+        raise FileNotFoundError("repeat_purchase_predictions.parquet not found")
+    return df
 
 
 def call_segment_api(customer_id: str, feature_payload: Optional[Dict[str, Any]] = None) -> Dict[str, Any]:

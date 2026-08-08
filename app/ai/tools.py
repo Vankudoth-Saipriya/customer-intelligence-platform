@@ -8,7 +8,8 @@ Customer Feature Store, and ML model predictions.
 import json
 from pathlib import Path
 from typing import Any, Dict, Optional
-import pandas as pd
+
+from app.ai import artifact_store
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 ARTIFACTS_DIR = PROJECT_ROOT / "artifacts"
@@ -143,12 +144,11 @@ class SegmentationTool(BaseTool):
     """Tool extracting customer segmentation ML cluster profiles and statistics."""
 
     def run(self) -> Dict[str, Any]:
-        seg_path = ARTIFACTS_DIR / "ml" / "customer_segments.parquet"
         meta_path = ARTIFACTS_DIR / "ml" / "customer_segmentation_metadata.json"
 
-        if not seg_path.exists():
+        df_seg = artifact_store.get_segments()
+        if df_seg is None:
             return {"error": "customer_segments.parquet not found"}
-        df_seg = pd.read_parquet(seg_path)
 
         meta = {}
         if meta_path.exists():
@@ -181,12 +181,11 @@ class CLVTool(BaseTool):
     """Tool extracting CLV regressor performance metrics and top customer predictions."""
 
     def run(self) -> Dict[str, Any]:
-        clv_path = ARTIFACTS_DIR / "ml" / "customer_clv_predictions.parquet"
         meta_path = ARTIFACTS_DIR / "ml" / "customer_clv_metadata.json"
 
-        if not clv_path.exists():
+        df_clv = artifact_store.get_clv_predictions()
+        if df_clv is None:
             return {"error": "customer_clv_predictions.parquet not found"}
-        df_clv = pd.read_parquet(clv_path)
 
         meta = {}
         if meta_path.exists():
@@ -211,12 +210,11 @@ class RepeatPurchaseTool(BaseTool):
     """Tool extracting repeat purchase propensity classifier metrics and summary."""
 
     def run(self) -> Dict[str, Any]:
-        rp_path = ARTIFACTS_DIR / "ml" / "repeat_purchase_predictions.parquet"
         meta_path = ARTIFACTS_DIR / "ml" / "repeat_purchase_metadata.json"
 
-        if not rp_path.exists():
+        df_rp = artifact_store.get_repeat_predictions()
+        if df_rp is None:
             return {"error": "repeat_purchase_predictions.parquet not found"}
-        df_rp = pd.read_parquet(rp_path)
 
         meta = {}
         if meta_path.exists():

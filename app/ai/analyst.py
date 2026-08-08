@@ -13,6 +13,7 @@ import pandas as pd
 import requests
 from loguru import logger
 
+from app.ai import artifact_store
 from app.ai.prompt_builder import PromptBuilder
 from app.ai.tools import (
     CLVTool,
@@ -283,35 +284,30 @@ class BusinessAnalyst:
     def generate_customer_report(self, customer_id: str) -> str:
         """Generate an in-depth AI Customer Report for a given customer ID."""
         logger.info(f"Generating Customer Report for ID '{customer_id}'...")
-        # Load feature store record
-        fs_path = ARTIFACTS_DIR / "features" / "customer_feature_store.parquet"
-        seg_path = ARTIFACTS_DIR / "ml" / "customer_segments.parquet"
-        clv_path = ARTIFACTS_DIR / "ml" / "customer_clv_predictions.parquet"
-        rp_path = ARTIFACTS_DIR / "ml" / "repeat_purchase_predictions.parquet"
-
         cust_data = {}
-        if fs_path.exists():
-            df_fs = pd.read_parquet(fs_path)
+
+        df_fs = artifact_store.get_feature_store()
+        if df_fs is not None:
             match = df_fs[(df_fs["customer_id"] == customer_id) | (df_fs["customer_unique_id"] == customer_id)]
             if not match.empty:
                 cust_data = match.iloc[0].to_dict()
 
-        if seg_path.exists():
-            df_seg = pd.read_parquet(seg_path)
+        df_seg = artifact_store.get_segments()
+        if df_seg is not None:
             match = df_seg[(df_seg["customer_id"] == customer_id) | (df_seg["customer_unique_id"] == customer_id)]
             if not match.empty:
                 cust_data["cluster_id"] = int(match["cluster_id"].iloc[0])
-                cust_data["cluster_name"] = str(match["cluster_name"].iloc[0])
-                cust_data["cluster_description"] = str(match["cluster_description"].iloc[0])
+                cust_data["cluster_name"] = str(match["cluster_name"].iloc[0]) if "cluster_name" in match.columns else f"Cluster {int(match['cluster_id'].iloc[0])}"
+                cust_data["cluster_description"] = str(match["cluster_description"].iloc[0]) if "cluster_description" in match.columns else ""
 
-        if clv_path.exists():
-            df_clv = pd.read_parquet(clv_path)
+        df_clv = artifact_store.get_clv_predictions()
+        if df_clv is not None:
             match = df_clv[(df_clv["customer_id"] == customer_id) | (df_clv["customer_unique_id"] == customer_id)]
             if not match.empty:
                 cust_data["predicted_clv"] = float(match["predicted_clv"].iloc[0])
 
-        if rp_path.exists():
-            df_rp = pd.read_parquet(rp_path)
+        df_rp = artifact_store.get_repeat_predictions()
+        if df_rp is not None:
             match = df_rp[(df_rp["customer_id"] == customer_id) | (df_rp["customer_unique_id"] == customer_id)]
             if not match.empty:
                 cust_data["repeat_propensity"] = float(match["repeat_propensity"].iloc[0])

@@ -77,7 +77,7 @@ try:
                 x="Payment Method",
                 y="Avg Payment Value ($)",
                 color="Avg Payment Value ($)",
-                color_continuous_scale="Emerald",
+                color_continuous_scale="Greens",
                 title="Average Transaction Value by Payment Method",
             )
             fig_avg_pmt.update_layout(template="plotly_dark")

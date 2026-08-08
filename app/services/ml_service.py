@@ -16,6 +16,7 @@ from loguru import logger
 import numpy as np
 import pandas as pd
 
+from app.ai import artifact_store
 from app.schemas.ml import (
     CLVResponse,
     CustomerFeaturePayload,
@@ -70,34 +71,32 @@ class MLService:
         if seg_meta_json.exists():
             with open(seg_meta_json, "r", encoding="utf-8") as f:
                 self._seg_metadata = json.load(f)
-        if seg_pq.exists():
-            self._seg_table = pd.read_parquet(seg_pq)
+        # Use shared store — avoids a second full-width parquet load
+        self._seg_table = artifact_store.get_segments()
 
         # 2. CLV
         clv_joblib = self.artifacts_dir / "clv_pipeline.joblib"
         clv_meta_json = self.artifacts_dir / "customer_clv_metadata.json"
-        clv_pq = self.artifacts_dir / "customer_clv_predictions.parquet"
 
         if clv_joblib.exists():
             self._clv_data = joblib.load(clv_joblib)
         if clv_meta_json.exists():
             with open(clv_meta_json, "r", encoding="utf-8") as f:
                 self._clv_metadata = json.load(f)
-        if clv_pq.exists():
-            self._clv_table = pd.read_parquet(clv_pq)
+        # Use shared store
+        self._clv_table = artifact_store.get_clv_predictions()
 
         # 3. Repeat Purchase
         rp_joblib = self.artifacts_dir / "repeat_purchase_pipeline.joblib"
         rp_meta_json = self.artifacts_dir / "repeat_purchase_metadata.json"
-        rp_pq = self.artifacts_dir / "repeat_purchase_predictions.parquet"
 
         if rp_joblib.exists():
             self._repeat_purchase_data = joblib.load(rp_joblib)
         if rp_meta_json.exists():
             with open(rp_meta_json, "r", encoding="utf-8") as f:
                 self._repeat_metadata = json.load(f)
-        if rp_pq.exists():
-            self._repeat_table = pd.read_parquet(rp_pq)
+        # Use shared store
+        self._repeat_table = artifact_store.get_repeat_predictions()
 
         logger.info("Successfully loaded ML model artifacts into cache.")
 
