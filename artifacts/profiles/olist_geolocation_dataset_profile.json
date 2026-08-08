@@ -1,0 +1,142 @@
+{
+  "dataset_name": "olist_geolocation_dataset",
+  "overview": {
+    "total_rows": 1000163,
+    "total_columns": 5,
+    "shape": [
+      1000163,
+      5
+    ],
+    "memory_mb": 145.202
+  },
+  "missing_values": [
+    {
+      "column": "geolocation_zip_code_prefix",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "int64"
+    },
+    {
+      "column": "geolocation_lat",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64"
+    },
+    {
+      "column": "geolocation_lng",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64"
+    },
+    {
+      "column": "geolocation_city",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    },
+    {
+      "column": "geolocation_state",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    }
+  ],
+  "duplicates": {
+    "total_rows": 1000163,
+    "exact_duplicate_rows": 261831,
+    "exact_duplicate_percent": 26.18,
+    "key_columns": null,
+    "key_duplicate_rows": 0
+  },
+  "numeric_statistics": [
+    {
+      "column": "geolocation_zip_code_prefix",
+      "count": 1000163.0,
+      "mean": 36574.16646586607,
+      "std": 30549.335710319865,
+      "min": 1001.0,
+      "25%": 11075.0,
+      "50%": 26530.0,
+      "75%": 63504.0,
+      "max": 99990.0,
+      "skewness": 0.6945,
+      "null_count": 0
+    },
+    {
+      "column": "geolocation_lat",
+      "count": 1000163.0,
+      "mean": -21.176152910383966,
+      "std": 5.715866308822852,
+      "min": -36.6053744107061,
+      "25%": -23.60354554038031,
+      "50%": -22.91937749486411,
+      "75%": -19.97962033957529,
+      "max": 45.06593318269697,
+      "skewness": 1.5651,
+      "null_count": 0
+    },
+    {
+      "column": "geolocation_lng",
+      "count": 1000163.0,
+      "mean": -46.39054132093579,
+      "std": 4.269748306619603,
+      "min": -101.46676644931476,
+      "25%": -48.573172180526896,
+      "50%": -46.63787866960149,
+      "75%": -43.7677088028139,
+      "max": 121.10539381057764,
+      "skewness": -0.1024,
+      "null_count": 0
+    }
+  ],
+  "categorical_statistics": [
+    {
+      "column": "geolocation_city",
+      "unique_count": 8011,
+      "top_value": "sao paulo",
+      "top_frequency": 135800,
+      "top_percent": 13.58,
+      "null_count": 0
+    },
+    {
+      "column": "geolocation_state",
+      "unique_count": 27,
+      "top_value": "SP",
+      "top_frequency": 404268,
+      "top_percent": 40.42,
+      "null_count": 0
+    }
+  ],
+  "data_types": [
+    {
+      "column": "geolocation_zip_code_prefix",
+      "data_type": "int64",
+      "non_null_count": 1000163,
+      "null_count": 0
+    },
+    {
+      "column": "geolocation_lat",
+      "data_type": "float64",
+      "non_null_count": 1000163,
+      "null_count": 0
+    },
+    {
+      "column": "geolocation_lng",
+      "data_type": "float64",
+      "non_null_count": 1000163,
+      "null_count": 0
+    },
+    {
+      "column": "geolocation_city",
+      "data_type": "object",
+      "non_null_count": 1000163,
+      "null_count": 0
+    },
+    {
+      "column": "geolocation_state",
+      "data_type": "object",
+      "non_null_count": 1000163,
+      "null_count": 0
+    }
+  ]
+}

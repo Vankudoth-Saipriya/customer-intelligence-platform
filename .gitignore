@@ -49,3 +49,4 @@ htmlcov/
 # Docker / Local logs
 *.log
 docker-data/
+artifacts/customer_intelligence_verification.db

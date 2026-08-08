@@ -1,0 +1,242 @@
+{
+  "dataset_name": "olist_products_dataset",
+  "overview": {
+    "total_rows": 32951,
+    "total_columns": 9,
+    "shape": [
+      32951,
+      9
+    ],
+    "memory_mb": 6.795
+  },
+  "missing_values": [
+    {
+      "column": "product_category_name",
+      "missing_count": 610,
+      "missing_percent": 1.85,
+      "dtype": "object"
+    },
+    {
+      "column": "product_description_lenght",
+      "missing_count": 610,
+      "missing_percent": 1.85,
+      "dtype": "float64"
+    },
+    {
+      "column": "product_name_lenght",
+      "missing_count": 610,
+      "missing_percent": 1.85,
+      "dtype": "float64"
+    },
+    {
+      "column": "product_photos_qty",
+      "missing_count": 610,
+      "missing_percent": 1.85,
+      "dtype": "float64"
+    },
+    {
+      "column": "product_weight_g",
+      "missing_count": 2,
+      "missing_percent": 0.01,
+      "dtype": "float64"
+    },
+    {
+      "column": "product_height_cm",
+      "missing_count": 2,
+      "missing_percent": 0.01,
+      "dtype": "float64"
+    },
+    {
+      "column": "product_length_cm",
+      "missing_count": 2,
+      "missing_percent": 0.01,
+      "dtype": "float64"
+    },
+    {
+      "column": "product_width_cm",
+      "missing_count": 2,
+      "missing_percent": 0.01,
+      "dtype": "float64"
+    },
+    {
+      "column": "product_id",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    }
+  ],
+  "duplicates": {
+    "total_rows": 32951,
+    "exact_duplicate_rows": 0,
+    "exact_duplicate_percent": 0.0,
+    "key_columns": null,
+    "key_duplicate_rows": 0
+  },
+  "numeric_statistics": [
+    {
+      "column": "product_name_lenght",
+      "count": 32341.0,
+      "mean": 48.47694876472589,
+      "std": 10.245740725237239,
+      "min": 5.0,
+      "25%": 42.0,
+      "50%": 51.0,
+      "75%": 57.0,
+      "max": 76.0,
+      "skewness": -0.9032,
+      "null_count": 610
+    },
+    {
+      "column": "product_description_lenght",
+      "count": 32341.0,
+      "mean": 771.4952846232337,
+      "std": 635.1152246349538,
+      "min": 4.0,
+      "25%": 339.0,
+      "50%": 595.0,
+      "75%": 972.0,
+      "max": 3992.0,
+      "skewness": 1.9621,
+      "null_count": 610
+    },
+    {
+      "column": "product_photos_qty",
+      "count": 32341.0,
+      "mean": 2.1889861166939797,
+      "std": 1.7367656379315444,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 1.0,
+      "75%": 3.0,
+      "max": 20.0,
+      "skewness": 2.1934,
+      "null_count": 610
+    },
+    {
+      "column": "product_weight_g",
+      "count": 32949.0,
+      "mean": 2276.4724877841513,
+      "std": 4282.038730977007,
+      "min": 0.0,
+      "25%": 300.0,
+      "50%": 700.0,
+      "75%": 1900.0,
+      "max": 40425.0,
+      "skewness": 3.6049,
+      "null_count": 2
+    },
+    {
+      "column": "product_length_cm",
+      "count": 32949.0,
+      "mean": 30.81507784758263,
+      "std": 16.914458054065967,
+      "min": 7.0,
+      "25%": 18.0,
+      "50%": 25.0,
+      "75%": 38.0,
+      "max": 105.0,
+      "skewness": 1.7505,
+      "null_count": 2
+    },
+    {
+      "column": "product_height_cm",
+      "count": 32949.0,
+      "mean": 16.937661234028347,
+      "std": 13.637554061749494,
+      "min": 2.0,
+      "25%": 8.0,
+      "50%": 13.0,
+      "75%": 21.0,
+      "max": 105.0,
+      "skewness": 2.1401,
+      "null_count": 2
+    },
+    {
+      "column": "product_width_cm",
+      "count": 32949.0,
+      "mean": 23.196728277034204,
+      "std": 12.079047453227835,
+      "min": 6.0,
+      "25%": 15.0,
+      "50%": 20.0,
+      "75%": 30.0,
+      "max": 118.0,
+      "skewness": 1.671,
+      "null_count": 2
+    }
+  ],
+  "categorical_statistics": [
+    {
+      "column": "product_id",
+      "unique_count": 32951,
+      "top_value": "00066f42aeeb9f3007548bb9d3f33c38",
+      "top_frequency": 1,
+      "top_percent": 0.0,
+      "null_count": 0
+    },
+    {
+      "column": "product_category_name",
+      "unique_count": 73,
+      "top_value": "cama_mesa_banho",
+      "top_frequency": 3029,
+      "top_percent": 9.19,
+      "null_count": 610
+    }
+  ],
+  "data_types": [
+    {
+      "column": "product_id",
+      "data_type": "object",
+      "non_null_count": 32951,
+      "null_count": 0
+    },
+    {
+      "column": "product_category_name",
+      "data_type": "object",
+      "non_null_count": 32341,
+      "null_count": 610
+    },
+    {
+      "column": "product_name_lenght",
+      "data_type": "float64",
+      "non_null_count": 32341,
+      "null_count": 610
+    },
+    {
+      "column": "product_description_lenght",
+      "data_type": "float64",
+      "non_null_count": 32341,
+      "null_count": 610
+    },
+    {
+      "column": "product_photos_qty",
+      "data_type": "float64",
+      "non_null_count": 32341,
+      "null_count": 610
+    },
+    {
+      "column": "product_weight_g",
+      "data_type": "float64",
+      "non_null_count": 32949,
+      "null_count": 2
+    },
+    {
+      "column": "product_length_cm",
+      "data_type": "float64",
+      "non_null_count": 32949,
+      "null_count": 2
+    },
+    {
+      "column": "product_height_cm",
+      "data_type": "float64",
+      "non_null_count": 32949,
+      "null_count": 2
+    },
+    {
+      "column": "product_width_cm",
+      "data_type": "float64",
+      "non_null_count": 32949,
+      "null_count": 2
+    }
+  ]
+}

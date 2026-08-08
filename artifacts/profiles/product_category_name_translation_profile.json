@@ -1,0 +1,66 @@
+{
+  "dataset_name": "product_category_name_translation",
+  "overview": {
+    "total_rows": 71,
+    "total_columns": 2,
+    "shape": [
+      71,
+      2
+    ],
+    "memory_mb": 0.01
+  },
+  "missing_values": [
+    {
+      "column": "product_category_name",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    },
+    {
+      "column": "product_category_name_english",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    }
+  ],
+  "duplicates": {
+    "total_rows": 71,
+    "exact_duplicate_rows": 0,
+    "exact_duplicate_percent": 0.0,
+    "key_columns": null,
+    "key_duplicate_rows": 0
+  },
+  "numeric_statistics": [],
+  "categorical_statistics": [
+    {
+      "column": "product_category_name",
+      "unique_count": 71,
+      "top_value": "agro_industria_e_comercio",
+      "top_frequency": 1,
+      "top_percent": 1.41,
+      "null_count": 0
+    },
+    {
+      "column": "product_category_name_english",
+      "unique_count": 71,
+      "top_value": "agro_industry_and_commerce",
+      "top_frequency": 1,
+      "top_percent": 1.41,
+      "null_count": 0
+    }
+  ],
+  "data_types": [
+    {
+      "column": "product_category_name",
+      "data_type": "object",
+      "non_null_count": 71,
+      "null_count": 0
+    },
+    {
+      "column": "product_category_name_english",
+      "data_type": "object",
+      "non_null_count": 71,
+      "null_count": 0
+    }
+  ]
+}

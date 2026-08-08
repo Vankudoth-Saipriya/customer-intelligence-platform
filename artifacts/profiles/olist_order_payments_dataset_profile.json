@@ -1,0 +1,142 @@
+{
+  "dataset_name": "olist_order_payments_dataset",
+  "overview": {
+    "total_rows": 103886,
+    "total_columns": 5,
+    "shape": [
+      103886,
+      5
+    ],
+    "memory_mb": 17.815
+  },
+  "missing_values": [
+    {
+      "column": "order_id",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    },
+    {
+      "column": "payment_sequential",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "int64"
+    },
+    {
+      "column": "payment_type",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    },
+    {
+      "column": "payment_installments",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "int64"
+    },
+    {
+      "column": "payment_value",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "float64"
+    }
+  ],
+  "duplicates": {
+    "total_rows": 103886,
+    "exact_duplicate_rows": 0,
+    "exact_duplicate_percent": 0.0,
+    "key_columns": null,
+    "key_duplicate_rows": 0
+  },
+  "numeric_statistics": [
+    {
+      "column": "payment_sequential",
+      "count": 103886.0,
+      "mean": 1.0926785129853878,
+      "std": 0.7065837791949956,
+      "min": 1.0,
+      "25%": 1.0,
+      "50%": 1.0,
+      "75%": 1.0,
+      "max": 29.0,
+      "skewness": 16.1801,
+      "null_count": 0
+    },
+    {
+      "column": "payment_installments",
+      "count": 103886.0,
+      "mean": 2.853348863176944,
+      "std": 2.6870506738564797,
+      "min": 0.0,
+      "25%": 1.0,
+      "50%": 1.0,
+      "75%": 4.0,
+      "max": 24.0,
+      "skewness": 1.6551,
+      "null_count": 0
+    },
+    {
+      "column": "payment_value",
+      "count": 103886.0,
+      "mean": 154.10038041699553,
+      "std": 217.49406386472435,
+      "min": 0.0,
+      "25%": 56.79,
+      "50%": 100.0,
+      "75%": 171.8375,
+      "max": 13664.08,
+      "skewness": 9.254,
+      "null_count": 0
+    }
+  ],
+  "categorical_statistics": [
+    {
+      "column": "order_id",
+      "unique_count": 99440,
+      "top_value": "fa65dad1b0e818e3ccc5cb0e39231352",
+      "top_frequency": 29,
+      "top_percent": 0.03,
+      "null_count": 0
+    },
+    {
+      "column": "payment_type",
+      "unique_count": 5,
+      "top_value": "credit_card",
+      "top_frequency": 76795,
+      "top_percent": 73.92,
+      "null_count": 0
+    }
+  ],
+  "data_types": [
+    {
+      "column": "order_id",
+      "data_type": "object",
+      "non_null_count": 103886,
+      "null_count": 0
+    },
+    {
+      "column": "payment_sequential",
+      "data_type": "int64",
+      "non_null_count": 103886,
+      "null_count": 0
+    },
+    {
+      "column": "payment_type",
+      "data_type": "object",
+      "non_null_count": 103886,
+      "null_count": 0
+    },
+    {
+      "column": "payment_installments",
+      "data_type": "int64",
+      "non_null_count": 103886,
+      "null_count": 0
+    },
+    {
+      "column": "payment_value",
+      "data_type": "float64",
+      "non_null_count": 103886,
+      "null_count": 0
+    }
+  ]
+}

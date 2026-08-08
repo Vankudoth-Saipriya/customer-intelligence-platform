@@ -1,0 +1,112 @@
+{
+  "dataset_name": "olist_sellers_dataset",
+  "overview": {
+    "total_rows": 3095,
+    "total_columns": 4,
+    "shape": [
+      3095,
+      4
+    ],
+    "memory_mb": 0.659
+  },
+  "missing_values": [
+    {
+      "column": "seller_id",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    },
+    {
+      "column": "seller_zip_code_prefix",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "int64"
+    },
+    {
+      "column": "seller_city",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    },
+    {
+      "column": "seller_state",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    }
+  ],
+  "duplicates": {
+    "total_rows": 3095,
+    "exact_duplicate_rows": 0,
+    "exact_duplicate_percent": 0.0,
+    "key_columns": null,
+    "key_duplicate_rows": 0
+  },
+  "numeric_statistics": [
+    {
+      "column": "seller_zip_code_prefix",
+      "count": 3095.0,
+      "mean": 32291.059450726978,
+      "std": 32713.453829509002,
+      "min": 1001.0,
+      "25%": 7093.5,
+      "50%": 14940.0,
+      "75%": 64552.5,
+      "max": 99730.0,
+      "skewness": 0.9161,
+      "null_count": 0
+    }
+  ],
+  "categorical_statistics": [
+    {
+      "column": "seller_id",
+      "unique_count": 3095,
+      "top_value": "0015a82c2db000af6aaaf3ae2ecb0532",
+      "top_frequency": 1,
+      "top_percent": 0.03,
+      "null_count": 0
+    },
+    {
+      "column": "seller_city",
+      "unique_count": 611,
+      "top_value": "sao paulo",
+      "top_frequency": 694,
+      "top_percent": 22.42,
+      "null_count": 0
+    },
+    {
+      "column": "seller_state",
+      "unique_count": 23,
+      "top_value": "SP",
+      "top_frequency": 1849,
+      "top_percent": 59.74,
+      "null_count": 0
+    }
+  ],
+  "data_types": [
+    {
+      "column": "seller_id",
+      "data_type": "object",
+      "non_null_count": 3095,
+      "null_count": 0
+    },
+    {
+      "column": "seller_zip_code_prefix",
+      "data_type": "int64",
+      "non_null_count": 3095,
+      "null_count": 0
+    },
+    {
+      "column": "seller_city",
+      "data_type": "object",
+      "non_null_count": 3095,
+      "null_count": 0
+    },
+    {
+      "column": "seller_state",
+      "data_type": "object",
+      "non_null_count": 3095,
+      "null_count": 0
+    }
+  ]
+}

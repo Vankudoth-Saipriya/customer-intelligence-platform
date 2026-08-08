@@ -37,7 +37,7 @@ with tab_chat:
     st.subheader("💬 Ask the AI Business Analyst")
     st.markdown("Ask any business question regarding revenue, customer demographics, carrier SLA, payment methods, or ML models.")
 
-    # Initialize chat history
+    # Initialize chat history safely
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = [
             {
@@ -51,30 +51,28 @@ with tab_chat:
     qp1, qp2, qp3, qp4 = st.columns(4)
     with qp1:
         if st.button("📈 What is total revenue & AOV?"):
-            st.session_state.user_question_input = "What is total revenue and average order value?"
+            st.session_state["user_question_prompt"] = "What is total revenue and average order value?"
     with qp2:
         if st.button("👥 Summary of customer clusters"):
-            st.session_state.user_question_input = "Provide a summary of customer clusters and demographics."
+            st.session_state["user_question_prompt"] = "Provide a summary of customer clusters and demographics."
     with qp3:
         if st.button("🚚 Delivery SLA & delay metrics"):
-            st.session_state.user_question_input = "What is our carrier delivery SLA rate and average delay?"
+            st.session_state["user_question_prompt"] = "What is our carrier delivery SLA rate and average delay?"
     with qp4:
         if st.button("🤖 ML Model Accuracy & CLV"):
-            st.session_state.user_question_input = "What are the ML model metrics for CLV and repeat purchase?"
+            st.session_state["user_question_prompt"] = "What are the ML model metrics for CLV and repeat purchase?"
 
-    # Render previous messages
+    # Render previous messages using native Streamlit chat interface
     for msg in st.session_state.chat_history:
         with st.chat_message(msg["role"]):
             st.markdown(msg["content"])
 
     # Chat Input Box
-    default_prompt = st.session_state.get("user_question_input", "")
-    user_input = st.chat_input("Type your business question here...") or (default_prompt if default_prompt else None)
+    prompt_from_btn = st.session_state.pop("user_question_prompt", None)
+    chat_prompt = st.chat_input("Type your business question here...")
+    user_input = chat_prompt or prompt_from_btn
 
     if user_input:
-        if "user_question_input" in st.session_state:
-            del st.session_state["user_question_input"]
-
         # Append user message
         st.session_state.chat_history.append({"role": "user", "content": user_input})
         with st.chat_message("user"):
@@ -115,7 +113,7 @@ with tab_cust:
 
     try:
         df_seg = get_customer_segments()
-        sample_cid = df_seg["customer_id"].iloc[0]
+        sample_cid = df_seg["customer_id"].iloc[0] if ("customer_id" in df_seg.columns and not df_seg.empty) else "00012a2504309823e6e38064373a51d2"
     except Exception:
         sample_cid = "00012a2504309823e6e38064373a51d2"
 
@@ -133,8 +131,9 @@ with tab_cat:
     st.markdown("Generate an AI performance report for any product category.")
 
     try:
-        prod_eda = get_product_eda()
-        top_cats = list(prod_eda["product_category_analysis"]["revenue_by_category"].keys())
+        prod_eda = get_product_eda() or {}
+        cat_rev_map = prod_eda.get("category_analysis", {}).get("revenue_by_category", {})
+        top_cats = list(cat_rev_map.keys()) if cat_rev_map else ["bed_bath_table", "health_beauty", "sports_leisure", "computers_accessories"]
     except Exception:
         top_cats = ["bed_bath_table", "health_beauty", "sports_leisure", "computers_accessories"]
 

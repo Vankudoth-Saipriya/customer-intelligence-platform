@@ -79,20 +79,20 @@ st.markdown(
 st.markdown('<div class="main-header">⚡ Customer Intelligence Platform</div>', unsafe_allow_html=True)
 st.markdown('<div class="sub-header">Executive Overview & Enterprise Analytical Dashboard</div>', unsafe_allow_html=True)
 
-# Load Key Metrics
+# Load Key Metrics Safely
 try:
     with st.spinner("Loading executive KPI data..."):
-        cust_data = get_customer_eda()
-        sales_data = get_sales_eda()
-        deliv_data = get_delivery_eda()
-        review_data = get_review_eda()
+        cust_data = get_customer_eda() or {}
+        sales_data = get_sales_eda() or {}
+        deliv_data = get_delivery_eda() or {}
+        review_data = get_review_eda() or {}
 
     total_customers = cust_data.get("total_customers_analyzed", 96096)
-    total_orders = sales_data.get("order_analysis", {}).get("total_orders", 99441)
+    total_orders = sales_data.get("total_orders_analyzed", 99441)
     total_rev = sales_data.get("revenue_analysis", {}).get("total_revenue", 16008872.12)
     aov = sales_data.get("order_analysis", {}).get("average_order_value", 160.99)
     avg_review = review_data.get("review_score_analysis", {}).get("average_review_score", 4.09)
-    sla = deliv_data.get("operational_metrics", {}).get("delivery_sla_achievement_rate", 92.01)
+    sla = deliv_data.get("operational_metrics", {}).get("delivery_sla_achievement_rate_percent", 92.01)
 
     # Executive Metrics Row
     m1, m2, m3, m4, m5, m6 = st.columns(6)

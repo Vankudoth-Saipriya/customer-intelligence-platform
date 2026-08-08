@@ -1,0 +1,172 @@
+{
+  "dataset_name": "olist_order_reviews_dataset",
+  "overview": {
+    "total_rows": 99224,
+    "total_columns": 7,
+    "shape": [
+      99224,
+      7
+    ],
+    "memory_mb": 42.747
+  },
+  "missing_values": [
+    {
+      "column": "review_comment_title",
+      "missing_count": 87656,
+      "missing_percent": 88.34,
+      "dtype": "object"
+    },
+    {
+      "column": "review_comment_message",
+      "missing_count": 58247,
+      "missing_percent": 58.7,
+      "dtype": "object"
+    },
+    {
+      "column": "review_id",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    },
+    {
+      "column": "review_score",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "int64"
+    },
+    {
+      "column": "order_id",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    },
+    {
+      "column": "review_creation_date",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    },
+    {
+      "column": "review_answer_timestamp",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    }
+  ],
+  "duplicates": {
+    "total_rows": 99224,
+    "exact_duplicate_rows": 0,
+    "exact_duplicate_percent": 0.0,
+    "key_columns": null,
+    "key_duplicate_rows": 0
+  },
+  "numeric_statistics": [
+    {
+      "column": "review_score",
+      "count": 99224.0,
+      "mean": 4.08642062404257,
+      "std": 1.3475791311150982,
+      "min": 1.0,
+      "25%": 4.0,
+      "50%": 5.0,
+      "75%": 5.0,
+      "max": 5.0,
+      "skewness": -1.3644,
+      "null_count": 0
+    }
+  ],
+  "categorical_statistics": [
+    {
+      "column": "review_id",
+      "unique_count": 98410,
+      "top_value": "08528f70f579f0c830189efc523d2182",
+      "top_frequency": 3,
+      "top_percent": 0.0,
+      "null_count": 0
+    },
+    {
+      "column": "order_id",
+      "unique_count": 98673,
+      "top_value": "03c939fd7fd3b38f8485a0f95798f1f6",
+      "top_frequency": 3,
+      "top_percent": 0.0,
+      "null_count": 0
+    },
+    {
+      "column": "review_comment_title",
+      "unique_count": 4527,
+      "top_value": "Recomendo",
+      "top_frequency": 423,
+      "top_percent": 0.43,
+      "null_count": 87656
+    },
+    {
+      "column": "review_comment_message",
+      "unique_count": 36159,
+      "top_value": "Muito bom",
+      "top_frequency": 230,
+      "top_percent": 0.23,
+      "null_count": 58247
+    },
+    {
+      "column": "review_creation_date",
+      "unique_count": 636,
+      "top_value": "2017-12-19 00:00:00",
+      "top_frequency": 463,
+      "top_percent": 0.47,
+      "null_count": 0
+    },
+    {
+      "column": "review_answer_timestamp",
+      "unique_count": 98248,
+      "top_value": "2017-06-15 23:21:05",
+      "top_frequency": 4,
+      "top_percent": 0.0,
+      "null_count": 0
+    }
+  ],
+  "data_types": [
+    {
+      "column": "review_id",
+      "data_type": "object",
+      "non_null_count": 99224,
+      "null_count": 0
+    },
+    {
+      "column": "order_id",
+      "data_type": "object",
+      "non_null_count": 99224,
+      "null_count": 0
+    },
+    {
+      "column": "review_score",
+      "data_type": "int64",
+      "non_null_count": 99224,
+      "null_count": 0
+    },
+    {
+      "column": "review_comment_title",
+      "data_type": "object",
+      "non_null_count": 11568,
+      "null_count": 87656
+    },
+    {
+      "column": "review_comment_message",
+      "data_type": "object",
+      "non_null_count": 40977,
+      "null_count": 58247
+    },
+    {
+      "column": "review_creation_date",
+      "data_type": "object",
+      "non_null_count": 99224,
+      "null_count": 0
+    },
+    {
+      "column": "review_answer_timestamp",
+      "data_type": "object",
+      "non_null_count": 99224,
+      "null_count": 0
+    }
+  ]
+}
