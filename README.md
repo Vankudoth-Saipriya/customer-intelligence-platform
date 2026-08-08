@@ -91,9 +91,11 @@ Built on Brazilian e-commerce transaction data (**500,000+ transaction records a
 | **📊 Exploratory Analytics** | 5 core EDA modules covering Products, Sales Trajectory, Payment Methods, Logistics Delivery SLA, and Review Sentiment. |
 | **🧠 Customer Feature Store** | 36 aggregated features per customer across 96,096 unique customer entities saved in Parquet format. |
 
-| **🎯 Customer Segmentation** | Unsupervised KMeans clustering ($k=2$, Silhouette Score: `0.5369`) profiling high-value vs. dormant buyers. |
-| **💵 CLV Prediction** | Supervised Random Forest Regressor ($R^2 = 0.9999$, $\text{MAE} = \$0.11$) predicting total customer lifetime revenue. |
-| **🔄 Repeat Purchase Propensity** | Supervised Logistic Regression Classifier ($\text{ROC-AUC} = 1.0000$, $\text{F1} = 0.9992$) predicting repeat buyer likelihood. |
+| **🎯 Customer Segmentation** | Unsupervised KMeans clustering (k=2, Silhouette Score: 0.5369) profiling high-value vs. dormant buyers. |
+| **💵 CLV Prediction** | Supervised Random Forest Regressor (R² = 0.9999, MAE = USD 0.11) predicting total customer lifetime revenue. |
+
+| **🔄 Repeat Purchase Propensity** | Supervised Logistic Regression Classifier (ROC-AUC = 1.0000, F1 = 0.9992) predicting repeat buyer likelihood. |
+
 | **🌐 FastAPI REST Inference** | 10 high-performance API endpoints for real-time model inference and AI reports with lazy loading & memory caching. |
 | **🖥️ Interactive Dashboard** | 11 Streamlit pages with dark enterprise themes, interactive Plotly charts, and customer/category lookups. |
 | **🤖 AI Business Analyst** | Autonomous AI agent powered by 9 modular tools, `PromptBuilder`, and zero-downtime Analytical Synthesis Engine. |
@@ -229,9 +231,11 @@ The ELT pipeline ([app/etl/](file:///c:/Users/saipr/Desktop/customer-intelligenc
 
 The machine learning engines ([app/ml/](file:///c:/Users/saipr/Desktop/customer-intelligence-platform/app/ml/)) train and export self-contained joblib model pipelines:
 
-- **Customer Segmentation (`CustomerSegmentation`)**: Evaluates KMeans for $k \in [2, 10]$, selects optimal $k=2$ (Silhouette Score: `0.5369`), and assigns customer business cluster personas.
-- **CLV Prediction (`CustomerLifetimeValuePredictor`)**: Trains Random Forest Regressor ($R^2 = 0.9999$, $\text{RMSE} = \$1.56$, $\text{MAE} = \$0.11$) predicting total customer lifetime revenue while preventing target leakage.
-- **Repeat Purchase Propensity (`RepeatPurchasePredictor`)**: Trains Logistic Regression Classifier ($\text{ROC-AUC} = 1.0000$, $\text{F1} = 0.9992$, $\text{Accuracy} = 99.99\%$) with class balancing to identify repeat buyers.
+- **Customer Segmentation (`CustomerSegmentation`)**: Evaluates KMeans for k between 2 and 10, selects optimal k=2 (Silhouette Score: 0.5369), and assigns customer business cluster personas.
+- **CLV Prediction (`CustomerLifetimeValuePredictor`)**: Trains Random Forest Regressor (R² = 0.9999, RMSE = USD 1.56, MAE = USD 0.11) predicting total customer lifetime revenue while preventing target leakage.
+
+- **Repeat Purchase Propensity (`RepeatPurchasePredictor`)**: Trains Logistic Regression Classifier (ROC-AUC = 1.0000, F1 = 0.9992, Accuracy = 99.99%) with class balancing to identify repeat buyers.
+
 
 ---
 
@@ -280,24 +284,10 @@ The REST API layer ([app/api/v1/](file:///c:/Users/saipr/Desktop/customer-intell
 
 ---
 
-## 🖼️ Dashboard Screenshot Artifacts
+## 🖼️ Dashboard Interface Showcase
 
-![Dashboard Overview Collage](artifacts/dashboard/dashboard_overview.png)
+![Dashboard Overview](artifacts/dashboard/dashboard_overview.png)
 
-| Module Page | Screenshot Artifact Path |
-| :--- | :--- |
-| **Executive Home** | `artifacts/dashboard/00_home.png` |
-| **Customer Analytics** | `artifacts/dashboard/01_customer_analytics.png` |
-| **Product Analytics** | `artifacts/dashboard/02_product_analytics.png` |
-| **Sales Analytics** | `artifacts/dashboard/03_sales_analytics.png` |
-| **Delivery Analytics** | `artifacts/dashboard/04_delivery_analytics.png` |
-| **Payment Analytics** | `artifacts/dashboard/05_payment_analytics.png` |
-| **Review Analytics** | `artifacts/dashboard/06_review_analytics.png` |
-| **Customer Segmentation** | `artifacts/dashboard/07_customer_segmentation.png` |
-| **CLV Prediction** | `artifacts/dashboard/08_clv_prediction.png` |
-| **Repeat Purchase Propensity** | `artifacts/dashboard/09_repeat_purchase.png` |
-| **AI Business Analyst** | `artifacts/dashboard/10_ai_business_analyst.png` |
-| **Overview Collage Cover** | `artifacts/dashboard/dashboard_overview.png` |
 
 ---
 
