@@ -284,14 +284,8 @@ The REST API layer ([app/api/v1/](file:///c:/Users/saipr/Desktop/customer-intell
 
 ---
 
-## 🖼️ Dashboard Interface Showcase
-
-![Dashboard Overview](artifacts/dashboard/dashboard_overview.png)
-
-
----
-
 ## ⚡ Quick Start & Setup
+
 
 ### 1. Docker Compose (Recommended)
 
