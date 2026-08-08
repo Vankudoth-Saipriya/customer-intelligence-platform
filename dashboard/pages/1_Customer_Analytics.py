@@ -45,7 +45,8 @@ try:
     with c2:
         st.metric("Unique States", f"{num_states}")
     with c3:
-        st.metric("Average Customer Age", f"{avg_age:.1f} days")
+        st.metric("Average Customer Tenure", f"{avg_age:.1f} days")
+
     with c4:
         st.metric("Repeat Customer Rate", f"{repeat_pct:.2f}%")
 

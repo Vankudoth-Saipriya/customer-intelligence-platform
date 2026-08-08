@@ -68,9 +68,33 @@ st.markdown(
         padding: 1.5rem;
         border-radius: 12px;
         border: 1px solid #334155;
-        transition: transform 0.2s, border-color 0.2s;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    }
+    .nav-card h3 {
+        color: #F8FAFC !important;
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+    }
+    .nav-card p {
+        color: #E2E8F0 !important;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+    .nav-card ul {
+        color: #CBD5E1 !important;
+        margin-left: 1.2rem;
+        padding-left: 0;
+    }
+    .nav-card li {
+        color: #CBD5E1 !important;
+        font-size: 0.9rem;
+        margin-bottom: 0.35rem;
+        line-height: 1.4;
     }
     </style>
+
     """,
     unsafe_allow_html=True,
 )
