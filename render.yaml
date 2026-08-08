@@ -40,3 +40,8 @@ services:
         value: production
       - key: PYTHONUNBUFFERED
         value: "1"
+      - key: API_URL
+        fromService:
+          type: web
+          name: customer-intelligence-api
+          property: url

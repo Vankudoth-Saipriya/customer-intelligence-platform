@@ -19,7 +19,13 @@ from app.services.ml_service import MLService, get_ml_service
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
 ARTIFACTS_DIR = PROJECT_ROOT / "artifacts"
-API_HOST = os.getenv("API_URL", "http://127.0.0.1:8000")
+API_HOST = os.getenv("API_URL", "").rstrip("/")
+if not API_HOST:
+    if os.getenv("ENVIRONMENT") == "production":
+        API_HOST = "https://customer-intelligence-api.onrender.com"
+    else:
+        API_HOST = "http://127.0.0.1:8000"
+
 API_BASE_URL = f"{API_HOST}/api/v1/ml"
 AI_API_BASE_URL = f"{API_HOST}/api/v1/ai"
 
