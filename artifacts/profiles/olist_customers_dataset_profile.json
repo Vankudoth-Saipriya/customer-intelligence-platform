@@ -1,0 +1,132 @@
+{
+  "dataset_name": "olist_customers_dataset",
+  "overview": {
+    "total_rows": 99441,
+    "total_columns": 5,
+    "shape": [
+      99441,
+      5
+    ],
+    "memory_mb": 29.621
+  },
+  "missing_values": [
+    {
+      "column": "customer_id",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    },
+    {
+      "column": "customer_unique_id",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    },
+    {
+      "column": "customer_zip_code_prefix",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "int64"
+    },
+    {
+      "column": "customer_city",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    },
+    {
+      "column": "customer_state",
+      "missing_count": 0,
+      "missing_percent": 0.0,
+      "dtype": "object"
+    }
+  ],
+  "duplicates": {
+    "total_rows": 99441,
+    "exact_duplicate_rows": 0,
+    "exact_duplicate_percent": 0.0,
+    "key_columns": null,
+    "key_duplicate_rows": 0
+  },
+  "numeric_statistics": [
+    {
+      "column": "customer_zip_code_prefix",
+      "count": 99441.0,
+      "mean": 35137.47458291851,
+      "std": 29797.938996206118,
+      "min": 1003.0,
+      "25%": 11347.0,
+      "50%": 24416.0,
+      "75%": 58900.0,
+      "max": 99990.0,
+      "skewness": 0.779,
+      "null_count": 0
+    }
+  ],
+  "categorical_statistics": [
+    {
+      "column": "customer_id",
+      "unique_count": 99441,
+      "top_value": "00012a2ce6f8dcda20d059ce98491703",
+      "top_frequency": 1,
+      "top_percent": 0.0,
+      "null_count": 0
+    },
+    {
+      "column": "customer_unique_id",
+      "unique_count": 96096,
+      "top_value": "8d50f5eadf50201ccdcedfb9e2ac8455",
+      "top_frequency": 17,
+      "top_percent": 0.02,
+      "null_count": 0
+    },
+    {
+      "column": "customer_city",
+      "unique_count": 4119,
+      "top_value": "sao paulo",
+      "top_frequency": 15540,
+      "top_percent": 15.63,
+      "null_count": 0
+    },
+    {
+      "column": "customer_state",
+      "unique_count": 27,
+      "top_value": "SP",
+      "top_frequency": 41746,
+      "top_percent": 41.98,
+      "null_count": 0
+    }
+  ],
+  "data_types": [
+    {
+      "column": "customer_id",
+      "data_type": "object",
+      "non_null_count": 99441,
+      "null_count": 0
+    },
+    {
+      "column": "customer_unique_id",
+      "data_type": "object",
+      "non_null_count": 99441,
+      "null_count": 0
+    },
+    {
+      "column": "customer_zip_code_prefix",
+      "data_type": "int64",
+      "non_null_count": 99441,
+      "null_count": 0
+    },
+    {
+      "column": "customer_city",
+      "data_type": "object",
+      "non_null_count": 99441,
+      "null_count": 0
+    },
+    {
+      "column": "customer_state",
+      "data_type": "object",
+      "non_null_count": 99441,
+      "null_count": 0
+    }
+  ]
+}

@@ -1,0 +1,170 @@
+{
+  "total_customers_analyzed": 99441,
+  "geographic_distribution": {
+    "state_distribution": {
+      "SP": 41746,
+      "RJ": 12852,
+      "MG": 11635,
+      "RS": 5466,
+      "PR": 5045,
+      "SC": 3637,
+      "BA": 3380,
+      "DF": 2140,
+      "ES": 2033,
+      "GO": 2020,
+      "PE": 1652,
+      "CE": 1336,
+      "PA": 975,
+      "MT": 907,
+      "MA": 747,
+      "MS": 715,
+      "PB": 536,
+      "PI": 495,
+      "RN": 485,
+      "AL": 413,
+      "SE": 350,
+      "TO": 280,
+      "RO": 253,
+      "AM": 148,
+      "AC": 81,
+      "AP": 68,
+      "RR": 46
+    },
+    "total_cities_count": 4119,
+    "top_20_cities": {
+      "Sao Paulo": 15540,
+      "Rio De Janeiro": 6882,
+      "Belo Horizonte": 2773,
+      "Brasilia": 2131,
+      "Curitiba": 1521,
+      "Campinas": 1444,
+      "Porto Alegre": 1379,
+      "Salvador": 1245,
+      "Guarulhos": 1189,
+      "Sao Bernardo Do Campo": 938,
+      "Niteroi": 849,
+      "Santo Andre": 797,
+      "Osasco": 746,
+      "Santos": 713,
+      "Goiania": 692,
+      "Sao Jose Dos Campos": 691,
+      "Fortaleza": 654,
+      "Sorocaba": 633,
+      "Recife": 613,
+      "Florianopolis": 570
+    }
+  },
+  "growth_over_time": {
+    "customers_by_year": {
+      "2016": 326,
+      "2017": 43708,
+      "2018": 52062
+    },
+    "customers_by_month": {
+      "2016-09": 4,
+      "2016-10": 321,
+      "2016-12": 1,
+      "2017-01": 764,
+      "2017-02": 1752,
+      "2017-03": 2636,
+      "2017-04": 2352,
+      "2017-05": 3596,
+      "2017-06": 3139,
+      "2017-07": 3894,
+      "2017-08": 4184,
+      "2017-09": 4130,
+      "2017-10": 4470,
+      "2017-11": 7304,
+      "2017-12": 5487,
+      "2018-01": 7025,
+      "2018-02": 6451,
+      "2018-03": 6965,
+      "2018-04": 6711,
+      "2018-05": 6622,
+      "2018-06": 5940,
+      "2018-07": 6071,
+      "2018-08": 6271,
+      "2018-09": 5,
+      "2018-10": 1
+    }
+  },
+  "repeat_analysis": {
+    "total_unique_customers": 96096,
+    "repeat_customers": 2997,
+    "repeat_purchase_rate_percent": 3.12
+  },
+  "purchase_distribution": {
+    "orders_per_customer_histogram": {
+      "mean_orders_per_customer": 1.03,
+      "std_orders_per_customer": 0.21,
+      "min_orders": 1,
+      "q25_orders": 1.0,
+      "median_orders": 1.0,
+      "q75_orders": 1.0,
+      "max_orders": 17
+    },
+    "order_frequency_counts": {
+      "1": 93099,
+      "2": 2745,
+      "3": 203,
+      "4": 30,
+      "5": 8,
+      "6": 6,
+      "7": 3,
+      "9": 1,
+      "17": 1
+    }
+  },
+  "spending_overview": {
+    "total_spent_overall": 15843553.24,
+    "average_spending_per_customer": 164.87,
+    "min_spending": 0.0,
+    "max_spending": 13664.08,
+    "quartiles": {
+      "q25": 62.39,
+      "q50_median": 107.27,
+      "q75": 182.24
+    }
+  },
+  "value_segmentation": {
+    "Low Value (Bottom 25%)": {
+      "customer_count": 24033,
+      "revenue_contribution": 1009483.29,
+      "customer_percentage": 25.01,
+      "revenue_percentage": 6.37
+    },
+    "Medium Value (25%-75%)": {
+      "customer_count": 48039,
+      "revenue_contribution": 5368034.42,
+      "customer_percentage": 49.99,
+      "revenue_percentage": 33.88
+    },
+    "High Value (Top 25%)": {
+      "customer_count": 24024,
+      "revenue_contribution": 9466035.53,
+      "customer_percentage": 25.0,
+      "revenue_percentage": 59.75
+    }
+  },
+  "frequency_segmentation": {
+    "One-time": {
+      "customer_count": 93099,
+      "revenue_contribution": 14921510.75,
+      "customer_percentage": 96.88,
+      "revenue_percentage": 94.18
+    },
+    "Occasional (2-5 orders)": {
+      "customer_count": 2986,
+      "revenue_contribution": 913141.28,
+      "customer_percentage": 3.11,
+      "revenue_percentage": 5.76
+    },
+    "Frequent (>5 orders)": {
+      "customer_count": 11,
+      "revenue_contribution": 8901.21,
+      "customer_percentage": 0.01,
+      "revenue_percentage": 0.06
+    }
+  },
+  "execution_time_sec": 1.6485
+}
