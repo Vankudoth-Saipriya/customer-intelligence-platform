@@ -47,11 +47,12 @@ try:
         with col_a:
             st.subheader("📊 Repeat Purchase Propensity Probability Score Distribution")
             if "repeat_propensity" in df_rp.columns:
+                df_sample = df_rp.sample(min(5000, len(df_rp)), random_state=42)
                 fig_prob = px.histogram(
-                    df_rp,
+                    df_sample,
                     x="repeat_propensity",
                     nbins=50,
-                    title="Distribution of Repeat Propensity Scores",
+                    title="Distribution of Repeat Propensity Scores (Sampled 5,000 Points)",
                     labels={"repeat_propensity": "Repeat Propensity Probability"},
                     color_discrete_sequence=["#8B5CF6"],
                 )
