@@ -48,8 +48,6 @@ Verify environment variables in the Render Dashboard:
 | `DEBUG` | `false` | API | Disable debug logging |
 | `LOG_LEVEL` | `INFO` | API | Log verbosity level |
 | `PYTHONUNBUFFERED` | `1` | Both | Direct log output |
-| `OPENAI_API_KEY` | *(Optional)* | API | LLM key for AI Business Analyst |
-| `GEMINI_API_KEY` | *(Optional)* | API | Alternative Gemini LLM key |
 
 ### Step 3: Deploy Blueprint
 Click **Apply Blueprint**. Render will build and deploy both services automatically.

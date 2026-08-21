@@ -100,8 +100,8 @@ st.markdown(
 )
 
 # Header Section
-st.markdown('<div class="main-header">⚡ Customer Intelligence Platform</div>', unsafe_allow_html=True)
-st.markdown('<div class="sub-header">Executive Overview & Enterprise Analytical Dashboard</div>', unsafe_allow_html=True)
+st.markdown('<div class="main-header">⚡ Customer Intelligence & E-Commerce Analytics</div>', unsafe_allow_html=True)
+st.markdown('<div class="sub-header">Executive BI Dashboard & Predictive Decision Platform</div>', unsafe_allow_html=True)
 
 # Load Key Metrics Safely
 try:
@@ -147,7 +147,7 @@ try:
         st.markdown(
             f"""
             <div class="metric-card">
-                <div class="card-title">Total Revenue</div>
+                <div class="card-title">Gross GMV</div>
                 <div class="card-value">${total_rev:,.2f}</div>
             </div>
             """,
@@ -193,23 +193,20 @@ except Exception as e:
 st.markdown("<br><hr><br>", unsafe_allow_html=True)
 
 # Navigation Cards Section
-st.subheader("📌 Platform Navigation & Intelligence Modules")
+st.subheader("📌 Analytical Workflow & Platform Modules")
 
-c1, c2, c3 = st.columns(3)
+c1, c2, c3, c4 = st.columns(4)
 
 with c1:
     st.markdown(
         """
         <div class="nav-card">
-            <h3>📊 Exploratory Data Analytics</h3>
-            <p>In-depth customer demographic, product category, sales seasonality, payment behavior, logistics delivery SLA, and review sentiment analytics.</p>
+            <h3>📈 1. Executive Overview</h3>
+            <p>Financial KPIs, Net Revenue ($13.59M) vs Gross GMV ($16.01M) reconciliation, order status lifecycle audit, and revenue trends.</p>
             <ul>
-                <li>Customer Demographics & Value Tiers</li>
-                <li>Product Performance & Freight Analysis</li>
-                <li>Sales & Revenue Seasonality</li>
-                <li>Delivery SLA & Regional Logistics</li>
-                <li>Payment Method Distribution</li>
-                <li>Customer Review Ratings & Sentiment</li>
+                <li>Net Revenue vs Gross GMV Audit</li>
+                <li>Order Status Breakdown & Drops</li>
+                <li>Monthly Trajectory & Run-Rate</li>
             </ul>
         </div>
         """,
@@ -220,13 +217,12 @@ with c2:
     st.markdown(
         """
         <div class="nav-card">
-            <h3>🎯 Customer Segmentation</h3>
-            <p>Unsupervised KMeans clustering powered by the Customer Feature Store.</p>
+            <h3>👥 2. Customer & Sales Analytics</h3>
+            <p>12-month acquisition cohort retention heatmap, Pareto seller revenue concentration (80/20), and RFM persona clustering.</p>
             <ul>
-                <li>Optimal Cluster Selection (k=2..10)</li>
-                <li>Silhouette & Calinski-Harabasz Metrics</li>
-                <li>Automated Business Profiles</li>
-                <li>Live Real-Time Cluster Inference</li>
+                <li>12-Month Cohort Retention Matrix</li>
+                <li>Seller & Customer Pareto Share</li>
+                <li>Log-RFM Persona Distribution</li>
             </ul>
         </div>
         """,
@@ -237,13 +233,28 @@ with c3:
     st.markdown(
         """
         <div class="nav-card">
-            <h3>🤖 Predictive ML Models</h3>
-            <p>Supervised machine learning pipelines predicting Customer Lifetime Value (CLV) and Repeat Purchase Propensity.</p>
+            <h3>🚚 3. Logistics & Statistics</h3>
+            <p>Carrier delivery SLA performance, regional state speed rankings, and inferential non-parametric hypothesis testing.</p>
             <ul>
-                <li>Random Forest CLV Regressor ($R^2 = 0.9999$)</li>
-                <li>Logistic Repeat Purchase Classifier ($\text{ROC-AUC} = 1.0$)</li>
-                <li>Feature Importance Ranking</li>
-                <li>Real-Time API Model Inference</li>
+                <li>Mann-Whitney U SLA Test ($p<0.0001$)</li>
+                <li>1.72-Star Review Penalty Analysis</li>
+                <li>Kruskal-Wallis Regional State SLA</li>
+            </ul>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+with c4:
+    st.markdown(
+        """
+        <div class="nav-card">
+            <h3>🤖 4. Predictive Analytics</h3>
+            <p>Temporal machine learning models (2017-10-01 cutoff), Ridge CLV value tiering, feature weights, and real-time inference.</p>
+            <ul>
+                <li>Temporal Cutoff Methodology</li>
+                <li>Ridge CLV Regression ($\text{MAE}=\$7.27$)</li>
+                <li>Model Feature Weights Interpretability</li>
             </ul>
         </div>
         """,
@@ -251,4 +262,4 @@ with c3:
     )
 
 st.markdown("<br>", unsafe_allow_html=True)
-st.info("👈 Select any module from the sidebar navigation to begin exploration!")
+st.info("👈 Select any of the 4 analytical pages from the sidebar navigation to begin exploration!")

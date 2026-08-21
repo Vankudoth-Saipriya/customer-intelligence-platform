@@ -8,7 +8,7 @@
 | **Total Lines of Code (LOC)** | `13,527` |
 | **FastAPI REST Endpoints** | `9` |
 | **Trained ML Models** | `3` |
-| **Streamlit Dashboard Pages** | `10` |
+| **Streamlit Dashboard Pages** | `4` |
 | **ETL Pipeline Modules** | `5` |
 | **EDA Analytics Modules** | `5` |
 | **AI Analyst Tools** | `9` |
@@ -35,37 +35,22 @@
 - `customer_feature_store.py` — 36 aggregated features per unique customer (`customer_unique_id`, 96,096 rows).
 
 ### 4. Machine Learning Models (`app/ml/`)
-- `segmentation.py` — Customer Segmentation via Unsupervised KMeans ($k=2$, Silhouette Score: `0.5369`).
-- `clv_prediction.py` — Customer Lifetime Value Regression via Random Forest ($R^2 = 0.9999$).
-- `repeat_purchase_prediction.py` — Repeat Purchase Propensity Classification via Logistic Regression (ROC-AUC = 1.0000).
+- `segmentation.py` — Customer Segmentation via Unsupervised KMeans ($K=4$, Calinski-Harabasz: `66,767.45`, DB Index: `0.7974`).
+- `clv_prediction.py` — Temporal Customer Lifetime Value Regression via Ridge Regression ($\text{MAE} = \$7.27, \text{MedAE} = \$3.44$, observation cutoff `2017-10-01`).
+- `repeat_purchase_prediction.py` — Temporal Repeat Purchase Propensity Classification via Logistic Regression ($\text{PR-AUC} = 0.0354, \text{ROC-AUC} = 0.5632, \text{Recall} = 75.50\%$).
 
-### 5. AI Business Analyst (`app/ai/`)
-- `analyst.py` — Core `BusinessAnalyst` answering queries and generating automated reports.
-- `prompt_builder.py` — Modular LLM prompt builder injecting metrics into context.
-- `report_generator.py` — Sample report exporter (`sample_executive_summary.md`, `sample_business_report.md`).
-- `tools.py` — 9 modular JSON data extraction tools (`RevenueTool`, `CustomerTool`, `ProductTool`, `DeliveryTool`, `PaymentTool`, `ReviewTool`, `SegmentationTool`, `CLVTool`, `RepeatPurchaseTool`).
+### 5. Internal Services (`app/services/` & `app/ai/`)
+- Internal support modules (`AIService`, `MLService`, `tools.py`, `prompt_builder.py`) retained for internal background utilities and unit testing.
 
 ### 6. FastAPI Inference Endpoints (`app/api/v1/`)
 - `GET /health` — Health check endpoint.
 - `POST /api/v1/ml/segment` — Real-time customer segment inference.
 - `POST /api/v1/ml/clv` — Real-time CLV prediction.
 - `POST /api/v1/ml/repeat-purchase` — Real-time repeat purchase propensity prediction.
-- `GET /api/v1/ml/models` — Trained model metadata & metrics catalog.
-- `GET /api/v1/ml/health` — ML Service health check.
-- `POST /api/v1/ai/ask` — Natural language AI Q&A endpoint.
-- `POST /api/v1/ai/customer-report` — On-demand AI customer profile report.
-- `POST /api/v1/ai/category-report` — On-demand AI product category report.
-- `GET /api/v1/ai/executive-summary` — Executive summary report endpoint.
 
 ### 7. Streamlit Dashboard App (`dashboard/`)
-- `Home.py` — Executive Overview KPI dashboard.
-- `1_Customer_Analytics.py` — Customer demographics & value tiers.
-- `2_Product_Analytics.py` — Product category performance & freight.
-- `3_Sales_Analytics.py` — Revenue trajectory & seasonality.
-- `4_Delivery_Analytics.py` — Logistics SLA & regional state speed.
-- `5_Payment_Analytics.py` — Payment method shares & installments.
-- `6_Review_Analytics.py` — Customer satisfaction & sentiment.
-- `7_Customer_Segmentation.py` — Cluster breakdown & real-time lookup.
-- `8_CLV_Prediction.py` — Predicted CLV scatter plot & API lookup.
-- `9_Repeat_Purchase.py` — Propensity histogram, gauge & API lookup.
-- `10_AI_Business_Analyst.py` — Interactive AI Chat & automated report generator.
+- `Home.py` — Executive Overview KPI dashboard landing page.
+- `1_Executive_Overview.py` — Financial KPIs, Net Revenue ($13.59M) vs Gross GMV ($16.01M) reconciliation, order status lifecycle audit, and revenue trends.
+- `2_Customer_&_Sales_Analytics.py` — 12-Month Acquisition Cohort Retention matrix (<3.12% Month-1 retention), Seller/Customer Pareto concentration (82.69% top-20% share), and Log-RFM customer segmentation.
+- `3_Logistics_&_Statistical_Analysis.py` — Delivery SLA performance, non-parametric Mann-Whitney U test (1.72-star rating penalty, $p<0.0001$), and Kruskal-Wallis regional state SLA test.
+- `4_Predictive_Analytics.py` — Temporal observation cutoff methodology (`2017-10-01`), Ridge CLV Regression ($\text{MAE} = \$7.27, \text{MedAE} = \$3.44$), feature weights, and real-time score lookup.

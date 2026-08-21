@@ -1,115 +1,139 @@
 {
-  "total_customers": 96096,
-  "best_model_name": "Random Forest Regressor",
-  "best_r2_score": 0.9999,
-  "best_rmse": 1.5654,
-  "best_mae": 0.1093,
+  "total_customers": 26773,
+  "best_model_name": "Ridge Regression",
+  "best_r2_score": 0.006,
+  "best_rmse": 35.8142,
+  "best_mae": 7.2741,
+  "best_median_ae": 3.4444,
+  "best_non_zero_clv_mae": 138.857,
   "model_comparison": {
-    "Linear Regression": {
-      "mae": 3.2101,
-      "rmse": 14.8291,
-      "r2_score": 0.9945,
-      "train_time_sec": 1.2201
+    "Ridge Regression": {
+      "mae": 7.2741,
+      "rmse": 35.8142,
+      "r2_score": 0.006,
+      "median_absolute_error": 3.4444,
+      "non_zero_clv_mae": 138.857,
+      "train_time_sec": 0.0223
     },
     "Random Forest Regressor": {
-      "mae": 0.1093,
-      "rmse": 1.5654,
-      "r2_score": 0.9999,
-      "train_time_sec": 24.0555
+      "mae": 24.4343,
+      "rmse": 46.1676,
+      "r2_score": -0.6518,
+      "median_absolute_error": 17.3132,
+      "non_zero_clv_mae": 122.794,
+      "train_time_sec": 0.5347
     },
     "Gradient Boosting Regressor": {
-      "mae": 2.0044,
-      "rmse": 3.9172,
-      "r2_score": 0.9996,
-      "train_time_sec": 45.7456
+      "mae": 20.0686,
+      "rmse": 46.9696,
+      "r2_score": -0.7097,
+      "median_absolute_error": 13.4376,
+      "non_zero_clv_mae": 127.9725,
+      "train_time_sec": 1.3129
+    },
+    "XGBoost Regressor": {
+      "mae": 24.0604,
+      "rmse": 59.4418,
+      "r2_score": -1.7382,
+      "median_absolute_error": 13.3639,
+      "non_zero_clv_mae": 127.6595,
+      "train_time_sec": 0.0538
+    },
+    "Hurdle Model (Two-Stage GBDT+Ridge)": {
+      "mae": 42.7455,
+      "rmse": 73.0897,
+      "r2_score": -3.1399,
+      "median_absolute_error": 4.6978,
+      "non_zero_clv_mae": 117.4673,
+      "train_time_sec": 1.3195
     }
   },
   "feature_importance": [
     {
-      "feature": "avg_order_value",
-      "importance_score": 0.930082
+      "feature": "obs_total_items",
+      "importance_score": 8.650625
     },
     {
-      "feature": "avg_payment_value",
-      "importance_score": 0.03004
+      "feature": "obs_avg_items_per_order",
+      "importance_score": 7.4593
     },
     {
-      "feature": "repeat_purchase_rate",
-      "importance_score": 0.013963
+      "feature": "customer_state_RN",
+      "importance_score": 4.108652
     },
     {
-      "feature": "frequency_orders",
-      "importance_score": 0.013534
+      "feature": "obs_recency_days",
+      "importance_score": 3.866031
     },
     {
-      "feature": "review_count",
-      "importance_score": 0.001937
+      "feature": "customer_state_AC",
+      "importance_score": 3.636805
     },
     {
-      "feature": "total_items",
-      "importance_score": 0.001853
+      "feature": "obs_customer_age_days",
+      "importance_score": 3.277471
     },
     {
-      "feature": "avg_items_per_order",
-      "importance_score": 0.001487
+      "feature": "customer_state_SC",
+      "importance_score": 3.245099
     },
     {
-      "feature": "days_between_orders_mean",
-      "importance_score": 0.001039
+      "feature": "customer_state_PI",
+      "importance_score": 3.22262
     },
     {
-      "feature": "state_RJ",
-      "importance_score": 0.000965
+      "feature": "obs_avg_order_value",
+      "importance_score": 2.765534
     },
     {
-      "feature": "favorite_product_category_Fixed_Telephony",
-      "importance_score": 0.000904
+      "feature": "obs_monetary_value",
+      "importance_score": 2.521485
     },
     {
-      "feature": "avg_delivery_days",
-      "importance_score": 0.000828
+      "feature": "customer_state_PB",
+      "importance_score": 2.28338
     },
     {
-      "feature": "avg_freight_value",
-      "importance_score": 0.000648
+      "feature": "customer_state_CE",
+      "importance_score": 2.277602
     },
     {
-      "feature": "order_value_std",
-      "importance_score": 0.000586
+      "feature": "customer_state_MS",
+      "importance_score": 2.031562
     },
     {
-      "feature": "avg_delivery_delay",
-      "importance_score": 0.000568
+      "feature": "customer_state_RO",
+      "importance_score": 1.971377
     },
     {
-      "feature": "order_frequency_per_month",
-      "importance_score": 0.000527
+      "feature": "obs_frequency_orders",
+      "importance_score": 1.958297
     },
     {
-      "feature": "preferred_payment_method_credit_card",
-      "importance_score": 0.000154
+      "feature": "customer_state_BA",
+      "importance_score": 1.620723
     },
     {
-      "feature": "customer_age_days",
-      "importance_score": 0.000111
+      "feature": "customer_state_AP",
+      "importance_score": 1.555007
     },
     {
-      "feature": "favorite_product_category_Art",
-      "importance_score": 9.6e-05
+      "feature": "customer_state_MT",
+      "importance_score": 1.553351
     },
     {
-      "feature": "favorite_product_category_Watches_Gifts",
-      "importance_score": 9.5e-05
+      "feature": "customer_state_AL",
+      "importance_score": 1.408252
     },
     {
-      "feature": "recency_days",
-      "importance_score": 8.2e-05
+      "feature": "obs_preferred_payment_debit_card",
+      "importance_score": 1.387162
     }
   ],
-  "csv_path": "C:\\Users\\saipr\\Desktop\\customer-intelligence-platform\\artifacts\\ml\\customer_clv_predictions.csv",
-  "parquet_path": "C:\\Users\\saipr\\Desktop\\customer-intelligence-platform\\artifacts\\ml\\customer_clv_predictions.parquet",
-  "metadata_path": "C:\\Users\\saipr\\Desktop\\customer-intelligence-platform\\artifacts\\ml\\customer_clv_metadata.json",
-  "training_time_sec": 71.0275,
-  "prediction_time_sec": 0.2122,
-  "execution_time_sec": 74.3964
+  "csv_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\customer_clv_predictions.csv",
+  "parquet_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\customer_clv_predictions.parquet",
+  "metadata_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\customer_clv_metadata.json",
+  "training_time_sec": 3.2536,
+  "prediction_time_sec": 0.0023,
+  "execution_time_sec": 8.9486
 }

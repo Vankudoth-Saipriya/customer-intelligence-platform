@@ -206,6 +206,36 @@ class DataProfiler:
         result_paths: Dict[str, Path] = {}
         for d_name, df in datasets.items():
             name_key = d_name.value if isinstance(d_name, DatasetType) else str(d_name)
-            report_path = self.generate_profile_report(df, name_key, output_dir=output_dir)
-            result_paths[name_key] = report_path
         return result_paths
+
+    @staticmethod
+    def audit_order_status_and_revenue(orders_df: pd.DataFrame, payments_df: pd.DataFrame) -> Dict[str, Any]:
+        """
+        Audit order status breakdown, cancellation rates, and reconcile Gross GMV vs Net Delivered Revenue.
+        """
+        merged = orders_df.merge(payments_df.groupby("order_id")["payment_value"].sum().reset_index(), on="order_id", how="left")
+        merged["payment_value"] = merged["payment_value"].fillna(0.0)
+
+        status_counts = merged["order_status"].value_counts().to_dict()
+        gross_gmv = float(merged["payment_value"].sum())
+        net_delivered_revenue = float(merged[merged["order_status"] == "delivered"]["payment_value"].sum())
+        canceled_revenue = float(merged[merged["order_status"].isin(["canceled", "unavailable"])]["payment_value"].sum())
+        in_flight_revenue = float(merged[~merged["order_status"].isin(["delivered", "canceled", "unavailable"])]["payment_value"].sum())
+
+        delivered_count = int((merged["order_status"] == "delivered").sum())
+        canceled_count = int((merged["order_status"] == "canceled").sum())
+        unavailable_count = int((merged["order_status"] == "unavailable").sum())
+        cancellation_rate_pct = round((canceled_count + unavailable_count) / len(merged) * 100.0, 2)
+
+        return {
+            "total_orders": len(merged),
+            "order_status_breakdown": status_counts,
+            "gross_gmv_all_orders": round(gross_gmv, 2),
+            "net_delivered_revenue": round(net_delivered_revenue, 2),
+            "lost_canceled_revenue": round(canceled_revenue, 2),
+            "in_flight_revenue": round(in_flight_revenue, 2),
+            "delivered_orders_count": delivered_count,
+            "canceled_orders_count": canceled_count,
+            "unavailable_orders_count": unavailable_count,
+            "cancellation_rate_pct": cancellation_rate_pct,
+        }

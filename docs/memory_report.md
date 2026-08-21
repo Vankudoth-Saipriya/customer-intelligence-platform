@@ -29,7 +29,7 @@ By applying column projection masks during `@st.cache_data` Parquet loading, onl
 
 ## 🤖 ML Models & Resource Caching
 
-Model pipelines are cached in global memory using `@st.cache_resource` via `get_cached_ml_service()` and `get_cached_ai_service()`, preventing redundant model re-instantiations during Streamlit session reruns:
+Model pipelines are cached in global memory using `@st.cache_resource` via `get_cached_ml_service()`, preventing redundant model re-instantiations during Streamlit session reruns:
 
 | ML Model Artifact File | Disk / Memory Footprint | Caching Decorator |
 | :--- | :---: | :--- |

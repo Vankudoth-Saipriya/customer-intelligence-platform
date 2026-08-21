@@ -62,7 +62,6 @@ This audit assesses the deployment readiness of the **Customer Intelligence Plat
 
 ### Optional Production Improvements
 1. **Render Persistent Disk**: For persistent database writes across container restarts, attach a Render Persistent Disk at `/app/data`.
-2. **Environment Secret Management**: Set optional `OPENAI_API_KEY` or `GEMINI_API_KEY` in Render environment settings to enable live LLM synthesis for the AI Business Analyst.
 
 ---
 

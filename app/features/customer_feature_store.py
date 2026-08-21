@@ -380,3 +380,143 @@ class CustomerFeatureStore:
         report.save_json()
 
         return report
+
+    def build_temporal_feature_store(
+        self,
+        cutoff_date: str = "2017-10-01",
+        output_dir: Optional[Path] = None,
+    ) -> pd.DataFrame:
+        """
+        Build temporal feature store with strict observation cutoff date to eliminate target leakage.
+        Predictors ($X$) are computed strictly from orders placed BEFORE cutoff_date.
+        Targets ($y$) are computed strictly from orders placed ON OR AFTER cutoff_date.
+        """
+        start_time = time.perf_counter()
+        cutoff_dt = pd.to_datetime(cutoff_date, utc=True)
+        logger.info(f"Engineering Temporal Customer Feature Store with Cutoff Date: '{cutoff_date}'...")
+
+        customers_df = self.data_loader.load_customers()
+        orders_df = self.data_loader.load_orders()
+        order_items_df = self.data_loader.load_order_items()
+        payments_df = self.data_loader.load_payments()
+        reviews_df = self.data_loader.load_reviews()
+
+        orders_df["purchase_dt"] = pd.to_datetime(orders_df["order_purchase_timestamp"], errors="coerce", utc=True)
+        orders_df["deliv_dt"] = pd.to_datetime(orders_df["order_delivered_customer_date"], errors="coerce", utc=True)
+        orders_df["estim_dt"] = pd.to_datetime(orders_df["order_estimated_delivery_date"], errors="coerce", utc=True)
+
+        cust_map = customers_df[["customer_id", "customer_unique_id", "customer_state", "customer_city"]].drop_duplicates(subset=["customer_id"])
+        orders_merged = orders_df.merge(cust_map, on="customer_id", how="left")
+
+        # Order price & freight item aggregations
+        items_agg = order_items_df.groupby("order_id").agg(
+            order_price=("price", "sum"),
+            order_freight=("freight_value", "sum"),
+            items_qty=("order_item_id", "count"),
+        ).reset_index()
+
+        orders_merged = orders_merged.merge(items_agg, on="order_id", how="left")
+        orders_merged["order_price"] = orders_merged["order_price"].fillna(0.0)
+        orders_merged["order_freight"] = orders_merged["order_freight"].fillna(0.0)
+        orders_merged["items_qty"] = orders_merged["items_qty"].fillna(0).astype(int)
+        orders_merged["order_value"] = orders_merged["order_price"] + orders_merged["order_freight"]
+
+        # Filter observation orders (< cutoff_date) and future orders (>= cutoff_date)
+        obs_orders = orders_merged[orders_merged["purchase_dt"] < cutoff_dt].copy()
+        fut_orders = orders_merged[orders_merged["purchase_dt"] >= cutoff_dt].copy()
+
+        # Observation customers: first purchase occurred before cutoff
+        cust_first_dt = obs_orders.groupby("customer_unique_id")["purchase_dt"].min().reset_index().rename(columns={"purchase_dt": "first_purchase_dt"})
+        cust_last_dt = obs_orders.groupby("customer_unique_id")["purchase_dt"].max().reset_index().rename(columns={"purchase_dt": "last_purchase_dt"})
+
+        base_cust = obs_orders[["customer_unique_id", "customer_state", "customer_city"]].drop_duplicates(subset=["customer_unique_id"]).copy()
+        base_cust = base_cust.merge(cust_first_dt, on="customer_unique_id", how="left")
+        base_cust = base_cust.merge(cust_last_dt, on="customer_unique_id", how="left")
+
+        # Compute observation features strictly prior to cutoff
+        obs_orders["deliv_days"] = (obs_orders["deliv_dt"] - obs_orders["purchase_dt"]).dt.total_seconds() / 86400.0
+        obs_orders["delay_days"] = (obs_orders["deliv_dt"] - obs_orders["estim_dt"]).dt.total_seconds() / 86400.0
+
+        obs_profile = obs_orders.groupby("customer_unique_id").agg(
+            obs_frequency_orders=("order_id", "nunique"),
+            obs_monetary_value=("order_price", "sum"),
+            obs_total_items=("items_qty", "sum"),
+            obs_avg_freight=("order_freight", "mean"),
+            obs_avg_delivery_days=("deliv_days", "mean"),
+            obs_avg_delivery_delay=("delay_days", "mean"),
+            late_count=("delay_days", lambda s: (s > 0).sum()),
+            deliv_count=("deliv_dt", "count"),
+        ).reset_index()
+
+        base_cust = base_cust.merge(obs_profile, on="customer_unique_id", how="left")
+
+        base_cust["customer_id"] = base_cust["customer_unique_id"]
+        base_cust["first_purchase_date"] = base_cust["first_purchase_dt"].dt.strftime("%Y-%m-%d")
+        base_cust["last_purchase_date"] = base_cust["last_purchase_dt"].dt.strftime("%Y-%m-%d")
+
+        base_cust["obs_customer_age_days"] = ((cutoff_dt - base_cust["first_purchase_dt"]).dt.total_seconds() / 86400.0).round(2)
+        base_cust["obs_recency_days"] = ((cutoff_dt - base_cust["last_purchase_dt"]).dt.total_seconds() / 86400.0).round(2)
+        base_cust["obs_avg_order_value"] = np.where(
+            base_cust["obs_frequency_orders"] > 0,
+            (base_cust["obs_monetary_value"] / base_cust["obs_frequency_orders"]).round(2),
+            0.0,
+        )
+        base_cust["obs_avg_items_per_order"] = np.where(
+            base_cust["obs_frequency_orders"] > 0,
+            (base_cust["obs_total_items"] / base_cust["obs_frequency_orders"]).round(2),
+            0.0,
+        )
+        base_cust["obs_late_delivery_ratio"] = np.where(
+            base_cust["deliv_count"] > 0,
+            (base_cust["late_count"] / base_cust["deliv_count"]).round(4),
+            0.0,
+        )
+
+        # Payment features before cutoff
+        obs_pmts = payments_df.merge(obs_orders[["order_id", "customer_unique_id"]], on="order_id", how="inner")
+        pmt_profile = obs_pmts.groupby("customer_unique_id").agg(
+            obs_avg_installments=("payment_installments", "mean")
+        ).reset_index()
+        pref_pmt = (
+            obs_pmts.groupby(["customer_unique_id", "payment_type"])["payment_sequential"]
+            .count()
+            .reset_index()
+            .sort_values(by=["customer_unique_id", "payment_sequential"], ascending=[True, False])
+            .drop_duplicates(subset=["customer_unique_id"])
+            .rename(columns={"payment_type": "obs_preferred_payment"})
+        )
+
+        base_cust = base_cust.merge(pmt_profile, on="customer_unique_id", how="left")
+        base_cust = base_cust.merge(pref_pmt[["customer_unique_id", "obs_preferred_payment"]], on="customer_unique_id", how="left")
+        base_cust["obs_avg_installments"] = base_cust["obs_avg_installments"].fillna(1.0).round(2)
+        base_cust["obs_preferred_payment"] = base_cust["obs_preferred_payment"].fillna("credit_card")
+
+        # Review features before cutoff
+        obs_revs = reviews_df.merge(obs_orders[["order_id", "customer_unique_id"]], on="order_id", how="inner")
+        rev_profile = obs_revs.groupby("customer_unique_id").agg(
+            obs_avg_review_score=("review_score", "mean"),
+            obs_review_count=("review_id", "count"),
+        ).reset_index()
+        base_cust = base_cust.merge(rev_profile, on="customer_unique_id", how="left")
+        base_cust["obs_avg_review_score"] = base_cust["obs_avg_review_score"].fillna(4.0).round(2)
+        base_cust["obs_review_count"] = base_cust["obs_review_count"].fillna(0).astype(int)
+
+        # Compute TARGET VARIABLES strictly from orders >= cutoff_date
+        fut_rev_per_cust = fut_orders.groupby("customer_unique_id")["order_price"].sum().reset_index().rename(columns={"order_price": "target_future_clv"})
+        base_cust = base_cust.merge(fut_rev_per_cust, on="customer_unique_id", how="left")
+        base_cust["target_future_clv"] = base_cust["target_future_clv"].fillna(0.0).round(2)
+        base_cust["target_repeat_buyer"] = (base_cust["target_future_clv"] > 0).astype(int)
+
+        # Drop temporary counts
+        base_cust = base_cust.drop(columns=["late_count", "deliv_count", "first_purchase_dt", "last_purchase_dt"], errors="ignore")
+
+        elapsed_sec = time.perf_counter() - start_time
+        logger.info(f"Completed Temporal Feature Store Engineering for {len(base_cust):,} observation customers in {elapsed_sec:.2f}s.")
+
+        if output_dir:
+            target_dir = Path(output_dir)
+            target_dir.mkdir(parents=True, exist_ok=True)
+            base_cust.to_parquet(target_dir / "temporal_feature_store.parquet", index=False)
+
+        return base_cust
+

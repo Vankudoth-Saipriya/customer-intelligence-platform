@@ -65,6 +65,8 @@ class CustomerCLVReport:
     best_r2_score: float
     best_rmse: float
     best_mae: float
+    best_median_ae: float = 0.0
+    best_non_zero_clv_mae: float = 0.0
     model_comparison: Dict[str, Dict[str, float]] = field(default_factory=dict)
     feature_importance: List[Dict[str, Any]] = field(default_factory=list)
     csv_path: str = ""
@@ -117,6 +119,10 @@ class RepeatPurchasePredictionReport:
     best_accuracy: float = 0.0
     best_precision: float = 0.0
     best_recall: float = 0.0
+    best_pr_auc: float = 0.0
+    optimal_threshold: float = 0.5
+    validation_metrics: Dict[str, float] = field(default_factory=dict)
+    confusion_matrix: Dict[str, Any] = field(default_factory=dict)
     model_comparison: Dict[str, Dict[str, Any]] = field(default_factory=dict)
     feature_importance: List[Dict[str, Any]] = field(default_factory=list)
     csv_path: str = ""

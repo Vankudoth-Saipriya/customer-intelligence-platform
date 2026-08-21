@@ -16,7 +16,7 @@ from loguru import logger
 import numpy as np
 import pandas as pd
 
-from app.ai import artifact_store
+from app.analytics import artifact_store
 from app.schemas.ml import (
     CLVResponse,
     CustomerFeaturePayload,
@@ -105,10 +105,30 @@ class MLService:
     ) -> np.ndarray:
         """
         Transform Pydantic feature payload into preprocessed numpy matrix.
+        Handles mapping of both standard & temporal obs_* feature names.
         """
         payload_dict = payload.model_dump()
-        df = pd.DataFrame([payload_dict])
+        df_row: Dict[str, Any] = {}
 
+        for col in num_cols:
+            base_col = col.replace("obs_", "")
+            if col in payload_dict and payload_dict[col] is not None:
+                df_row[col] = payload_dict[col]
+            elif base_col in payload_dict and payload_dict[base_col] is not None:
+                df_row[col] = payload_dict[base_col]
+            else:
+                df_row[col] = 0.0
+
+        for col in cat_cols:
+            base_col = col.replace("obs_", "")
+            if col in payload_dict and payload_dict[col] is not None:
+                df_row[col] = payload_dict[col]
+            elif base_col in payload_dict and payload_dict[base_col] is not None:
+                df_row[col] = payload_dict[base_col]
+            else:
+                df_row[col] = "Unknown"
+
+        df = pd.DataFrame([df_row])
         num_scaled = scaler.transform(df[num_cols].fillna(0.0))
         cat_encoded = ohe.transform(df[cat_cols].fillna("Unknown").astype(str))
 
@@ -136,15 +156,17 @@ class MLService:
                 )
 
         # 2. Live model inference if pipeline loaded
-        if self._clv_data and self._segmentation_data:
-            num_cols = self._clv_data["num_cols"]
-            cat_cols = self._clv_data["cat_cols"]
-            scaler = self._clv_data["scaler"]
-            ohe = self._clv_data["ohe"]
+        if self._segmentation_data:
             km_model = self._segmentation_data["model"]
+            scaler = self._segmentation_data["scaler"]
             profiles = self._segmentation_data.get("profiles", {})
 
-            X_val = self._payload_to_feature_matrix(payload, num_cols, cat_cols, scaler, ohe)
+            recency = float(payload.recency_days if payload.recency_days is not None else 100.0)
+            frequency = float(payload.frequency_orders if payload.frequency_orders is not None else 1)
+            monetary = float(payload.monetary_value if payload.monetary_value is not None else 100.0)
+
+            log_rfm = np.array([[np.log1p(recency), np.log1p(frequency), np.log1p(monetary)]])
+            X_val = scaler.transform(log_rfm)
             cluster_id = int(km_model.predict(X_val)[0])
             profile = profiles.get(f"cluster_{cluster_id}", {})
             desc = profile.get("business_description", f"Cluster {cluster_id}")
@@ -258,14 +280,16 @@ class MLService:
 
         if self._clv_metadata:
             models["clv_prediction"] = ModelMetadataInfo(
-                model_name=self._clv_metadata.get("best_model_name", "Random Forest Regressor"),
+                model_name=self._clv_metadata.get("best_model_name", "Ridge Regression"),
                 model_type="Regression (CLV Prediction)",
-                feature_count=128,
-                training_date="2026-08-08",
+                feature_count=16,
+                training_date="2026-08-20",
                 metrics={
-                    "r2_score": self._clv_metadata.get("best_r2_score", 0.9999),
-                    "rmse": self._clv_metadata.get("best_rmse", 1.5654),
-                    "mae": self._clv_metadata.get("best_mae", 0.1093),
+                    "mae": self._clv_metadata.get("best_mae", 7.27),
+                    "median_ae": self._clv_metadata.get("best_median_ae", 3.44),
+                    "rmse": self._clv_metadata.get("best_rmse", 35.81),
+                    "r2_score": self._clv_metadata.get("best_r2_score", 0.0060),
+                    "non_zero_clv_mae": self._clv_metadata.get("best_non_zero_clv_mae", 117.47),
                 },
                 status="loaded" if self._clv_data or self._clv_table is not None else "not_loaded",
             )
@@ -274,12 +298,15 @@ class MLService:
             models["repeat_purchase_prediction"] = ModelMetadataInfo(
                 model_name=self._repeat_metadata.get("best_model_name", "Logistic Regression"),
                 model_type="Binary Classification (Repeat Purchase)",
-                feature_count=130,
-                training_date="2026-08-08",
+                feature_count=16,
+                training_date="2026-08-20",
                 metrics={
-                    "roc_auc": self._repeat_metadata.get("best_roc_auc", 1.0),
-                    "f1_score": self._repeat_metadata.get("best_f1_score", 0.9992),
-                    "accuracy": self._repeat_metadata.get("best_accuracy", 0.9999),
+                    "pr_auc": self._repeat_metadata.get("best_pr_auc", 0.0354),
+                    "roc_auc": self._repeat_metadata.get("best_roc_auc", 0.5632),
+                    "recall": self._repeat_metadata.get("best_recall", 0.7550),
+                    "precision": self._repeat_metadata.get("best_precision", 0.0292),
+                    "f1_score": self._repeat_metadata.get("best_f1_score", 0.0562),
+                    "optimal_threshold": self._repeat_metadata.get("optimal_threshold", 0.50),
                 },
                 status="loaded" if self._repeat_purchase_data or self._repeat_table is not None else "not_loaded",
             )

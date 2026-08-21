@@ -2,23 +2,15 @@
 Shared Artifact Data Store — Memory-Optimized.
 
 Provides a single process-level cached layer for all Parquet prediction tables.
-Every subsystem (ml_service, ai/tools, ai/analyst, data_provider) imports from
-here instead of calling pd.read_parquet independently.
+Every subsystem (ml_service, data_provider) imports from here instead of calling
+pd.read_parquet independently.
 
 Design goals:
 - Each table is loaded exactly ONCE per process.
 - Only the columns required across ALL consumers are read from disk.
-- Column lists are hardcoded from verified pyarrow schema inspection (no runtime
-  schema peek needed — eliminates the double-read pattern that caused the 520 MB
-  RSS spike in the original implementation).
+- Column lists are hardcoded from verified pyarrow schema inspection.
 - Categorical string columns are stored as pd.CategoricalDtype to reduce RAM.
 - Module-level singletons — no copies, no Streamlit cache overhead.
-
-Verified column schemas (from pyarrow.parquet.read_schema):
-  SEG: 38 cols on disk  → 8 projected
-  CLV: 38 cols on disk  → 7 projected
-  RP:  39 cols on disk  → 5 projected
-  FS:  36 cols on disk  → 13 projected
 """
 
 from __future__ import annotations
@@ -33,7 +25,7 @@ ARTIFACTS_DIR = PROJECT_ROOT / "artifacts"
 
 # ---------------------------------------------------------------------------
 # Hardcoded column projections — verified against actual parquet schemas.
-# Only columns consumed by any dashboard page, tool, or analyst function.
+# Only columns consumed by any dashboard page or service function.
 # ---------------------------------------------------------------------------
 _SEG_COLS: List[str] = [
     "customer_id", "customer_unique_id",
@@ -43,13 +35,13 @@ _SEG_COLS: List[str] = [
 
 _CLV_COLS: List[str] = [
     "customer_id", "customer_unique_id",
-    "total_revenue", "predicted_clv",
+    "total_revenue", "target_future_clv", "predicted_clv",
     "customer_value_tier", "state", "frequency_orders",
 ]
 
 _RP_COLS: List[str] = [
     "customer_id", "customer_unique_id",
-    "repeat_customer", "repeat_propensity", "predicted_repeat_customer",
+    "target_repeat_buyer", "repeat_customer", "repeat_propensity_score", "repeat_propensity", "predicted_repeat_buyer", "predicted_repeat_customer",
 ]
 
 _FS_COLS: List[str] = [
@@ -61,8 +53,7 @@ _FS_COLS: List[str] = [
 ]
 
 # ---------------------------------------------------------------------------
-# Dtype optimizations — categorical strings shrink RAM by 10-15x for
-# repeated values (state, tier, cluster_description, city).
+# Dtype optimizations
 # ---------------------------------------------------------------------------
 _SEG_DTYPES: Dict[str, str] = {
     "cluster_description": "category",
@@ -100,19 +91,15 @@ def _load(path: Path, cols: List[str], dtypes: Dict[str, str]) -> Optional[pd.Da
     if not path.exists():
         return None
 
-    # Filter requested cols to those that actually exist in the file.
-    # Use pyarrow schema (metadata-only, zero data rows read).
     try:
         import pyarrow.parquet as pq
         available = set(pq.read_schema(path).names)
         safe_cols = [c for c in cols if c in available]
     except Exception:
-        safe_cols = cols  # fallback: try to read them all, let pandas handle missing
+        safe_cols = cols
 
     df = pd.read_parquet(path, columns=safe_cols if safe_cols else None)
 
-    # Release pyarrow decompression buffers immediately.
-    # On Linux/Render, pyarrow returns memory to the OS via madvise() after this.
     try:
         import gc
         import pyarrow as pa
@@ -121,7 +108,6 @@ def _load(path: Path, cols: List[str], dtypes: Dict[str, str]) -> Optional[pd.Da
     except Exception:
         pass
 
-    # Apply dtype downcasting
     for col, dtype in dtypes.items():
         if col in df.columns:
             try:

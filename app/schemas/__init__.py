@@ -2,15 +2,6 @@
 Schemas Package.
 """
 
-from app.schemas.ai import (
-    AICategoryReportRequest,
-    AICategoryReportResponse,
-    AICustomerReportRequest,
-    AICustomerReportResponse,
-    AIExecutiveSummaryResponse,
-    AIQuestionRequest,
-    AIQuestionResponse,
-)
 from app.schemas.ml import (
     CLVResponse,
     CustomerFeaturePayload,
@@ -27,11 +18,4 @@ __all__ = [
     "RepeatPurchaseResponse",
     "ModelsInfoResponse",
     "MLHealthResponse",
-    "AIQuestionRequest",
-    "AIQuestionResponse",
-    "AICustomerReportRequest",
-    "AICustomerReportResponse",
-    "AICategoryReportRequest",
-    "AICategoryReportResponse",
-    "AIExecutiveSummaryResponse",
 ]
