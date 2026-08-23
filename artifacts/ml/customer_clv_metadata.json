@@ -31,7 +31,7 @@
       "r2_score": 0.0011,
       "median_absolute_error": 1.6913,
       "non_zero_clv_mae": 120.12,
-      "train_time_sec": 0.0094
+      "train_time_sec": 0.0146
     },
     "Random Forest Regressor": {
       "mae": 11.3321,
@@ -39,7 +39,7 @@
       "r2_score": -0.4837,
       "median_absolute_error": 4.9483,
       "non_zero_clv_mae": 110.429,
-      "train_time_sec": 0.5375
+      "train_time_sec": 0.5029
     },
     "Gradient Boosting Regressor": {
       "mae": 9.3711,
@@ -47,7 +47,7 @@
       "r2_score": -0.5021,
       "median_absolute_error": 2.9234,
       "non_zero_clv_mae": 112.708,
-      "train_time_sec": 1.4587
+      "train_time_sec": 1.3222
     },
     "XGBoost Regressor": {
       "mae": 14.6896,
@@ -55,7 +55,7 @@
       "r2_score": -1.1385,
       "median_absolute_error": 2.4798,
       "non_zero_clv_mae": 108.0945,
-      "train_time_sec": 0.044
+      "train_time_sec": 0.0513
     },
     "Hurdle Model (Two-Stage GBDT+Ridge)": {
       "mae": 33.4781,
@@ -63,7 +63,7 @@
       "r2_score": -10.1392,
       "median_absolute_error": 7.8701,
       "non_zero_clv_mae": 100.8588,
-      "train_time_sec": 1.5558
+      "train_time_sec": 1.4113
     }
   },
   "feature_importance": [
@@ -151,7 +151,7 @@
   "csv_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\customer_clv_predictions.csv",
   "parquet_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\customer_clv_predictions.parquet",
   "metadata_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\customer_clv_metadata.json",
-  "training_time_sec": 3.6199,
-  "prediction_time_sec": 0.0022,
-  "execution_time_sec": 9.8808
+  "training_time_sec": 3.315,
+  "prediction_time_sec": 0.0027,
+  "execution_time_sec": 9.0742
 }

@@ -38,6 +38,14 @@
       "recall": 0.7962,
       "f1_score": 0.0211,
       "optimal_threshold": 0.45,
+      "test_prevalence": 0.0102,
+      "top_5_percent_group": {
+        "total_count": 768,
+        "true_positives": 11,
+        "false_positives": 757,
+        "precision": 0.0143,
+        "precision_lift": 1.4
+      },
       "validation_metrics": {
         "val_precision": 0.0124,
         "val_recall": 0.7647,
@@ -54,7 +62,7 @@
           125
         ]
       ],
-      "train_time_sec": 0.1815
+      "train_time_sec": 0.1459
     },
     "Random Forest Classifier": {
       "roc_auc": 0.5209,
@@ -64,6 +72,14 @@
       "recall": 0.4331,
       "f1_score": 0.0203,
       "optimal_threshold": 0.4,
+      "test_prevalence": 0.0102,
+      "top_5_percent_group": {
+        "total_count": 768,
+        "true_positives": 15,
+        "false_positives": 753,
+        "precision": 0.0195,
+        "precision_lift": 1.91
+      },
       "validation_metrics": {
         "val_precision": 0.012,
         "val_recall": 0.4706,
@@ -80,7 +96,7 @@
           68
         ]
       ],
-      "train_time_sec": 0.4236
+      "train_time_sec": 0.414
     },
     "Gradient Boosting Classifier": {
       "roc_auc": 0.5577,
@@ -90,6 +106,14 @@
       "recall": 0.1465,
       "f1_score": 0.0303,
       "optimal_threshold": 0.5,
+      "test_prevalence": 0.0102,
+      "top_5_percent_group": {
+        "total_count": 768,
+        "true_positives": 14,
+        "false_positives": 754,
+        "precision": 0.0182,
+        "precision_lift": 1.78
+      },
       "validation_metrics": {
         "val_precision": 0.0,
         "val_recall": 0.0,
@@ -106,7 +130,7 @@
           23
         ]
       ],
-      "train_time_sec": 2.6396
+      "train_time_sec": 2.4695
     },
     "XGBoost Classifier": {
       "roc_auc": 0.551,
@@ -116,6 +140,14 @@
       "recall": 0.5096,
       "f1_score": 0.0232,
       "optimal_threshold": 0.2,
+      "test_prevalence": 0.0102,
+      "top_5_percent_group": {
+        "total_count": 768,
+        "true_positives": 12,
+        "false_positives": 756,
+        "precision": 0.0156,
+        "precision_lift": 1.52
+      },
       "validation_metrics": {
         "val_precision": 0.0112,
         "val_recall": 0.5294,
@@ -132,95 +164,115 @@
           80
         ]
       ],
-      "train_time_sec": 0.112
+      "train_time_sec": 0.0879
     }
   },
   "feature_importance": [
     {
-      "feature": "customer_state_DF",
-      "importance_score": 0.09078
-    },
-    {
-      "feature": "obs_avg_review_score",
-      "importance_score": 0.058416
-    },
-    {
-      "feature": "obs_preferred_payment_boleto",
-      "importance_score": 0.054961
-    },
-    {
-      "feature": "customer_state_MG",
-      "importance_score": 0.048405
-    },
-    {
-      "feature": "customer_state_PR",
-      "importance_score": 0.047681
-    },
-    {
-      "feature": "obs_avg_installments",
-      "importance_score": 0.04748
-    },
-    {
-      "feature": "obs_total_items",
-      "importance_score": 0.04729
-    },
-    {
-      "feature": "obs_avg_delivery_days",
-      "importance_score": 0.047041
-    },
-    {
-      "feature": "obs_avg_order_value",
-      "importance_score": 0.045725
-    },
-    {
-      "feature": "obs_avg_freight",
-      "importance_score": 0.045404
-    },
-    {
       "feature": "obs_recency_days",
-      "importance_score": 0.045311
-    },
-    {
-      "feature": "obs_monetary_value",
-      "importance_score": 0.042903
-    },
-    {
-      "feature": "customer_state_PI",
-      "importance_score": 0.039403
-    },
-    {
-      "feature": "obs_late_delivery_ratio",
-      "importance_score": 0.037286
-    },
-    {
-      "feature": "obs_avg_delivery_delay",
-      "importance_score": 0.037047
+      "importance_score": 0.045311,
+      "shap_impact_score": 1.248039
     },
     {
       "feature": "obs_customer_age_days",
-      "importance_score": 0.035277
+      "importance_score": 0.035277,
+      "shap_impact_score": 1.23402
+    },
+    {
+      "feature": "obs_avg_review_score",
+      "importance_score": 0.058416,
+      "shap_impact_score": 0.403472
+    },
+    {
+      "feature": "obs_avg_order_value",
+      "importance_score": 0.045725,
+      "shap_impact_score": 0.38828
+    },
+    {
+      "feature": "obs_avg_freight",
+      "importance_score": 0.045404,
+      "shap_impact_score": 0.325969
+    },
+    {
+      "feature": "obs_avg_installments",
+      "importance_score": 0.04748,
+      "shap_impact_score": 0.320776
+    },
+    {
+      "feature": "obs_monetary_value",
+      "importance_score": 0.042903,
+      "shap_impact_score": 0.29845
+    },
+    {
+      "feature": "obs_avg_delivery_delay",
+      "importance_score": 0.037047,
+      "shap_impact_score": 0.297251
+    },
+    {
+      "feature": "obs_avg_delivery_days",
+      "importance_score": 0.047041,
+      "shap_impact_score": 0.241646
+    },
+    {
+      "feature": "obs_preferred_payment_boleto",
+      "importance_score": 0.054961,
+      "shap_impact_score": 0.091236
     },
     {
       "feature": "customer_state_SP",
-      "importance_score": 0.029686
+      "importance_score": 0.029686,
+      "shap_impact_score": 0.070669
+    },
+    {
+      "feature": "customer_state_PR",
+      "importance_score": 0.047681,
+      "shap_impact_score": 0.070559
+    },
+    {
+      "feature": "obs_late_delivery_ratio",
+      "importance_score": 0.037286,
+      "shap_impact_score": 0.050473
     },
     {
       "feature": "customer_state_GO",
-      "importance_score": 0.024745
+      "importance_score": 0.024745,
+      "shap_impact_score": 0.049116
     },
     {
-      "feature": "customer_state_SC",
-      "importance_score": 0.023933
+      "feature": "obs_total_items",
+      "importance_score": 0.04729,
+      "shap_impact_score": 0.038478
+    },
+    {
+      "feature": "customer_state_MG",
+      "importance_score": 0.048405,
+      "shap_impact_score": 0.032836
     },
     {
       "feature": "customer_state_RJ",
-      "importance_score": 0.017685
+      "importance_score": 0.017685,
+      "shap_impact_score": 0.027752
+    },
+    {
+      "feature": "obs_avg_items_per_order",
+      "importance_score": 0.0153,
+      "shap_impact_score": 0.027585
+    },
+    {
+      "feature": "customer_state_PI",
+      "importance_score": 0.039403,
+      "shap_impact_score": 0.027559
+    },
+    {
+      "feature": "customer_state_CE",
+      "importance_score": 0.0154,
+      "shap_impact_score": 0.018311
     }
   ],
   "csv_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\customer_repeat_purchase_predictions.csv",
   "parquet_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\customer_repeat_purchase_predictions.parquet",
   "metadata_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\repeat_purchase_metadata.json",
-  "training_time_sec": 3.4141,
-  "prediction_time_sec": 0.0044,
-  "execution_time_sec": 9.8314
+  "training_time_sec": 3.174,
+  "prediction_time_sec": 0.0047,
+  "execution_time_sec": 10.0348
 }

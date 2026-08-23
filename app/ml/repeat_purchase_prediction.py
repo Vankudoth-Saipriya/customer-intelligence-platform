@@ -220,6 +220,16 @@ class RepeatPurchasePredictor:
             f1 = round(float(f1_score(y_test, preds, zero_division=0)), 4)
             cm = confusion_matrix(y_test, preds).tolist()
 
+            # Top 5% Highest-Propensity Group Analysis on Untouched Test Set
+            test_prev = float(y_test.mean())
+            top_5_cutoff = np.percentile(probs, 95)
+            top_5_mask = probs >= top_5_cutoff
+            top_5_count = int(top_5_mask.sum())
+            top_5_tp = int((top_5_mask & (y_test == 1)).sum())
+            top_5_fp = int((top_5_mask & (y_test == 0)).sum())
+            top_5_prec = round(float(top_5_tp / top_5_count), 4) if top_5_count > 0 else 0.0
+            top_5_lift = round(float(top_5_prec / test_prev), 2) if test_prev > 0 else 0.0
+
             comparison[name] = {
                 "roc_auc": roc_auc,
                 "pr_auc": pr_auc,
@@ -228,6 +238,14 @@ class RepeatPurchasePredictor:
                 "recall": rec,
                 "f1_score": f1,
                 "optimal_threshold": round(float(best_thresh), 2),
+                "test_prevalence": round(test_prev, 4),
+                "top_5_percent_group": {
+                    "total_count": top_5_count,
+                    "true_positives": top_5_tp,
+                    "false_positives": top_5_fp,
+                    "precision": top_5_prec,
+                    "precision_lift": top_5_lift,
+                },
                 "validation_metrics": {
                     "val_precision": val_prec,
                     "val_recall": val_rec,
@@ -240,8 +258,8 @@ class RepeatPurchasePredictor:
 
             logger.info(
                 f"Model '{name}' -> PR-AUC: {pr_auc:.4f} | ROC-AUC: {roc_auc:.4f} | "
-                f"Test Rec: {rec*100:.1f}% | Test Prec: {prec*100:.1f}% | Test F1: {f1:.4f} "
-                f"(Val-Tuned Thresh: {best_thresh:.2f}, Val F1: {val_f1:.4f}, {m_t_elapsed:.2f}s)"
+                f"Test Rec: {rec*100:.1f}% | Test Prec: {prec*100:.1f}% | Test F1: {f1:.4f} | "
+                f"Top-5% Lift: {top_5_lift:.2f}x (Val-Tuned Thresh: {best_thresh:.2f}, {m_t_elapsed:.2f}s)"
             )
 
             if pr_auc > best_pr_auc:
@@ -255,11 +273,27 @@ class RepeatPurchasePredictor:
         return comparison, best_model_name, best_model, total_training_time
 
     def extract_feature_importance(
-        self, model: Any, feature_names: List[str], top_n: int = 20
+        self, model: Any, feature_names: List[str], top_n: int = 20, X_test: Optional[np.ndarray] = None
     ) -> List[Dict[str, Any]]:
         """
         Extract top N feature importances or coefficient absolute weights from the selected model.
+        Includes SHAP value calculations when X_test is provided and shap library is available.
         """
+        importances = None
+        shap_scores = None
+
+        if X_test is not None:
+            try:
+                import shap
+                if hasattr(model, "predict_proba"):
+                    explainer = shap.TreeExplainer(model)
+                    shap_vals = explainer.shap_values(X_test)
+                    if isinstance(shap_vals, list):
+                        shap_vals = shap_vals[1]
+                    shap_scores = np.abs(shap_vals).mean(axis=0)
+            except Exception as e:
+                logger.warning(f"SHAP feature attribution fallback to standard importances: {e}")
+
         if hasattr(model, "feature_importances_"):
             importances = model.feature_importances_
         elif hasattr(model, "coef_"):
@@ -267,14 +301,20 @@ class RepeatPurchasePredictor:
         else:
             importances = np.zeros(len(feature_names))
 
-        feat_imp_df = (
-            pd.DataFrame({"feature": feature_names, "importance": importances})
-            .sort_values(by="importance", ascending=False)
-            .head(top_n)
-        )
+        feat_df = pd.DataFrame({
+            "feature": feature_names,
+            "importance": importances,
+            "shap_importance": shap_scores if shap_scores is not None else importances
+        })
+
+        feat_imp_df = feat_df.sort_values(by="shap_importance", ascending=False).head(top_n)
 
         top_features = [
-            {"feature": row["feature"], "importance_score": round(float(row["importance"]), 6)}
+            {
+                "feature": row["feature"],
+                "importance_score": round(float(row["importance"]), 6),
+                "shap_impact_score": round(float(row["shap_importance"]), 6)
+            }
             for _, row in feat_imp_df.iterrows()
         ]
         return top_features
@@ -322,8 +362,8 @@ class RepeatPurchasePredictor:
             X_train, X_test, y_train, y_test
         )
 
-        # 4. Extract Top 20 Feature Importances
-        top_importances = self.extract_feature_importance(best_model, feature_names, top_n=20)
+        # 4. Extract Top 20 Feature Importances & SHAP Value Attributions
+        top_importances = self.extract_feature_importance(best_model, feature_names, top_n=20, X_test=X_test)
 
         # 5. Predict across complete customer dataset
         t_pred_start = time.perf_counter()

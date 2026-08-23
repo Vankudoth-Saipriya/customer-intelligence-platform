@@ -108,5 +108,5 @@
   "csv_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\customer_segments.csv",
   "parquet_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\customer_segments.parquet",
   "metadata_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\customer_segmentation_metadata.json",
-  "execution_time_sec": 12.5423
+  "execution_time_sec": 12.1674
 }
