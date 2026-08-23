@@ -1,226 +1,226 @@
 {
   "total_customers": 26773,
   "class_distribution": {
-    "non_repeat_count": 26139,
-    "repeat_count": 634,
-    "repeat_buyer_rate_pct": 2.37
+    "non_repeat_count": 26530,
+    "repeat_count": 243,
+    "repeat_buyer_rate_pct": 0.91
   },
-  "best_model_name": "Logistic Regression",
-  "best_roc_auc": 0.5632,
-  "best_f1_score": 0.0562,
-  "best_accuracy": 0.3395,
-  "best_precision": 0.0292,
-  "best_recall": 0.755,
-  "best_pr_auc": 0.0354,
-  "optimal_threshold": 0.5,
+  "best_model_name": "XGBoost Classifier",
+  "best_roc_auc": 0.551,
+  "best_f1_score": 0.0232,
+  "best_accuracy": 0.5611,
+  "best_precision": 0.0119,
+  "best_recall": 0.5096,
+  "best_pr_auc": 0.0135,
+  "optimal_threshold": 0.2,
   "validation_metrics": {
-    "val_precision": 0.0236,
-    "val_recall": 0.4681,
-    "val_f1": 0.0449,
-    "optimal_threshold": 0.5
+    "val_precision": 0.0112,
+    "val_recall": 0.5294,
+    "val_f1": 0.022,
+    "optimal_threshold": 0.2
   },
   "confusion_matrix": [
     [
-      4909,
-      10038
+      8531,
+      6659
     ],
     [
-      98,
-      302
+      77,
+      80
     ]
   ],
   "model_comparison": {
     "Logistic Regression": {
-      "roc_auc": 0.5632,
-      "pr_auc": 0.0354,
-      "accuracy": 0.3395,
-      "precision": 0.0292,
-      "recall": 0.755,
-      "f1_score": 0.0562,
-      "optimal_threshold": 0.5,
-      "validation_metrics": {
-        "val_precision": 0.0236,
-        "val_recall": 0.4681,
-        "val_f1": 0.0449,
-        "optimal_threshold": 0.5
-      },
-      "confusion_matrix": [
-        [
-          4909,
-          10038
-        ],
-        [
-          98,
-          302
-        ]
-      ],
-      "train_time_sec": 0.1411
-    },
-    "Random Forest Classifier": {
-      "roc_auc": 0.5538,
-      "pr_auc": 0.0337,
-      "accuracy": 0.9183,
-      "precision": 0.0448,
-      "recall": 0.105,
-      "f1_score": 0.0628,
-      "optimal_threshold": 0.5,
-      "validation_metrics": {
-        "val_precision": 0.0279,
-        "val_recall": 0.1277,
-        "val_f1": 0.0458,
-        "optimal_threshold": 0.5
-      },
-      "confusion_matrix": [
-        [
-          14051,
-          896
-        ],
-        [
-          358,
-          42
-        ]
-      ],
-      "train_time_sec": 0.4013
-    },
-    "Gradient Boosting Classifier": {
-      "roc_auc": 0.5426,
-      "pr_auc": 0.0288,
-      "accuracy": 0.5518,
-      "precision": 0.03,
-      "recall": 0.5175,
-      "f1_score": 0.0568,
-      "optimal_threshold": 0.05,
-      "validation_metrics": {
-        "val_precision": 0.1111,
-        "val_recall": 0.0851,
-        "val_f1": 0.0964,
-        "optimal_threshold": 0.05
-      },
-      "confusion_matrix": [
-        [
-          8261,
-          6686
-        ],
-        [
-          193,
-          207
-        ]
-      ],
-      "train_time_sec": 2.4191
-    },
-    "XGBoost Classifier": {
-      "roc_auc": 0.5122,
-      "pr_auc": 0.032,
-      "accuracy": 0.5159,
-      "precision": 0.0269,
-      "recall": 0.5,
-      "f1_score": 0.0511,
+      "roc_auc": 0.5325,
+      "pr_auc": 0.0122,
+      "accuracy": 0.2457,
+      "precision": 0.0107,
+      "recall": 0.7962,
+      "f1_score": 0.0211,
       "optimal_threshold": 0.45,
       "validation_metrics": {
-        "val_precision": 0.0284,
-        "val_recall": 0.383,
-        "val_f1": 0.0529,
+        "val_precision": 0.0124,
+        "val_recall": 0.7647,
+        "val_f1": 0.0245,
         "optimal_threshold": 0.45
       },
       "confusion_matrix": [
         [
-          7717,
-          7230
+          3645,
+          11545
         ],
         [
-          200,
-          200
+          32,
+          125
         ]
       ],
-      "train_time_sec": 0.0831
+      "train_time_sec": 0.1815
+    },
+    "Random Forest Classifier": {
+      "roc_auc": 0.5209,
+      "pr_auc": 0.0133,
+      "accuracy": 0.5719,
+      "precision": 0.0104,
+      "recall": 0.4331,
+      "f1_score": 0.0203,
+      "optimal_threshold": 0.4,
+      "validation_metrics": {
+        "val_precision": 0.012,
+        "val_recall": 0.4706,
+        "val_f1": 0.0234,
+        "optimal_threshold": 0.4
+      },
+      "confusion_matrix": [
+        [
+          8709,
+          6481
+        ],
+        [
+          89,
+          68
+        ]
+      ],
+      "train_time_sec": 0.4236
+    },
+    "Gradient Boosting Classifier": {
+      "roc_auc": 0.5577,
+      "pr_auc": 0.0133,
+      "accuracy": 0.904,
+      "precision": 0.0169,
+      "recall": 0.1465,
+      "f1_score": 0.0303,
+      "optimal_threshold": 0.5,
+      "validation_metrics": {
+        "val_precision": 0.0,
+        "val_recall": 0.0,
+        "val_f1": 0.0,
+        "optimal_threshold": 0.5
+      },
+      "confusion_matrix": [
+        [
+          13851,
+          1339
+        ],
+        [
+          134,
+          23
+        ]
+      ],
+      "train_time_sec": 2.6396
+    },
+    "XGBoost Classifier": {
+      "roc_auc": 0.551,
+      "pr_auc": 0.0135,
+      "accuracy": 0.5611,
+      "precision": 0.0119,
+      "recall": 0.5096,
+      "f1_score": 0.0232,
+      "optimal_threshold": 0.2,
+      "validation_metrics": {
+        "val_precision": 0.0112,
+        "val_recall": 0.5294,
+        "val_f1": 0.022,
+        "optimal_threshold": 0.2
+      },
+      "confusion_matrix": [
+        [
+          8531,
+          6659
+        ],
+        [
+          77,
+          80
+        ]
+      ],
+      "train_time_sec": 0.112
     }
   },
   "feature_importance": [
     {
-      "feature": "customer_state_CE",
-      "importance_score": 2.958293
-    },
-    {
-      "feature": "customer_state_MS",
-      "importance_score": 2.310282
-    },
-    {
-      "feature": "customer_state_PB",
-      "importance_score": 2.291823
-    },
-    {
-      "feature": "customer_state_AC",
-      "importance_score": 1.321574
-    },
-    {
-      "feature": "customer_state_RO",
-      "importance_score": 1.317036
-    },
-    {
-      "feature": "obs_avg_order_value",
-      "importance_score": 1.011324
-    },
-    {
-      "feature": "customer_state_RJ",
-      "importance_score": 0.838058
-    },
-    {
-      "feature": "obs_recency_days",
-      "importance_score": 0.815035
-    },
-    {
       "feature": "customer_state_DF",
-      "importance_score": 0.81341
+      "importance_score": 0.09078
     },
     {
-      "feature": "customer_state_AM",
-      "importance_score": 0.812246
+      "feature": "obs_avg_review_score",
+      "importance_score": 0.058416
     },
     {
-      "feature": "customer_state_RN",
-      "importance_score": 0.789437
+      "feature": "obs_preferred_payment_boleto",
+      "importance_score": 0.054961
     },
     {
       "feature": "customer_state_MG",
-      "importance_score": 0.726978
+      "importance_score": 0.048405
     },
     {
-      "feature": "customer_state_RR",
-      "importance_score": 0.714691
+      "feature": "customer_state_PR",
+      "importance_score": 0.047681
     },
     {
-      "feature": "customer_state_AP",
-      "importance_score": 0.682459
+      "feature": "obs_avg_installments",
+      "importance_score": 0.04748
+    },
+    {
+      "feature": "obs_total_items",
+      "importance_score": 0.04729
+    },
+    {
+      "feature": "obs_avg_delivery_days",
+      "importance_score": 0.047041
+    },
+    {
+      "feature": "obs_avg_order_value",
+      "importance_score": 0.045725
+    },
+    {
+      "feature": "obs_avg_freight",
+      "importance_score": 0.045404
+    },
+    {
+      "feature": "obs_recency_days",
+      "importance_score": 0.045311
     },
     {
       "feature": "obs_monetary_value",
-      "importance_score": 0.670424
+      "importance_score": 0.042903
+    },
+    {
+      "feature": "customer_state_PI",
+      "importance_score": 0.039403
+    },
+    {
+      "feature": "obs_late_delivery_ratio",
+      "importance_score": 0.037286
+    },
+    {
+      "feature": "obs_avg_delivery_delay",
+      "importance_score": 0.037047
     },
     {
       "feature": "obs_customer_age_days",
-      "importance_score": 0.665193
+      "importance_score": 0.035277
     },
     {
-      "feature": "obs_preferred_payment_debit_card",
-      "importance_score": 0.584107
+      "feature": "customer_state_SP",
+      "importance_score": 0.029686
+    },
+    {
+      "feature": "customer_state_GO",
+      "importance_score": 0.024745
     },
     {
       "feature": "customer_state_SC",
-      "importance_score": 0.566154
+      "importance_score": 0.023933
     },
     {
-      "feature": "obs_preferred_payment_voucher",
-      "importance_score": 0.557215
-    },
-    {
-      "feature": "customer_state_PE",
-      "importance_score": 0.549226
+      "feature": "customer_state_RJ",
+      "importance_score": 0.017685
     }
   ],
   "csv_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\customer_repeat_purchase_predictions.csv",
   "parquet_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\customer_repeat_purchase_predictions.parquet",
   "metadata_path": "C:\\Users\\saipr\\Desktop\\ResumeProjects\\customer-intelligence-platform\\artifacts\\ml\\repeat_purchase_metadata.json",
-  "training_time_sec": 3.0979,
-  "prediction_time_sec": 0.004,
-  "execution_time_sec": 8.8073
+  "training_time_sec": 3.4141,
+  "prediction_time_sec": 0.0044,
+  "execution_time_sec": 9.8314
 }

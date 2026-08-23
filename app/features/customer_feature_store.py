@@ -501,8 +501,10 @@ class CustomerFeatureStore:
         base_cust["obs_avg_review_score"] = base_cust["obs_avg_review_score"].fillna(4.0).round(2)
         base_cust["obs_review_count"] = base_cust["obs_review_count"].fillna(0).astype(int)
 
-        # Compute TARGET VARIABLES strictly from orders >= cutoff_date
-        fut_rev_per_cust = fut_orders.groupby("customer_unique_id")["order_price"].sum().reset_index().rename(columns={"order_price": "target_future_clv"})
+        # Compute TARGET VARIABLES strictly from orders placed within 90 days ON OR AFTER cutoff_date
+        cutoff_90d_end = cutoff_dt + pd.Timedelta(days=90)
+        fut_90_orders = fut_orders[fut_orders["purchase_dt"] < cutoff_90d_end].copy()
+        fut_rev_per_cust = fut_90_orders.groupby("customer_unique_id")["order_price"].sum().reset_index().rename(columns={"order_price": "target_future_clv"})
         base_cust = base_cust.merge(fut_rev_per_cust, on="customer_unique_id", how="left")
         base_cust["target_future_clv"] = base_cust["target_future_clv"].fillna(0.0).round(2)
         base_cust["target_repeat_buyer"] = (base_cust["target_future_clv"] > 0).astype(int)

@@ -15,10 +15,10 @@ st.markdown("---")
 # Executive Business Insight Card
 st.info(
     """
-    **🎯 BUSINESS QUESTION**: How can we accurately predict 1-year customer lifetime value (CLV) without temporal feature leakage?  
-    **📊 KEY INSIGHT**: By enforcing a strict cutoff date (**2017-10-01**), features are generated exclusively from pre-cutoff activity to predict 1-year future spend. **Ridge Regression** achieves an **MAE of $7.27** (Median Absolute Error = **$3.44**).  
-    **🔬 EVIDENCE**: Trained on 21,418 observation customers and evaluated on 5,355 chronologically held-out test customers. Top predictive features include `obs_total_items`, `obs_avg_items_per_order`, and `obs_recency_days`.  
-    **💡 RECOMMENDED ACTION**: Use predicted CLV tiers to prioritize high-value customer acquisition channels and target high-spend single buyers for post-purchase loyalty rewards.
+    **🎯 BUSINESS QUESTION**: Can we accurately predict 90-day future customer spend from prior transaction history without feature leakage?
+    **📊 KEY INSIGHT**: Using a temporal cutoff date (**2017-10-01**), predictors ($X$) are computed strictly from pre-cutoff behavior to predict 90-day future spend ($y$, `2017-10-01` to `2017-12-30`). Due to 99.09% zero-spending imbalance, a naive **Zero-Spend Baseline achieves $1.25 MAE**.
+    **🔬 EVIDENCE**: Evaluated on 15,347 chronologically held-out test customers ($N = 26,773$ total observation customers).
+    **💡 RECOMMENDED ACTION**: Use customer RFM tiers and past monetary spend for targeted retention marketing, while recognizing the high zero-inflation inherent in single-purchase marketplaces.
     """
 )
 
@@ -33,16 +33,16 @@ try:
     df_clv = get_clv_prediction_data()
     df_seg = get_customer_segmentation_data()
 
-    # Section 1: Model Metrics Bar
+    # Section 1: Model & Baseline Metrics Bar
     col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.metric("Temporal Cutoff Date", "2017-10-01")
+        st.metric("Prediction Horizon", "90 Days Post-Cutoff")
     with col2:
-        st.metric("Model Architecture", clv_meta.get("best_model_name", "Ridge Regression"))
+        st.metric("Zero-Spend Baseline MAE", f"${clv_meta.get('zero_baseline_mae', 1.25):.2f}")
     with col3:
-        st.metric("Test Set MAE", f"${clv_meta.get('best_mae', 7.27):.2f}")
+        st.metric("Mean-Spend Baseline MAE", f"${clv_meta.get('mean_baseline_mae', 2.30):.2f}")
     with col4:
-        st.metric("Test Set Median AE", f"${clv_meta.get('best_median_ae', 3.44):.2f}")
+        st.metric("Ridge Model MAE", f"${clv_meta.get('best_mae', 3.05):.2f}")
 
     st.markdown("---")
 

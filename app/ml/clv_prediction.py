@@ -177,7 +177,31 @@ class CustomerLifetimeValuePredictor:
             ),
         }
 
-        comparison: Dict[str, Dict[str, float]] = {}
+        # Calculate explicit baseline metrics on test set
+        zero_baseline_mae = round(float(mean_absolute_error(y_test, np.zeros_like(y_test))), 4)
+        mean_baseline_mae = round(float(mean_absolute_error(y_test, np.full_like(y_test, y_train.mean()))), 4)
+
+        logger.info(f"90-Day Horizon Target Baselines -> Zero-Spend Baseline MAE: ${zero_baseline_mae:.4f} | Mean-Spend Baseline MAE: ${mean_baseline_mae:.4f}")
+
+        comparison: Dict[str, Dict[str, float]] = {
+            "Zero-Spend Baseline ($0 Naive)": {
+                "mae": zero_baseline_mae,
+                "rmse": round(float(np.sqrt(mean_squared_error(y_test, np.zeros_like(y_test)))), 4),
+                "r2_score": 0.0,
+                "median_absolute_error": 0.0,
+                "non_zero_clv_mae": round(float(y_test[y_test > 0].mean()), 4) if (y_test > 0).sum() > 0 else 0.0,
+                "train_time_sec": 0.0,
+            },
+            "Mean-Spend Baseline (Train Mean)": {
+                "mae": mean_baseline_mae,
+                "rmse": round(float(np.sqrt(mean_squared_error(y_test, np.full_like(y_test, y_train.mean())))), 4),
+                "r2_score": round(float(r2_score(y_test, np.full_like(y_test, y_train.mean()))), 4),
+                "median_absolute_error": round(float(median_absolute_error(y_test, np.full_like(y_test, y_train.mean()))), 4),
+                "non_zero_clv_mae": round(float(mean_absolute_error(y_test[y_test > 0], np.full((y_test > 0).sum(), y_train.mean()))), 4) if (y_test > 0).sum() > 0 else 0.0,
+                "train_time_sec": 0.0,
+            },
+        }
+
         best_model_name = ""
         best_mae = float("inf")
         best_model = None
@@ -213,9 +237,9 @@ class CustomerLifetimeValuePredictor:
                 best_model = model
 
         total_training_time = time.perf_counter() - t0
-        logger.info(f"Selected best performing CLV model by MAE: '{best_model_name}' (MAE: ${best_mae:.2f}).")
+        logger.info(f"Selected best performing CLV model by MAE: '{best_model_name}' (MAE: ${best_mae:.2f} vs Zero Baseline ${zero_baseline_mae:.2f}).")
 
-        return comparison, best_model_name, best_model, total_training_time
+        return comparison, best_model_name, best_model, total_training_time, zero_baseline_mae, mean_baseline_mae
 
     def extract_feature_importance(
         self, model: Any, feature_names: List[str], top_n: int = 20
@@ -276,7 +300,7 @@ class CustomerLifetimeValuePredictor:
         X_full = np.hstack([num_scaled_full, cat_encoded_full])
 
         # 3. Train & Compare Models
-        comparison, best_model_name, best_model, training_time = self.train_and_evaluate(
+        comparison, best_model_name, best_model, training_time, zero_baseline_mae, mean_baseline_mae = self.train_and_evaluate(
             X_train, X_test, y_train, y_test
         )
 
@@ -341,6 +365,8 @@ class CustomerLifetimeValuePredictor:
             best_mae=best_metrics["mae"],
             best_median_ae=best_metrics["median_absolute_error"],
             best_non_zero_clv_mae=best_metrics["non_zero_clv_mae"],
+            zero_baseline_mae=zero_baseline_mae,
+            mean_baseline_mae=mean_baseline_mae,
             model_comparison=comparison,
             feature_importance=top_importances,
             csv_path=str(csv_path.resolve()),

@@ -281,15 +281,17 @@ class MLService:
         if self._clv_metadata:
             models["clv_prediction"] = ModelMetadataInfo(
                 model_name=self._clv_metadata.get("best_model_name", "Ridge Regression"),
-                model_type="Regression (CLV Prediction)",
+                model_type="Regression (90-Day Future Value)",
                 feature_count=16,
-                training_date="2026-08-20",
+                training_date="2026-08-22",
                 metrics={
-                    "mae": self._clv_metadata.get("best_mae", 7.27),
-                    "median_ae": self._clv_metadata.get("best_median_ae", 3.44),
-                    "rmse": self._clv_metadata.get("best_rmse", 35.81),
-                    "r2_score": self._clv_metadata.get("best_r2_score", 0.0060),
-                    "non_zero_clv_mae": self._clv_metadata.get("best_non_zero_clv_mae", 117.47),
+                    "mae": self._clv_metadata.get("best_mae", 3.05),
+                    "zero_baseline_mae": self._clv_metadata.get("zero_baseline_mae", 1.25),
+                    "mean_baseline_mae": self._clv_metadata.get("mean_baseline_mae", 2.30),
+                    "median_ae": self._clv_metadata.get("best_median_ae", 1.69),
+                    "rmse": self._clv_metadata.get("best_rmse", 18.18),
+                    "r2_score": self._clv_metadata.get("best_r2_score", 0.0011),
+                    "non_zero_clv_mae": self._clv_metadata.get("best_non_zero_clv_mae", 120.12),
                 },
                 status="loaded" if self._clv_data or self._clv_table is not None else "not_loaded",
             )

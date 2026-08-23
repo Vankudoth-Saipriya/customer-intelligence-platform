@@ -206,7 +206,7 @@ class InferentialStatisticalTester:
             "p_value": float(p_val),
             "effect_size_rank_biserial": round(effect_size, 4),
             "statistically_significant": bool(p_val < 0.05),
-            "business_interpretation": f"Late deliveries suffer a mean review penalty of {round(np.mean(ontime_scores) - np.mean(late_scores), 2)} stars (p-val = {p_val:.4e}, effect size r = {effect_size:.4f}), proving that logistics SLA delays directly damage customer experience.",
+            "business_interpretation": f"Late deliveries are associated with a statistically significant mean review score drop of {round(np.mean(ontime_scores) - np.mean(late_scores), 2)} stars (4.23 vs 2.57 stars, p-val = {p_val:.4e}, rank-biserial effect size r = {effect_size:.4f}).",
         }
 
     def test_repeat_buyer_spend_difference(self) -> Dict[str, Any]:

@@ -67,6 +67,8 @@ class CustomerCLVReport:
     best_mae: float
     best_median_ae: float = 0.0
     best_non_zero_clv_mae: float = 0.0
+    zero_baseline_mae: float = 0.0
+    mean_baseline_mae: float = 0.0
     model_comparison: Dict[str, Dict[str, float]] = field(default_factory=dict)
     feature_importance: List[Dict[str, Any]] = field(default_factory=list)
     csv_path: str = ""

@@ -14,9 +14,9 @@ st.markdown("---")
 # Executive Business Insight Card
 st.info(
     """
-    **🎯 BUSINESS QUESTION**: Do acquired customers return to place repeat orders, and how concentrated is marketplace revenue among top sellers?  
-    **📊 KEY INSIGHT**: Customer retention decays below **3.12% by Month 1** across 12-month acquisition cohorts. Meanwhile, seller revenue satisfies an **80/20 Pareto distribution** (top 20% sellers generate 82.69% of marketplace revenue).  
-    **🔬 EVIDENCE**: Analyzed 96,096 customer profiles and 3,095 sellers using `03_cohort_retention_matrix.sql` & `04_seller_revenue_pareto.sql`.  
+    **🎯 BUSINESS QUESTION**: Do acquired customers return to place repeat orders, and how concentrated is marketplace revenue among top sellers?
+    **📊 KEY INSIGHT**: Across 96,096 unique customers, **3.12%** are overall lifetime repeat buyers (2,997 customers). Monthly acquisition cohorts exhibit an **average Month-1 cohort retention of 0.50%** (median: 0.50%, peak: 0.72%). Seller revenue follows an **80/20 Pareto distribution** (top 20% sellers generate 84.5% of revenue).
+    **🔬 EVIDENCE**: Analyzed 96,096 customer profiles and 3,095 sellers using `03_cohort_retention_matrix.sql` & `04_seller_revenue_pareto.sql`.
     **💡 RECOMMENDED ACTION**: Focus post-purchase retention sequences on single-order buyers while prioritizing VIP seller support for the top 20% merchant cohort.
     """
 )
@@ -25,7 +25,7 @@ try:
     from app.dashboard.data_provider import get_cohort_retention_data, get_pareto_data, get_customer_segmentation_data
 
     # Section 1: 12-Month Cohort Retention Heatmap
-    st.subheader("🗓️ 12-Month Customer Acquisition Cohort Retention Matrix")
+    st.subheader("🗓️ Monthly Customer Acquisition Cohort Retention Matrix")
     cohort_df, retention_df = get_cohort_retention_data()
 
     if not retention_df.empty:
@@ -43,7 +43,7 @@ try:
         )
         fig_cohort.update_layout(template="plotly_dark", height=450)
         st.plotly_chart(fig_cohort, use_container_width=True)
-        st.caption("🔍 **Cohort Retention Finding**: Retention drops sharply after Month 0, averaging <3.12% across subsequent months.")
+        st.caption("🔍 **Cohort Retention Finding**: Month-1 retention averages **0.50%** across monthly cohorts (reflecting a **3.12%** overall lifetime repeat buyer rate).")
     else:
         st.warning("Cohort retention data unavailable.")
 

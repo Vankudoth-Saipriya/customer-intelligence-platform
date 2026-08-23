@@ -202,9 +202,9 @@ with c1:
         """
         <div class="nav-card">
             <h3>📈 1. Executive Overview</h3>
-            <p>Financial KPIs, Net Revenue ($13.59M) vs Gross GMV ($16.01M) reconciliation, order status lifecycle audit, and revenue trends.</p>
+            <p>Financial KPIs, Net Delivered Revenue (R$ 13.59M) vs Gross Order Value (R$ 15.84M) reconciliation, order status audit, and revenue trends.</p>
             <ul>
-                <li>Net Revenue vs Gross GMV Audit</li>
+                <li>Net Revenue vs Gross Order Value</li>
                 <li>Order Status Breakdown & Drops</li>
                 <li>Monthly Trajectory & Run-Rate</li>
             </ul>
@@ -218,9 +218,9 @@ with c2:
         """
         <div class="nav-card">
             <h3>👥 2. Customer & Sales Analytics</h3>
-            <p>12-month acquisition cohort retention heatmap, Pareto seller revenue concentration (80/20), and RFM persona clustering.</p>
+            <p>Monthly acquisition cohort retention matrix, 3.12% overall lifetime repeat rate (0.50% avg Month-1 retention), seller Pareto (80/20), and RFM clustering.</p>
             <ul>
-                <li>12-Month Cohort Retention Matrix</li>
+                <li>Monthly Cohort Retention Matrix</li>
                 <li>Seller & Customer Pareto Share</li>
                 <li>Log-RFM Persona Distribution</li>
             </ul>
@@ -237,7 +237,7 @@ with c3:
             <p>Carrier delivery SLA performance, regional state speed rankings, and inferential non-parametric hypothesis testing.</p>
             <ul>
                 <li>Mann-Whitney U SLA Test ($p<0.0001$)</li>
-                <li>1.72-Star Review Penalty Analysis</li>
+                <li>1.66-Star Review Drop Association</li>
                 <li>Kruskal-Wallis Regional State SLA</li>
             </ul>
         </div>
@@ -250,11 +250,11 @@ with c4:
         """
         <div class="nav-card">
             <h3>🤖 4. Predictive Analytics</h3>
-            <p>Temporal machine learning models (2017-10-01 cutoff), Ridge CLV value tiering, feature weights, and real-time inference.</p>
+            <p>Temporal machine learning models (2017-10-01 cutoff), 90-day future value prediction, baseline comparison, and real-time inference.</p>
             <ul>
                 <li>Temporal Cutoff Methodology</li>
-                <li>Ridge CLV Regression ($\text{MAE}=\$7.27$)</li>
-                <li>Model Feature Weights Interpretability</li>
+                <li>90-Day Future Value Target</li>
+                <li>Naive $0 Baseline ($1.25 MAE) Comparison</li>
             </ul>
         </div>
         """,
