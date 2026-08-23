@@ -3,10 +3,6 @@ Dashboard Data Provider Package.
 """
 
 from app.dashboard.data_provider import (
-    call_ai_ask_api,
-    call_ai_category_report_api,
-    call_ai_customer_report_api,
-    call_ai_executive_summary_api,
     call_clv_api,
     call_repeat_api,
     call_segment_api,
@@ -36,8 +32,4 @@ __all__ = [
     "call_segment_api",
     "call_clv_api",
     "call_repeat_api",
-    "call_ai_ask_api",
-    "call_ai_customer_report_api",
-    "call_ai_category_report_api",
-    "call_ai_executive_summary_api",
 ]
